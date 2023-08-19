@@ -17,6 +17,10 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation project(':crosscuttingYourPlus')
+	implementation project(':repositoryYourPlus')
+	implementation project(':entityYourPlus')
+	implementation project(':dtoYourPlus')
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

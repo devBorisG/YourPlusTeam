@@ -1,6 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="17" />
+    <bytecodeTargetLevel target="17">
+      <module name="crosscuttingYourPlus" target="17" />
+      <module name="crosscuttingYourPlus.main" target="17" />
+      <module name="crosscuttingYourPlus.test" target="17" />
+      <module name="dtoYourPlus" target="17" />
+      <module name="dtoYourPlus.main" target="17" />
+      <module name="dtoYourPlus.test" target="17" />
+      <module name="entityYourPlus" target="17" />
+      <module name="entityYourPlus.main" target="17" />
+      <module name="entityYourPlus.test" target="17" />
+      <module name="repositoryYourPlus" target="17" />
+      <module name="repositoryYourPlus.main" target="17" />
+      <module name="repositoryYourPlus.test" target="17" />
+      <module name="serviceYourPlus" target="17" />
+      <module name="serviceYourPlus.main" target="17" />
+      <module name="serviceYourPlus.test" target="17" />
+    </bytecodeTargetLevel>
   </component>
 </project>

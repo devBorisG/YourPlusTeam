@@ -4,4 +4,5 @@ include 'crosscuttingYourPlus'
 include 'apiYourPlus'
 include 'dtoYourPlus'
 include 'serviceYourPlus'
-
+include 'entityYourPlus'
+include 'repositoryYourPlus'

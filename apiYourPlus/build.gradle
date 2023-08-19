@@ -18,6 +18,9 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
     implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation project(':crosscuttingYourPlus')
+	implementation project(':dtoYourPlus')
+	implementation project(':serviceYourPlus')
     runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
