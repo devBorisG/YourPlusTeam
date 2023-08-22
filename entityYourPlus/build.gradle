@@ -18,7 +18,9 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation project(':crosscuttingYourPlus')
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.projectlombok:lombok:1.18.26'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 tasks.named('test') {

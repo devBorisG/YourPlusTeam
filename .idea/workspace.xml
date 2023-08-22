@@ -4,25 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/exceptions/YourPlusCustomException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/exceptions/enumeration/LayerException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/exceptions/messages/Message.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/exceptions/messages/enumeration/MessageLevel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/exceptions/service/ServiceCustomException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/helper/ObjectHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/helper/StringHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/helper/UUIDHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entityYourPlus/src/main/java/com/uco/yourplus/entityYourPlus/example.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+    <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="Se agrega capa de crosscuting con excepciones, mensajes y helpers">
+      <change afterPath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/helper/IntegerHelper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/ProductoDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/categoria/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/laboratorio/package-info.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/producto/ProductoBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/producto/ProductoDTOBuilder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/entityYourPlus/src/main/java/com/uco/yourplus/entityYourPlus/ProductoEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosscuttingYourPlus/settings.gradle" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/CrosscuttingYourPlusApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/CrosscuttingYourPlusApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/DtoYourPlusApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/DtoYourPlusApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entityYourPlus/src/main/java/com/uco/yourplus/entityYourPlus/EntityYourPlusApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/RepositoryYourPlusApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/RepositoryYourPlusApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/ServiceYourPlusApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/ServiceYourPlusApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/DtoYourPlusApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/entityYourPlus/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/entityYourPlus/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/entityYourPlus/src/main/java/com/uco/yourplus/entityYourPlus/example.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,8 +62,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="package-info" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -95,6 +93,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
@@ -206,8 +205,23 @@
       <workItem from="1692407182633" duration="1617000" />
       <workItem from="1692718942011" duration="80000" />
       <workItem from="1692719049806" duration="255000" />
-      <workItem from="1692723772126" duration="2531000" />
+      <workItem from="1692723772126" duration="6514000" />
     </task>
+    <task id="LOCAL-00001" summary="Se agrega capa de crosscuting con excepciones, mensajes y helpers">
+      <created>1692726490229</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1692726490229</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Se agrega capa de crosscuting con excepciones, mensajes y helpers">
+      <created>1692726632321</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1692726632321</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -215,5 +229,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Se agrega capa de crosscuting con excepciones, mensajes y helpers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Se agrega capa de crosscuting con excepciones, mensajes y helpers" />
   </component>
 </project>
