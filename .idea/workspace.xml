@@ -4,21 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="Se agrega capa de crosscuting con excepciones, mensajes y helpers">
-      <change afterPath="$PROJECT_DIR$/crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/helper/IntegerHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/ProductoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/categoria/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/laboratorio/package-info.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/producto/ProductoBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/producto/ProductoDTOBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/entityYourPlus/src/main/java/com/uco/yourplus/entityYourPlus/ProductoEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" afterDir="false" />
+    <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="Creacion de producto DTO">
+      <change afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/producto/ProductoRepositoryCustom.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/producto/ProductoRepositoryImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/DtoYourPlusApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/entityYourPlus/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/entityYourPlus/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/entityYourPlus/src/main/java/com/uco/yourplus/entityYourPlus/example.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositoryYourPlus/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/repositoryYourPlus/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/RepositoryYourPlusApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/producto/ProductoRepository.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,28 +79,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "C:/Users/David/Documents/GitHub/YourPlus",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "settings.sync",
-    "spring.configuration.checksum": "ab33b9da41da0b499fe41f2ff2ce4c1a",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/David/Documents/GitHub/YourPlus&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.sync&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;ab33b9da41da0b499fe41f2ff2ce4c1a&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Spring Boot.ApiyourplusApplication">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
@@ -205,7 +198,8 @@
       <workItem from="1692407182633" duration="1617000" />
       <workItem from="1692718942011" duration="80000" />
       <workItem from="1692719049806" duration="255000" />
-      <workItem from="1692723772126" duration="6514000" />
+      <workItem from="1692723772126" duration="6604000" />
+      <workItem from="1692847096029" duration="1647000" />
     </task>
     <task id="LOCAL-00001" summary="Se agrega capa de crosscuting con excepciones, mensajes y helpers">
       <created>1692726490229</created>
@@ -221,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1692726632321</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Creacion de producto DTO">
+      <created>1692731397197</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1692731397197</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -230,6 +231,7 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="Se agrega capa de crosscuting con excepciones, mensajes y helpers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Se agrega capa de crosscuting con excepciones, mensajes y helpers" />
+    <MESSAGE value="Creacion de producto DTO" />
+    <option name="LAST_COMMIT_MESSAGE" value="Creacion de producto DTO" />
   </component>
 </project>
