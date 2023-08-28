@@ -1,5 +1,7 @@
 package com.uco.yourplus.apiyourplus.controller.persona;
 
+import com.uco.yourplus.dtoYourPlus.builder.PersonaDTO;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
