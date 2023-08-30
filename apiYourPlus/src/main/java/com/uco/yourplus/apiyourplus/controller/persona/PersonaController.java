@@ -1,6 +1,8 @@
 package com.uco.yourplus.apiyourplus.controller.persona;
 
 import com.uco.yourplus.dtoYourPlus.builder.PersonaDTO;
+import com.uco.yourplus.serviceYourPlus.facade.persona.RegistrarPersonaFacade;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,8 +11,12 @@ import java.util.List;
 import java.util.Random;
 
 @RestController
-@RequestMapping("http://www.yourplus.com/persona")
+@RequestMapping("apiyourplus/persona")
 public class PersonaController {
+
+    @Autowired
+    RegistrarPersonaFacade registrarPersonaFacade;
+
     Random random = new Random();
     @GetMapping
     public String mostrarPersona(@RequestParam("id") String id){
@@ -26,8 +32,11 @@ public class PersonaController {
         return aleatorio;
     }
 
-    @PostMapping
+    @PostMapping("/pipi")
     public String ingresarPersona(){
+        PersonaDTO personaDTO = new PersonaDTO();
+        personaDTO.setNombre("Nicolas");
+        registrarPersonaFacade.execute(personaDTO);
         return "Persona registrado correctamente";
     }
 
