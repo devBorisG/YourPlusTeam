@@ -3,7 +3,6 @@ package com.uco.yourplus.repositoryYourPlus.persona;
 import com.uco.yourplus.crosscuttingYourPlus.helper.StringHelper;
 import com.uco.yourplus.crosscuttingYourPlus.helper.UUIDHelper;
 import com.uco.yourplus.entityYourPlus.PersonaEntity;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -15,7 +14,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class PersonaRepositoryCustomImpl implements PersonaRepositoryCustom{
+public class PersonaRepositoryCustomImpl implements PersonaRepositoryCustom {
 
     @PersistenceContext
     private EntityManager entityManager;
