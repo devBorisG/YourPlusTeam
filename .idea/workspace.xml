@@ -4,35 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="Creacion de Persona Entity">
-      <change afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/persona/PersonaRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/persona/PersonaRepositoryCustom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/persona/PersonaRepositoryCustomImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/rol/RolRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/rol/RolRepositoryCustom.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/rol/RolRepositoryCustomImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/domain/PersonaDomain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/domain/RolDomain.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/UseCaseFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/persona/RegistrarPersonaFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/persona/implementation/RegistrarPersonaFacadeImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/specification/Specification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/specification/persona/PersonaSpecification.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/specification/persona/implementation/PersonaSpecificationImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/UseCase.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/UseCaseList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/rol/ConsultarRol.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/rol/implementation/ConsultarRolImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/PersonaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/apiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/PersonaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/apiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/response/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/apiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/response/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/persona/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/rol/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/domain/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/specification/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/package-info.java" beforeDir="false" />
-    </list>
+    <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="Creacion de Persona Entity" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -60,12 +32,7 @@
       <state>
         <projects_view>
           <tree_state>
-            <expand>
-              <path>
-                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="YourPlusTeam" type="f1a62948:ProjectNode" />
-              </path>
-            </expand>
+            <expand />
             <select />
           </tree_state>
         </projects_view>
@@ -83,6 +50,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="david" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -99,28 +71,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/David/Documents/GitHub/YourPlus&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;a01bae375501f49d9fe4251d7b587a97&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "corretto-17",
+    "last_opened_file_path": "C:/Users/David/Documents/GitHub/YourPlus",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "spring.configuration.checksum": "e89d0b045c427e9c8dbf02569d829b70",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
