@@ -13,5 +13,8 @@ public class RegistrarPersonaFacadeImpl implements RegistrarPersonaFacade {
 
     @Override
     public void execute(PersonaDTO dto) {
+        PersonaDomain personaDomain = new PersonaDomain();
+        BeanUtils.copyProperties(dto, personaDomain);
+        System.out.println(personaDomain.getNombre());
     }
 }
