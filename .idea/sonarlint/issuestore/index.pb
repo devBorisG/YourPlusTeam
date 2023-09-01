@@ -5,18 +5,12 @@ H
 apiYourPlus/build.gradle,2\3\2367708591c409e992222dd23bc60caa5deb9893
 H
 dtoYourPlus/build.gradle,3\b\3b5cd752b331ac1593bfbdd614f1cca88df13274
-L
-serviceYourPlus/build.gradle,6\4\64967d57f9cc07f8b4b44da2b9aa326143df70b5
-O
-repositoryYourPlus/build.gradle,f\f\ff70d872bb31acf555cfc8aaeaf241162a3c8115
 Ç
 RapiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/ApiyourplusApplication.java,2\6\26288849fc3695f186fc48d19e1c0e86e67054a9
 L
 crosscuttingYourPlus/gradlew,6\3\63f3024abb5a11ea4cfce4adbdbec7c77e6af90d
 Q
 !crosscuttingYourPlus/build.gradle,9\c\9cc9626cc5fef94119bcf2aac47b80fd4bb2a34c
-S
-#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
 ù
 mcrosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/CrosscuttingYourPlusApplication.java,3\7\371467f37dd0279d6347bd52b7728d0bbf07b21e
 £
@@ -25,10 +19,6 @@ scrosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/except
 icrosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/exceptions/messages/Message.java,0\9\09e6e6685210d97073f5304992ed7f68bed48f6f
 ™
 zcrosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/exceptions/messages/enumeration/MessageLevel.java,1\4\14fd3e3c873942b0ce3b451f3c43ae70d69ed107
-ó
-grepositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/RepositoryYourPlusApplication.java,3\8\382bfa9996e61ec78a5a43ec2522626ad7724e12
-é
-^serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/ServiceYourPlusApplication.java,2\6\2670e611acf1d2ec04d7b13fa884a14406a05070
 è
 _crosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/helper/UUIDHelper.java,7\8\78bfb6fb90ec561bc2956d2cb0e33a0c1d4f6680
 †
@@ -38,8 +28,6 @@ wcrosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/except
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-]
--.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 ë
 acrosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/helper/ObjectHelper.java,5\e\5e71fcd9662fb7f98e01bcf1015aebca6d7324ea
 ë
@@ -48,10 +36,6 @@ K
 entityYourPlus/build.gradle,b\3\b3931abb74f946e5cf08d712941a1bee74e5849e
 í
 bcrosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingYourPlus/helper/IntegerHelper.java,d\5\d55ca940604630616b086fb9037d8c53b38fb1ed
-ä
-ZdtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/categoria/package-info.java,a\5\a58ae9139635fa0564871ad78a5b52293ad356e2
-å
-\dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/laboratorio/package-info.java,b\5\b523d7d5da9d7637a474c953dfd8ea3d0d3f4baf
 å
 \dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/producto/ProductoBuilder.java,8\e\8e0bd7e231503a564757307a02a21e3f37857095
 

@@ -1,8 +1,10 @@
 package com.uco.yourplus.apiyourplus.controller.persona;
 
+import com.uco.yourplus.apiyourplus.controller.response.Response;
 import com.uco.yourplus.dtoYourPlus.builder.PersonaDTO;
 import com.uco.yourplus.serviceYourPlus.facade.persona.RegistrarPersonaFacade;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,6 +22,13 @@ public class PersonaController {
     Random random = new Random();
     @GetMapping
     public String mostrarPersona(@RequestParam("id") String id){
+        final Response<PersonaDTO> response = new Response<>();
+        HttpStatus httpStatus = HttpStatus.OK;
+        try{
+            //code
+        }catch (Exception e){
+            //code
+        }
         return String.format("Producto con id: %s", id);
     }
 
