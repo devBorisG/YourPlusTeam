@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="Creacion de las especificaciones y los casos de uso para persona y rol">
+    <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="Modificacion personaDTO y completacion del specification">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/PersonaDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/PersonaDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/specification/persona/implementation/PersonaSpecificationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/specification/persona/implementation/PersonaSpecificationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/PersonaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/apiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/PersonaController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +255,15 @@
       <option name="project" value="LOCAL" />
       <updated>1693672632452</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Modificacion personaDTO y completacion del specification">
+      <option name="closed" value="true" />
+      <created>1693678074776</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1693678074777</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,6 +276,7 @@
     <MESSAGE value="Creacion de Persona Entity" />
     <MESSAGE value="Commit" />
     <MESSAGE value="Creacion de las especificaciones y los casos de uso para persona y rol" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion de las especificaciones y los casos de uso para persona y rol" />
+    <MESSAGE value="Modificacion personaDTO y completacion del specification" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificacion personaDTO y completacion del specification" />
   </component>
 </project>
