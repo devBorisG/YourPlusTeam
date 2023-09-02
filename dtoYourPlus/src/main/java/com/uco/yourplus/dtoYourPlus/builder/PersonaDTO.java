@@ -2,7 +2,9 @@ package com.uco.yourplus.dtoYourPlus.builder;
 
 import java.util.UUID;
 
+import static com.uco.yourplus.crosscuttingYourPlus.helper.ObjectHelper.getDefaultIfNull;
 import static com.uco.yourplus.crosscuttingYourPlus.helper.StringHelper.EMPTY;
+import static com.uco.yourplus.dtoYourPlus.builder.rol.RolDTOBuilder.getRolDTOBuilder;
 
 public class PersonaDTO {
 
@@ -84,7 +86,7 @@ public class PersonaDTO {
         return rolDTO;
     }
 
-    public void setRolDTO(RolDTO rolDTO) {
-        this.rolDTO = rolDTO;
+    public void setRolDTO(final RolDTO rolDTO) {
+        this.rolDTO = getDefaultIfNull(rolDTO,getRolDTOBuilder().build());
     }
 }
