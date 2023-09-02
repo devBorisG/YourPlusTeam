@@ -44,3 +44,13 @@ OdtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/ProductoDTO.java
 PentityYourPlus/src/main/java/com/uco/yourplus/entityYourPlus/ProductoEntity.java,0\e\0eb93a126ed71c716a94d953dc1183121c4bdf12
 è
 _dtoYourPlus/src/main/java/com/uco/yourplus/dtoYourPlus/builder/producto/ProductoDTOBuilder.java,6\4\6408fe9a74755eb9f476f1b32efddb4d48f5cbd3
+é
+^serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/ServiceYourPlusApplication.java,2/6/2670e611acf1d2ec04d7b13fa884a14406a05070
+á
+WserviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/UseCaseList.java,2/7/274d0313c0d1ea996f2bd089d5c61915289ca669
+S
+#.idea/sonarlint/issuestore/index.pb,9/f/9fe84ebb15faf917b7def6236dba604453cc61e0
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8/8/88a9255124c95bdc913197c120a8d560edc59c8e
+ä
+ZserviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/UseCaseListOne.java,a/8/a82340fde304286ce4666758b45236b0a145ec43
