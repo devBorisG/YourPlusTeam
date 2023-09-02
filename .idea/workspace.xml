@@ -5,8 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="Commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/implementation/ConsultarPersonaImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/implementation/ConsultarPersonaImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/RegistrarPersona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/implementation/RegistrarPersonaImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/entityYourPlus/YourPlusTeam.entityYourPlus.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/entityYourPlus/YourPlusTeam.entityYourPlus.main.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/specification/persona/implementation/PersonaSpecificationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/specification/persona/implementation/PersonaSpecificationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/rol/implementation/ConsultarRolImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/rol/implementation/ConsultarRolImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
