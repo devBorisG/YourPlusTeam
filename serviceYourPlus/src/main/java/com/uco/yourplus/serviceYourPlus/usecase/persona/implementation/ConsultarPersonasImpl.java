@@ -1,5 +1,6 @@
 package com.uco.yourplus.serviceYourPlus.usecase.persona.implementation;
 
+import com.uco.yourplus.crosscuttingYourPlus.exceptions.repository.RepositoryCustomException;
 import com.uco.yourplus.crosscuttingYourPlus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.entityYourPlus.PersonaEntity;
 import com.uco.yourplus.repositoryYourPlus.persona.PersonaRepository;
@@ -28,13 +29,13 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
             BeanUtils.copyProperties(domain, personaEntity);
             try{
                 result = personaRepository.findCustom(personaEntity);
-            }catch (Exception e){//Aqui debe de estar la exceptio custom de repository
+            }catch (RepositoryCustomException e){
                 throw ServiceCustomException.createTechnicalException(e, "no funca");
             }
         }else {
             try{
                 result = personaRepository.findAll();
-            }catch (Exception e){//Aqui debe de estar la exceptio custom de repository
+            }catch (RepositoryCustomException e){
                 throw ServiceCustomException.createTechnicalException(e, "no funca x2");
             }
         }
