@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="Creacion del post controller">
-      <change afterPath="$PROJECT_DIR$/apiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/AgregarPersonaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" afterDir="false" />
+    <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="Modificacion personaDTO y completacion del specification">
+      <change afterPath="$PROJECT_DIR$/apiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/EliminarPersonaController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/UseCaseFacadeDelete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/persona/EliminarPersonaFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/persona/implementation/EliminarPersonaFacadeImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/UseCaseDelete.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/EliminarPersona.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/implementation/EliminarPersonaImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/persona/PersonaRepositoryCustomImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/persona/PersonaRepositoryCustomImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,8 +58,8 @@
       <list>
         <option value="Enum" />
         <option value="package-info" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -85,32 +88,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "master",
-    "ignore.virus.scanning.warn.message": "true",
-    "jdk.selected.JAVA_MODULE": "corretto-17",
-    "last_opened_file_path": "/home/david/Documentos/GitHub/YourPlus",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "a01bae375501f49d9fe4251d7b587a97",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/david/Documentos/GitHub/YourPlus&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;e89d0b045c427e9c8dbf02569d829b70&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunDashboard">
     <option name="configurationTypes">
       <set>
@@ -118,7 +117,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ApiyourplusApplication (1)">
+  <component name="RunManager" selected="Spring Boot.ApiyourplusApplication">
     <configuration default="true" type="AZURE_FUNCTION_SUPPORT" factoryName="Run Functions">
       <option name="appName" />
       <option name="appServicePlanName" />
@@ -229,7 +228,6 @@
       <workItem from="1693519697817" duration="4962000" />
       <workItem from="1693526006413" duration="1290000" />
       <workItem from="1693671748935" duration="1000" />
-      <workItem from="1693839409988" duration="255000" />
     </task>
     <task id="LOCAL-00001" summary="Se agrega capa de crosscuting con excepciones, mensajes y helpers">
       <created>1692726490229</created>
@@ -276,15 +274,7 @@
       <option name="project" value="LOCAL" />
       <updated>1693678074777</updated>
     </task>
-    <task id="LOCAL-00007" summary="Creacion del post controller">
-      <option name="closed" value="true" />
-      <created>1693678747469</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1693678747469</updated>
-    </task>
-    <option name="localTasksCounter" value="8" />
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +288,6 @@
     <MESSAGE value="Commit" />
     <MESSAGE value="Creacion de las especificaciones y los casos de uso para persona y rol" />
     <MESSAGE value="Modificacion personaDTO y completacion del specification" />
-    <MESSAGE value="Creacion del post controller" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion del post controller" />
+    <option name="LAST_COMMIT_MESSAGE" value="Modificacion personaDTO y completacion del specification" />
   </component>
 </project>

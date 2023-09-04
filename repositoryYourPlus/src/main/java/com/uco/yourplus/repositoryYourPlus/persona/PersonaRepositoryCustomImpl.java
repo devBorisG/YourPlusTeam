@@ -19,6 +19,7 @@ public class PersonaRepositoryCustomImpl implements PersonaRepositoryCustom {
     @PersistenceContext
     private EntityManager entityManager;
 
+
     @Override
     public List<PersonaEntity> findCustom(PersonaEntity personaEntity) {
         try{
