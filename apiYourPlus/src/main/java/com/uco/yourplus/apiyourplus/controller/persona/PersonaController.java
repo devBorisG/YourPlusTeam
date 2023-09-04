@@ -42,30 +42,6 @@ public class PersonaController {
         return aleatorio;
     }
 
-    @PostMapping("/pipi")
-    public ResponseEntity<Response<PersonaDTO>>execute(@RequestBody PersonaDTO personaDTO){
-        final Response<PersonaDTO> response = new Response<>();
-        HttpStatus httpStatus = HttpStatus.OK;
-        try{
-            registrarPersonaFacade.execute(personaDTO);
-            List<PersonaDTO> data = new ArrayList<>();
-            data.add(personaDTO);
-            response.addSuccesMessage("melito pai lo agregaste crack");
-            response.setData(data);
-        } catch(final YourPlusCustomException yourPlusCustomException){
-            httpStatus = HttpStatus.BAD_REQUEST;
-            if(yourPlusCustomException.isTechnicalException()){
-                response.addErrorMessage("c daño el sistema");
-            } else{
-                response.addErrorMessage(yourPlusCustomException.getMessage());
-            }
-        } catch(final Exception exception){
-            httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-            response.addFatalMessage("apague y vuelva a prender que c murio el sistema");
-        }
-        return new ResponseEntity<>(response,httpStatus);
-    }
-
     @PutMapping
     public String actualizarPersona(@RequestParam("id") String id){
         return String.format("La Persona con id %s ha sido modificado",id);
