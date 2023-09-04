@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ConsultarRolesImpl implements ConsultarRoles {
+public class ConsultarRolesImpl implements ConsultarRoles {  
 
     @Autowired
     private RolRepository rolRepository;

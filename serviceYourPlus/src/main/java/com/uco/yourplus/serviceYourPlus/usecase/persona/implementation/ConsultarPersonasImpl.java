@@ -29,6 +29,9 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
             BeanUtils.copyProperties(domain, personaEntity);
             try{
                 result = personaRepository.findCustom(personaEntity);
+                if (result.isEmpty()){
+                    throw ServiceCustomException.createUserException("Usuario no existe");
+                }
             }catch (RepositoryCustomException e){
                 throw ServiceCustomException.createTechnicalException(e, "no funca");
             }
@@ -39,9 +42,7 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
                 throw ServiceCustomException.createTechnicalException(e, "no funca x2");
             }
         }
-        result.stream().map(value -> {
-            return new PersonaDomain();
-        }).forEach(convertResult::add);
+        result.stream().map(value -> new PersonaDomain()).forEach(convertResult::add);
         return convertResult;
     }
 }
