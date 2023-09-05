@@ -1,8 +1,8 @@
 rootProject.name="YourPlusTeam"
 
-include 'crosscuttingYourPlus'
-include 'apiYourPlus'
-include 'dtoYourPlus'
-include 'serviceYourPlus'
-include 'entityYourPlus'
-include 'repositoryYourPlus'
+include 'Crosscuttingyourplus'
+include 'ApiYourPlus'
+include 'DtoYourPlus'
+include 'ServiceYourPlus'
+include 'EntityYourPlus'
+include 'RepositoryYourPlus'
