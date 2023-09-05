@@ -1,6 +1,6 @@
 package com.uco.yourplus.serviceyourplus.domain;
 
-import com.uco.yourplus.dtoYourPlus.builder.RolDTO;
+import com.uco.yourplus.dtoyourplus.builder.RolDTO;
 
 import java.util.UUID;
 

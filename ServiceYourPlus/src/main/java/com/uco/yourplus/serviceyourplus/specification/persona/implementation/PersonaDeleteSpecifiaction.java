@@ -1,7 +1,7 @@
 package com.uco.yourplus.serviceyourplus.specification.persona.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
-import com.uco.yourplus.dtoYourPlus.builder.PersonaDTO;
+import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
 import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
 import com.uco.yourplus.serviceyourplus.specification.persona.PersonaDeleteSpecification;
 import com.uco.yourplus.serviceyourplus.usecase.persona.ConsultarPersonas;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-import static com.uco.yourplus.dtoYourPlus.builder.persona.PersonaDTOBuilder.getPersonaDTOBuilder;
+import static com.uco.yourplus.dtoyourplus.builder.persona.PersonaDTOBuilder.getPersonaDTOBuilder;
 
 @Service
 public class PersonaDeleteSpecifiaction implements PersonaDeleteSpecification{

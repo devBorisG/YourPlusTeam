@@ -1,9 +1,9 @@
 package com.uco.yourplus.serviceyourplus.specification.persona.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
-import com.uco.yourplus.dtoYourPlus.builder.PersonaDTO;
-import com.uco.yourplus.repositoryYourPlus.persona.PersonaRepository;
-import com.uco.yourplus.repositoryYourPlus.rol.RolRepository;
+import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
+import com.uco.yourplus.repositoryyourplus.persona.PersonaRepository;
+import com.uco.yourplus.repositoryyourplus.rol.RolRepository;
 import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
 import com.uco.yourplus.serviceyourplus.specification.persona.PersonaSpecification;
 import com.uco.yourplus.serviceyourplus.usecase.persona.ConsultarPersonas;
@@ -17,7 +17,7 @@ import java.util.Optional;
 import static com.uco.yourplus.crosscuttingyourplus.helper.ObjectHelper.isNull;
 import static com.uco.yourplus.crosscuttingyourplus.helper.StringHelper.*;
 import static com.uco.yourplus.crosscuttingyourplus.helper.UUIDHelper.isDefaultUUID;
-import static com.uco.yourplus.dtoYourPlus.builder.persona.PersonaDTOBuilder.getPersonaDTOBuilder;
+import static com.uco.yourplus.dtoyourplus.builder.persona.PersonaDTOBuilder.getPersonaDTOBuilder;
 
 @Service
 public class PersonaSpecificationImpl implements PersonaSpecification {

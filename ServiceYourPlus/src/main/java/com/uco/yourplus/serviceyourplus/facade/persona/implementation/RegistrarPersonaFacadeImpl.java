@@ -1,6 +1,6 @@
 package com.uco.yourplus.serviceyourplus.facade.persona.implementation;
 
-import com.uco.yourplus.dtoYourPlus.builder.PersonaDTO;
+import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
 import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
 import com.uco.yourplus.serviceyourplus.facade.persona.RegistrarPersonaFacade;
 import org.springframework.beans.BeanUtils;

@@ -10,29 +10,21 @@ import static com.uco.yourplus.crosscuttingyourplus.helper.StringHelper.isEmpty;
 public class YourPlusCustomException extends RuntimeException{
     @Serial
     private static final long serialVersionUID = 1L;
-    private String userMessage;
-    private LayerException layerException;
+    private final String userMessage;
+    private final LayerException layerException;
 
     protected YourPlusCustomException(final Throwable rootException, final String technicalMessage, final String userMessage, final LayerException layerException){
         super(technicalMessage, getDefaultIfNull(rootException, new Exception()));
-        setUserMessage(userMessage);
-        setLayerException(layerException);
+        this.userMessage = userMessage;
+        this.layerException = layerException;
     }
 
     public String getUserMessage() {
         return userMessage;
     }
 
-    private void setUserMessage(String userMessage) {
-        this.userMessage = userMessage;
-    }
-
     public LayerException getLayerException() {
         return layerException;
-    }
-
-    private void setLayerException(LayerException layerException) {
-        this.layerException = layerException;
     }
 
     public final boolean isTechnicalException(){

@@ -1,8 +1,8 @@
 package com.uco.yourplus.serviceyourplus.facade.persona.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
-import com.uco.yourplus.dtoYourPlus.builder.PersonaDTO;
-import com.uco.yourplus.repositoryYourPlus.persona.PersonaRepository;
+import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
+import com.uco.yourplus.repositoryyourplus.persona.PersonaRepository;
 import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
 import com.uco.yourplus.serviceyourplus.facade.persona.EliminarPersonaFacade;
 import com.uco.yourplus.serviceyourplus.usecase.persona.ConsultarPersonas;

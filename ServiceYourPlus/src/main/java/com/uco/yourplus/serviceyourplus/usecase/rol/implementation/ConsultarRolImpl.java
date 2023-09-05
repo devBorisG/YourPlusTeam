@@ -1,7 +1,7 @@
 package com.uco.yourplus.serviceyourplus.usecase.rol.implementation;
 
-import com.uco.yourplus.entityYourPlus.RolEntity;
-import com.uco.yourplus.repositoryYourPlus.rol.RolRepository;
+import com.uco.yourplus.entityyourplus.RolEntity;
+import com.uco.yourplus.repositoryyourplus.rol.RolRepository;
 import com.uco.yourplus.serviceyourplus.domain.RolDomain;
 import com.uco.yourplus.serviceyourplus.usecase.rol.ConsultarRol;
 import org.springframework.beans.BeanUtils;
