@@ -39,7 +39,7 @@ public class PersonaSpecificationImpl implements PersonaSpecification {
 
     @Override
     public void isSatisfied(PersonaDomain data) {
-
+        verifyUserIntegrity(data);
     }
 
     private void verifyUserIntegrity(PersonaDomain personaDomain){

@@ -5,19 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5d38e868-cd1a-450c-a11c-ac17320b6a2c" name="Changes" comment="Modificacion personaDTO y completacion del specification">
-      <change afterPath="$PROJECT_DIR$/apiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/EliminarPersonaController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/UseCaseFacadeDelete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/persona/EliminarPersonaFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/persona/implementation/EliminarPersonaFacadeImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/UseCaseDelete.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/EliminarPersona.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/implementation/EliminarPersonaImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/md5-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/persona/PersonaRepositoryCustomImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/repositoryYourPlus/src/main/java/com/uco/yourplus/repositoryYourPlus/persona/PersonaRepositoryCustomImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/apiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/EliminarPersonaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/apiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/EliminarPersonaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/UseCaseFacadeDelete.java" beforeDir="false" afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/UseCaseFacadeDelete.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/persona/implementation/EliminarPersonaFacadeImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/facade/persona/implementation/EliminarPersonaFacadeImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/specification/persona/implementation/PersonaSpecificationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/specification/persona/implementation/PersonaSpecificationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/UseCaseDelete.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/EliminarPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/EliminarPersona.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/implementation/EliminarPersonaImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/serviceYourPlus/src/main/java/com/uco/yourplus/serviceYourPlus/usecase/persona/implementation/EliminarPersonaImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
