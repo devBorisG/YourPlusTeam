@@ -28,10 +28,9 @@ public class EliminarPersonaImpl implements EliminarPersona {
     public void execute(PersonaDomain domain) {
         try{
             personaDeleteSpecification.isSatisfied(domain);
-            PersonaDomain consulta = new PersonaDomain();
-            consulta = consultarPersonas.execute(Optional.of(domain)).get(0);
+            PersonaDomain consulta = consultarPersonas.execute(Optional.of(domain)).get(0);
             PersonaEntity personaEntity = new PersonaEntity();
-            BeanUtils.copyProperties(domain,personaEntity);
+            BeanUtils.copyProperties(consulta,personaEntity);
             repository.delete(personaEntity);
         } catch (ServiceCustomException exception){
             throw exception;

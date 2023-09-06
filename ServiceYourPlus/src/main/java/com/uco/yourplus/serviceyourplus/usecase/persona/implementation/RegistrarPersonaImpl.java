@@ -1,5 +1,7 @@
 package com.uco.yourplus.serviceyourplus.usecase.persona.implementation;
 
+import com.uco.yourplus.crosscuttingyourplus.exceptions.repository.RepositoryCustomException;
+import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.entityyourplus.PersonaEntity;
 import com.uco.yourplus.repositoryyourplus.persona.PersonaRepository;
 import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
@@ -25,8 +27,8 @@ public class RegistrarPersonaImpl implements RegistrarPersona {
             PersonaEntity personaEntity = new PersonaEntity();
             BeanUtils.copyProperties(domain,personaEntity);
             repository.save(personaEntity);
-        }catch (Exception exception){
-            throw exception;
+        }catch (RepositoryCustomException exception){
+            throw ServiceCustomException.createTechnicalException(exception,"No se ha logrado ingresar con exito al nuevo usuario, por favor intente de nuevo");
         }
     }
 }
