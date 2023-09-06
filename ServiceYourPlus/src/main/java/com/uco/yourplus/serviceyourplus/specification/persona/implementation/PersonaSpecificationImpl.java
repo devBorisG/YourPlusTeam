@@ -72,10 +72,6 @@ public class PersonaSpecificationImpl implements PersonaSpecification {
         return consultarPersonas.execute(Optional.of(personaDomain)).isEmpty();
     }
 
-    private boolean verifyObjectIsntNull(PersonaDomain personaDomain){
-        return isNull(personaDomain.getRolDTO());
-    }
-
     private boolean verifyIsLetters(PersonaDomain personaDomain){
         return isOnlyWordsAndSpace(personaDomain.getNombre()+personaDomain.getApellido());
     }

@@ -1,5 +1,6 @@
 package com.uco.yourplus.repositoryyourplus.rol;
 
+import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.crosscuttingyourplus.helper.StringHelper;
 import com.uco.yourplus.crosscuttingyourplus.helper.UUIDHelper;
 import com.uco.yourplus.entityyourplus.RolEntity;
@@ -37,7 +38,7 @@ public class RolRepositoryCustomImpl implements RolRepositoryCustom{
             query.select(rolEntityRoot).where(criteriaBuilder.and(predicates.toArray(new Predicate[0])));
             return entityManager.createQuery(query).getResultList();
         } catch(Exception exception){
-            throw exception;
+            throw ServiceCustomException.createTechnicalException(exception,"Se ha generado un error relacionado al rol");
         }
     }
 }
