@@ -1,6 +1,5 @@
 package com.uco.yourplus.serviceyourplus.usecase;
 
-
 /**
  * Esta interfaz define un caso de uso genérico en el sistema YourPlus.
  * Los casos de uso representan operaciones específicas que se pueden realizar en el sistema,
@@ -15,4 +14,5 @@ public interface UseCase <D>{
      * @param domain El objeto de dominio que contiene los datos necesarios para ejecutar el caso de uso.
      */
     void execute(D domain);
+
 }

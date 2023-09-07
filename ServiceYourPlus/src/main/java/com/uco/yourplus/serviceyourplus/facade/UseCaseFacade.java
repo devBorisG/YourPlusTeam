@@ -1,5 +1,6 @@
 package com.uco.yourplus.serviceyourplus.facade;
 
+
 /**
  * Esta interfaz representa la fachada genérica para casos de uso en el sistema YourPlus.
  * Proporciona un método ejecutar que toma un tipo de objeto genérico T como parámetro.

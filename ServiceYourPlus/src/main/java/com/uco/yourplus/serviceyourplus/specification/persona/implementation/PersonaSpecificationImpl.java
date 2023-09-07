@@ -14,7 +14,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
-import static com.uco.yourplus.crosscuttingyourplus.helper.ObjectHelper.isNull;
 import static com.uco.yourplus.crosscuttingyourplus.helper.StringHelper.*;
 import static com.uco.yourplus.crosscuttingyourplus.helper.UUIDHelper.isDefaultUUID;
 import static com.uco.yourplus.dtoyourplus.builder.persona.PersonaDTOBuilder.getPersonaDTOBuilder;
