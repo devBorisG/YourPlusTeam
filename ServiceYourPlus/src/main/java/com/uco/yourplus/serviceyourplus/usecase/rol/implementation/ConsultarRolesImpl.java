@@ -40,9 +40,7 @@ public class ConsultarRolesImpl implements ConsultarRoles {
                 throw ServiceCustomException.createTechnicalException(e, "no funca");
             }
         }
-        result.stream().map(value -> {
-            return new RolDomain();
-        }).forEach(castResult::add);
+        result.stream().map(value -> new RolDomain()).forEach(castResult::add);
         return castResult;
     }
 }
