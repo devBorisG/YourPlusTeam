@@ -1,6 +1,6 @@
 rootProject.name="YourPlusTeam"
 
-include 'Crosscuttingyourplus'
+include 'CrosscuttingYourPlus'
 include 'ApiYourPlus'
 include 'DtoYourPlus'
 include 'ServiceYourPlus'
