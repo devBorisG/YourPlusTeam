@@ -15,6 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Esta clase representa un controlador REST para consultar personas en el sistema YourPlus.
+ * Permite realizar consultas de personas utilizando la fachada ConsultarPersonasFacade.
+ *
+ * @see ConsultarPersonasFacade
+ * @author David Andrés
+ */
 @RestController
 @RequestMapping("apiyourplus/persona")
 public class ConsultarPersonasController {
@@ -22,6 +29,12 @@ public class ConsultarPersonasController {
     @Autowired
     private ConsultarPersonasFacade facade;
 
+    /**
+     * Endpoint para consultar personas.
+     *
+     * @param personaDTO El objeto PersonaDTO que contiene los parámetros de la consulta.
+     * @return Una ResponseEntity que incluye un objeto Response con los resultados de la consulta.
+     */
     @GetMapping("/consultarpersonas")
     public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO){
         final Response<PersonaDTO> response = new Response<>();

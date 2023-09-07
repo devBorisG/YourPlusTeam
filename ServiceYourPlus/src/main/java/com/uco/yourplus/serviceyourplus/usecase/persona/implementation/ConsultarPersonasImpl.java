@@ -14,12 +14,27 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Implementación del caso de uso para consultar personas en el sistema YourPlus.
+ * Este caso de uso permite buscar personas en el repositorio de personas y convertirlas en objetos de dominio PersonaDomain.
+ *
+ * @see ConsultarPersonas
+ */
 @Service
 public class ConsultarPersonasImpl implements ConsultarPersonas {
 
     @Autowired
     private PersonaRepository personaRepository;
 
+
+    /**
+     * Ejecuta el caso de uso para consultar personas.
+     *
+     * @param domain Un objeto de dominio opcional que puede contener parámetros para la consulta.
+     * @return Una lista de objetos PersonaDomain que representan las personas encontradas en la consulta.
+     * @throws ServiceCustomException Sí ocurre un error en el servicio durante la consulta.
+     * @throws RepositoryCustomException Sí ocurre un error en el repositorio durante la consulta.
+     */
     @Override
     public List<PersonaDomain> execute(Optional<PersonaDomain> domain) {
         List<PersonaEntity> result;

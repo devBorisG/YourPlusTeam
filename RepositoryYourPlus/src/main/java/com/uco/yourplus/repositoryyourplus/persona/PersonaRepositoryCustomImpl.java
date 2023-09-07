@@ -15,12 +15,24 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
+/**
+ * Implementación personalizada del repositorio para consultas específicas relacionadas con la entidad PersonaEntity en el sistema YourPlus.
+ * Esta implementación utiliza JPA Criteria API para construir consultas personalizadas basadas en los parámetros proporcionados.
+ *
+ * @see PersonaRepositoryCustom
+ */
 public class PersonaRepositoryCustomImpl implements PersonaRepositoryCustom {
 
     @PersistenceContext
     private EntityManager entityManager;
 
-
+    /**
+     * Realiza una consulta personalizada en la entidad PersonaEntity en función de los parámetros proporcionados.
+     *
+     * @param personaEntity El objeto PersonaEntity que contiene los parámetros para la consulta personalizada.
+     * @return Una lista de objetos PersonaEntity que coinciden con los parámetros de la consulta personalizada.
+     * @throws RepositoryCustomException Sí ocurre un error durante la ejecución de la consulta personalizada.
+     */
     @Override
     public List<PersonaEntity> findCustom(PersonaEntity personaEntity) {
         try{

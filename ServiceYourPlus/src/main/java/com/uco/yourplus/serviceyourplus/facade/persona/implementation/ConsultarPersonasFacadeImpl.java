@@ -11,12 +11,24 @@ import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+/**
+ * Esta clase representa la implementación de la fachada para consultar personas.
+ * Proporciona un método para ejecutar la consulta de una persona por medio de un DTO.
+ *
+ * @author David Andrés
+ */
 @Service
 public class ConsultarPersonasFacadeImpl implements ConsultarPersonasFacade {
 
     @Autowired
     private ConsultarPersonas consultarPersonas;
 
+    /**
+     * Ejecuta la consulta de una persona utilizando un objeto PersonaDTO.
+     *
+     * @param dto El objeto PersonaDTO que contiene los datos de la persona a consultar.
+     * @throws ServiceCustomException Sí ocurre un error personalizado en el servicio.
+     */
     @Override
     public void execute(PersonaDTO dto) {
         try{
