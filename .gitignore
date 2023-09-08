@@ -38,3 +38,6 @@ out/
 
 ### VS Code ###
 .vscode/
+*.lock
+*.bin
+*.bin
