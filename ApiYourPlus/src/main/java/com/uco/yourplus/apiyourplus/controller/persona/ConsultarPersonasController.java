@@ -35,7 +35,7 @@ public class ConsultarPersonasController {
      * @param personaDTO El objeto PersonaDTO que contiene los parámetros de la consulta.
      * @return Una ResponseEntity que incluye un objeto Response con los resultados de la consulta.
      */
-    @GetMapping("/consultarpersonas")
+    @GetMapping()
     public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO){
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;

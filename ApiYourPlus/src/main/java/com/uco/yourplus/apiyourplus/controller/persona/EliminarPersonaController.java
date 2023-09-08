@@ -19,6 +19,8 @@ public class EliminarPersonaController {
 
     @Autowired
     private ConsultarPersonasFacade facade;
+
+    @DeleteMapping()
     public ResponseEntity<Response<PersonaDTO>>execute(@RequestBody PersonaDTO personaDTO){
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;

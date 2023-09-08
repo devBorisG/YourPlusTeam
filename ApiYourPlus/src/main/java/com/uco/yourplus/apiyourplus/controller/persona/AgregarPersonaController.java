@@ -22,9 +22,8 @@ public class AgregarPersonaController {
 
     @Autowired
     RegistrarPersonaFacade registrarPersonaFacade;
-    Random random = new Random();
 
-    @PostMapping("/registrar")
+    @PostMapping()
     public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO){
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
