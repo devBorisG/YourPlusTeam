@@ -22,6 +22,7 @@ dependencies {
 	implementation project(':RepositoryYourPlus')
 	implementation project(':EntityYourPlus')
 	implementation project(':DtoYourPlus')
+	implementation group: 'com.github.fge', name: 'json-patch', version: '1.7'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 

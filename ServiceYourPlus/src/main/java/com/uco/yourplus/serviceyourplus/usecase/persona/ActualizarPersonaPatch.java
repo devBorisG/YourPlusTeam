@@ -1,8 +1,16 @@
 package com.uco.yourplus.serviceyourplus.usecase.persona;
 
-import com.uco.yourplus.serviceyourplus.usecase.UseCase;
+import com.github.fge.jsonpatch.JsonPatch;
+import com.uco.yourplus.serviceyourplus.usecase.UseCasePatch;
 
-import java.util.Map;
-
-public interface ActualizarPersonaPatch extends UseCase<Map<String,Object>> {
+/**
+ * Interfaz que extiende la interfaz genérica UseCasePatch y se especializa en la ejecución de casos de uso
+ * para la actualización parcial de entidades "Persona" utilizando operaciones de parcheo JsonPatch.
+ * <p>
+ * Esta interfaz define un contrato para la ejecución de casos de uso que implican la aplicación de operaciones
+ * de parcheo JsonPatch a entidades "Persona".
+ *
+ * @see UseCasePatch
+ */
+public interface ActualizarPersonaPatch extends UseCasePatch<JsonPatch> {
 }
