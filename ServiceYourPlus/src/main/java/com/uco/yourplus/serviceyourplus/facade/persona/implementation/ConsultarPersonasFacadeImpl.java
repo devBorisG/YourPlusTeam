@@ -9,6 +9,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -30,11 +32,19 @@ public class ConsultarPersonasFacadeImpl implements ConsultarPersonasFacade {
      * @throws ServiceCustomException Sí ocurre un error personalizado en el servicio.
      */
     @Override
-    public void execute(PersonaDTO dto) {
+    public List<PersonaDTO> execute(Optional<PersonaDTO> dto) {
         try{
-            PersonaDomain personaDomain = new PersonaDomain();
-            BeanUtils.copyProperties(dto, personaDomain);
-            consultarPersonas.execute(Optional.of(personaDomain));
+            List<PersonaDomain> listDomain;
+            if (dto.isPresent()){
+                PersonaDomain personaDomain = new PersonaDomain();
+                BeanUtils.copyProperties(dto.get(), personaDomain);
+                listDomain = consultarPersonas.execute(Optional.of(personaDomain));
+            }else {
+                listDomain = consultarPersonas.execute(Optional.empty());
+            }
+            List<PersonaDTO> convertResult = new ArrayList<>();
+            listDomain.stream().map(value -> new PersonaDTO()).forEach(convertResult::add);
+            return convertResult;
         }catch (ServiceCustomException serviceCustomException){
             throw serviceCustomException;
         }catch (Exception exception){

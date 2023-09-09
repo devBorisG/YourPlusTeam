@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 /**
  * Esta clase representa un controlador REST para consultar personas en el sistema YourPlus.
@@ -37,12 +38,11 @@ public class ConsultarPersonasController {
      */
     @GetMapping()
     public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO){
+        Optional<PersonaDTO> existDto = Optional.ofNullable(personaDTO);
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
         try{
-            facade.execute(personaDTO);
-            List<PersonaDTO> data = new ArrayList<>();
-            data.add(personaDTO);
+            List<PersonaDTO> data = facade.execute(existDto);
             response.addSuccesMessage("Lista de personas");
             response.setData(data);
         }catch (final YourPlusCustomException yourPlusCustomException){

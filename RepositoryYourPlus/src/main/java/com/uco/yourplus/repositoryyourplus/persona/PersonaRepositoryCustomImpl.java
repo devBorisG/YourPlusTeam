@@ -4,6 +4,7 @@ import com.uco.yourplus.crosscuttingyourplus.exceptions.repository.RepositoryCus
 import com.uco.yourplus.crosscuttingyourplus.helper.StringHelper;
 import com.uco.yourplus.crosscuttingyourplus.helper.UUIDHelper;
 import com.uco.yourplus.entityyourplus.PersonaEntity;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -21,6 +22,7 @@ import java.util.Objects;
  *
  * @see PersonaRepositoryCustom
  */
+
 public class PersonaRepositoryCustomImpl implements PersonaRepositoryCustom {
 
     @PersistenceContext
@@ -42,7 +44,7 @@ public class PersonaRepositoryCustomImpl implements PersonaRepositoryCustom {
             List<Predicate> predicates = new ArrayList<>();
 
             if(!Objects.isNull(personaEntity)){
-                if(UUIDHelper.isDefaultUUID(personaEntity.getId())){
+                if(!UUIDHelper.isDefaultUUID(personaEntity.getId())){
                     predicates.add(criteriaBuilder.equal(personaEntityRoot.get("id"),personaEntity.getId()));
                 }
                 if(!StringHelper.isEmpty(personaEntity.getNombre())){

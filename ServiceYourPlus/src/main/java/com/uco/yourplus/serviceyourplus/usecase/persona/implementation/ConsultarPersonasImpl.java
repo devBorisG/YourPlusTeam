@@ -26,7 +26,6 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
     @Autowired
     private PersonaRepository personaRepository;
 
-
     /**
      * Ejecuta el caso de uso para consultar personas.
      *
@@ -44,9 +43,6 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
             BeanUtils.copyProperties(domain, personaEntity);
             try{
                 result = personaRepository.findCustom(personaEntity);
-                if (result.isEmpty()){
-                    throw ServiceCustomException.createUserException("Usuario no existe");
-                }
             }catch (RepositoryCustomException e){
                 throw ServiceCustomException.createTechnicalException(e, "no funca");
             }

@@ -4,6 +4,7 @@ import com.uco.yourplus.apiyourplus.controller.response.Response;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.YourPlusCustomException;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
 import com.uco.yourplus.serviceyourplus.facade.persona.ConsultarPersonasFacade;
+import com.uco.yourplus.serviceyourplus.facade.persona.EliminarPersonaFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,7 +19,7 @@ import java.util.List;
 public class EliminarPersonaController {
 
     @Autowired
-    private ConsultarPersonasFacade facade;
+    private EliminarPersonaFacade facade;
 
     @DeleteMapping()
     public ResponseEntity<Response<PersonaDTO>>execute(@RequestBody PersonaDTO personaDTO){

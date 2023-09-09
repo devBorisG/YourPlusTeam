@@ -2,6 +2,9 @@ package com.uco.yourplus.serviceyourplus.facade.persona;
 
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
 import com.uco.yourplus.serviceyourplus.facade.UseCaseFacade;
+import com.uco.yourplus.serviceyourplus.facade.UseCaseFacadeList;
+
+import java.util.Optional;
 
 /**
  * Esta interfaz representa la fachada para consultar personas en el sistema YourPlus.
@@ -14,5 +17,5 @@ import com.uco.yourplus.serviceyourplus.facade.UseCaseFacade;
  * @see UseCaseFacade
  * @author David Andrés
  */
-public interface ConsultarPersonasFacade extends UseCaseFacade<PersonaDTO> {
+public interface ConsultarPersonasFacade extends UseCaseFacadeList<PersonaDTO> {
 }

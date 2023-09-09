@@ -15,5 +15,5 @@ import java.util.UUID;
  * @see PersonaRepositoryCustom
  */
 @Repository
-public interface PersonaRepository extends JpaRepository<PersonaEntity, UUID>, PersonaRepositoryCustom{
+public interface PersonaRepository extends JpaRepository<PersonaEntity, UUID>,PersonaRepositoryCustom{
 }
