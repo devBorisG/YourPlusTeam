@@ -36,14 +36,20 @@ public class ConsultarPersonasFacadeImpl implements ConsultarPersonasFacade {
         try{
             List<PersonaDomain> listDomain;
             if (dto.isPresent()){
+                System.out.println("Si esta presente");
                 PersonaDomain personaDomain = new PersonaDomain();
                 BeanUtils.copyProperties(dto.get(), personaDomain);
                 listDomain = consultarPersonas.execute(Optional.of(personaDomain));
             }else {
+                System.out.println("no esta presente");
                 listDomain = consultarPersonas.execute(Optional.empty());
             }
             List<PersonaDTO> convertResult = new ArrayList<>();
-            listDomain.stream().map(value -> new PersonaDTO()).forEach(convertResult::add);
+            listDomain.forEach(value -> {
+                PersonaDTO personaDTO = new PersonaDTO();
+                BeanUtils.copyProperties(value, personaDTO);
+                convertResult.add(personaDTO);
+            });
             return convertResult;
         }catch (ServiceCustomException serviceCustomException){
             throw serviceCustomException;

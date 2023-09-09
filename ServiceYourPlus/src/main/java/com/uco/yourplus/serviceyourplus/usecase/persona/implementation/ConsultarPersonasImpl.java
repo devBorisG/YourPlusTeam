@@ -38,22 +38,30 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
     public List<PersonaDomain> execute(Optional<PersonaDomain> domain) {
         List<PersonaEntity> result;
         List<PersonaDomain> convertResult = new ArrayList<>();
-        if(domain.isPresent()){
-            PersonaEntity personaEntity = new PersonaEntity();
-            BeanUtils.copyProperties(domain, personaEntity);
-            try{
-                result = personaRepository.findCustom(personaEntity);
-            }catch (RepositoryCustomException e){
-                throw ServiceCustomException.createTechnicalException(e, "no funca");
-            }
-        }else {
-            try{
-                result = personaRepository.findAll();
-            }catch (RepositoryCustomException e){
-                throw ServiceCustomException.createTechnicalException(e, "no funca x2");
-            }
-        }
-        result.stream().map(value -> new PersonaDomain()).forEach(convertResult::add);
+//        if(domain.isPresent()){
+//            PersonaEntity personaEntity = new PersonaEntity();
+//            BeanUtils.copyProperties(domain.get(), personaEntity);
+//            System.out.println(personaEntity.getNombre());
+//            try{
+//                result = personaRepository.findCustom(personaEntity);
+//            }catch (RepositoryCustomException e){
+//                throw ServiceCustomException.createTechnicalException(e, "no funca");
+//            }
+//        }else {
+//            try{
+//                result = personaRepository.findAll();
+//            }catch (RepositoryCustomException e){
+//                throw ServiceCustomException.createTechnicalException(e, "no funca x2");
+//            }
+//        }
+        result = personaRepository.findAll();
+        System.out.println(result.get(0).getNombre());
+        result.forEach(value -> {
+            PersonaDomain personaDomain = new PersonaDomain();
+            BeanUtils.copyProperties(value, personaDomain);
+            convertResult.add(personaDomain);
+        });
+        System.out.println(convertResult.get(0).getNombre());
         return convertResult;
     }
 }

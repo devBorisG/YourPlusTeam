@@ -53,7 +53,7 @@ public class PersonaSpecificationImpl implements PersonaSpecification {
         if(!verifyEmail(personaDomain.getCorreo())){
             throw ServiceCustomException.createUserException("ta malo el correo");
         }
-        if(verifyEmailDoesNotExist(personaDomain.getCorreo())){
+        if(!verifyEmailDoesNotExist(personaDomain.getCorreo())){
             throw ServiceCustomException.createUserException("ya te registraste prro");
         }
         if(verifyRol(personaDomain)){
