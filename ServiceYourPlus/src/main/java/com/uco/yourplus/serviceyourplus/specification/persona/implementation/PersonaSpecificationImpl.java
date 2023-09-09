@@ -2,9 +2,11 @@ package com.uco.yourplus.serviceyourplus.specification.persona.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
+import com.uco.yourplus.entityyourplus.RolEntity;
 import com.uco.yourplus.repositoryyourplus.persona.PersonaRepository;
 import com.uco.yourplus.repositoryyourplus.rol.RolRepository;
 import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
+import com.uco.yourplus.serviceyourplus.domain.RolDomain;
 import com.uco.yourplus.serviceyourplus.specification.persona.PersonaSpecification;
 import com.uco.yourplus.serviceyourplus.usecase.persona.ConsultarPersonas;
 import com.uco.yourplus.serviceyourplus.usecase.rol.ConsultarRoles;
@@ -54,6 +56,9 @@ public class PersonaSpecificationImpl implements PersonaSpecification {
         if(verifyEmailDoesNotExist(personaDomain.getCorreo())){
             throw ServiceCustomException.createUserException("ya te registraste prro");
         }
+        if(verifyRol(personaDomain)){
+            throw ServiceCustomException.createUserException("No existe el rol");
+        }
     }
 
 
@@ -73,5 +78,13 @@ public class PersonaSpecificationImpl implements PersonaSpecification {
 
     private boolean verifyIsLetters(PersonaDomain personaDomain){
         return isOnlyWordsAndSpace(personaDomain.getNombre()+personaDomain.getApellido());
+    }
+
+    private boolean verifyRol(PersonaDomain personaDomain){
+        RolDomain rolDomain = new RolDomain();
+        RolEntity rolEntity = new RolEntity();
+        rolDomain.setDescripcion(personaDomain.getRolDTO().getDescripcion());
+        BeanUtils.copyProperties(rolDomain,rolEntity);
+        return rolRepository.findCustom(rolEntity).isEmpty();
     }
 }
