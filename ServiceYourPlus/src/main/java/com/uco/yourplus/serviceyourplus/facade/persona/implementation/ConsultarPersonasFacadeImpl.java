@@ -1,6 +1,7 @@
 package com.uco.yourplus.serviceyourplus.facade.persona.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
+import com.uco.yourplus.crosscuttingyourplus.helper.StringHelper;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
 import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
 import com.uco.yourplus.serviceyourplus.facade.persona.ConsultarPersonasFacade;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 /**
@@ -35,13 +37,14 @@ public class ConsultarPersonasFacadeImpl implements ConsultarPersonasFacade {
     public List<PersonaDTO> execute(Optional<PersonaDTO> dto) {
         try{
             List<PersonaDomain> listDomain;
-            if (dto.isPresent()){
-                System.out.println("Si esta presente");
+            if (dto.isPresent() &&
+            (!Objects.equals(dto.get().getNombre(), StringHelper.EMPTY) ||
+            !Objects.equals(dto.get().getApellido(), StringHelper.EMPTY) ||
+            !Objects.equals(dto.get().getCorreo(), StringHelper.EMPTY))){
                 PersonaDomain personaDomain = new PersonaDomain();
                 BeanUtils.copyProperties(dto.get(), personaDomain);
                 listDomain = consultarPersonas.execute(Optional.of(personaDomain));
             }else {
-                System.out.println("no esta presente");
                 listDomain = consultarPersonas.execute(Optional.empty());
             }
             List<PersonaDTO> convertResult = new ArrayList<>();
