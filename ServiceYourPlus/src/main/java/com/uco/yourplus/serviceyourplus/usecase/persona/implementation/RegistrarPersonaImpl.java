@@ -27,8 +27,11 @@ public class RegistrarPersonaImpl implements RegistrarPersona {
             PersonaEntity personaEntity = new PersonaEntity();
             BeanUtils.copyProperties(domain,personaEntity);
             repository.save(personaEntity);
+            System.out.println("Se registro");
         }catch (RepositoryCustomException exception){
             throw ServiceCustomException.createTechnicalException(exception,"No se ha logrado ingresar con exito al nuevo usuario, por favor intente de nuevo");
+        }catch (Exception e){
+            throw ServiceCustomException.createTechnicalException(e,"Error");
         }
     }
 }
