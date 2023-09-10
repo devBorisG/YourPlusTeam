@@ -11,7 +11,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "Usuario")
+@Table(name = "Usuario", schema = "public")
 public class PersonaEntity {
     @Id
     UUID id;
@@ -20,6 +20,6 @@ public class PersonaEntity {
     String correo;
     String password;
     @ManyToOne
-    @JoinColumn(name = "rol_id")
+    @JoinColumn(name = "id_rol")
     RolEntity rolEntity;
 }

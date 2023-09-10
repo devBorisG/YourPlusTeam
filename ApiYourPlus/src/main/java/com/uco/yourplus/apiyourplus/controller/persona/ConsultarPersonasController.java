@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -43,6 +42,7 @@ public class ConsultarPersonasController {
         HttpStatus httpStatus = HttpStatus.OK;
         try{
             List<PersonaDTO> data = facade.execute(existDto);
+            System.out.println(data);
             response.addSuccesMessage("Lista de personas");
             response.setData(data);
         }catch (final YourPlusCustomException yourPlusCustomException){

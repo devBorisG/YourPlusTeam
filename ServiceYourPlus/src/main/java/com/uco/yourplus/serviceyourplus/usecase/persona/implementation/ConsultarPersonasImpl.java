@@ -40,7 +40,8 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
         List<PersonaDomain> convertResult = new ArrayList<>();
         if(domain.isPresent()){
             PersonaEntity personaEntity = new PersonaEntity();
-            BeanUtils.copyProperties(domain, personaEntity);
+            BeanUtils.copyProperties(domain.get(), personaEntity);
+            System.out.println(personaEntity.getNombre());
             try{
                 result = personaRepository.findCustom(personaEntity);
             }catch (RepositoryCustomException e){
@@ -53,7 +54,11 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
                 throw ServiceCustomException.createTechnicalException(e, "no funca x2");
             }
         }
-        result.stream().map(value -> new PersonaDomain()).forEach(convertResult::add);
+        result.forEach(value -> {
+            PersonaDomain personaDomain = new PersonaDomain();
+            BeanUtils.copyProperties(value, personaDomain);
+            convertResult.add(personaDomain);
+        });
         return convertResult;
     }
 }

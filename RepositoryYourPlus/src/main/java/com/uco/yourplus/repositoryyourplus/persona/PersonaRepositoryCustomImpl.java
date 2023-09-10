@@ -2,9 +2,7 @@ package com.uco.yourplus.repositoryyourplus.persona;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.repository.RepositoryCustomException;
 import com.uco.yourplus.crosscuttingyourplus.helper.StringHelper;
-import com.uco.yourplus.crosscuttingyourplus.helper.UUIDHelper;
 import com.uco.yourplus.entityyourplus.PersonaEntity;
-import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -44,9 +42,6 @@ public class PersonaRepositoryCustomImpl implements PersonaRepositoryCustom {
             List<Predicate> predicates = new ArrayList<>();
 
             if(!Objects.isNull(personaEntity)){
-                if(!UUIDHelper.isDefaultUUID(personaEntity.getId())){
-                    predicates.add(criteriaBuilder.equal(personaEntityRoot.get("id"),personaEntity.getId()));
-                }
                 if(!StringHelper.isEmpty(personaEntity.getNombre())){
                     predicates.add((criteriaBuilder.equal(personaEntityRoot.get("nombre"),personaEntity.getNombre())));
                 }
@@ -56,14 +51,9 @@ public class PersonaRepositoryCustomImpl implements PersonaRepositoryCustom {
                 if(!StringHelper.isEmpty(personaEntity.getCorreo())){
                     predicates.add(criteriaBuilder.equal(personaEntityRoot.get("correo"),personaEntity.getCorreo()));
                 }
-                if(!StringHelper.isEmpty(personaEntity.getPassword())){
-                    predicates.add(criteriaBuilder.equal(personaEntityRoot.get("password"),personaEntity.getPassword()));
-                }
-                if(!Objects.isNull(personaEntity.getRolEntity())){
-                    predicates.add(criteriaBuilder.equal(personaEntityRoot.get("rol"),personaEntity.getRolEntity()));
-                }
             }
             query.select(personaEntityRoot).where(criteriaBuilder.and(predicates.toArray(new Predicate[0])));
+            System.out.println(query.getSelection());
             return entityManager.createQuery(query).getResultList();
         } catch (Exception exception){
             throw RepositoryCustomException.createTechnicalException(exception, "Ocurrio un error crenado el query para la consulta customizada");
