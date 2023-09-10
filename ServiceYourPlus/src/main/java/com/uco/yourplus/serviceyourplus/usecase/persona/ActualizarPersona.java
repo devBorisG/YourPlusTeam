@@ -1,3 +1,7 @@
 package com.uco.yourplus.serviceyourplus.usecase.persona;
-public interface ActualizarPersona extends UseCasePatch <PersonaEntity, UUID> {
+
+import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
+import com.uco.yourplus.serviceyourplus.usecase.UseCasePatch;
+
+public interface ActualizarPersona extends UseCasePatch<PersonaDomain> {
 }

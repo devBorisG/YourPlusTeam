@@ -1,8 +1,15 @@
 package com.uco.yourplus.serviceyourplus.usecase.persona.implementation;
 
+import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
+import com.uco.yourplus.entityyourplus.PersonaEntity;
+import com.uco.yourplus.repositoryyourplus.persona.PersonaRepository;
+import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
+import com.uco.yourplus.serviceyourplus.usecase.persona.ActualizarPersona;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityNotFoundException;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -13,15 +20,12 @@ public class ActualizarPersonaImpl implements ActualizarPersona {
     private PersonaRepository repository;
 
     @Override
-    public void execute(UUID id, PersonaEntity updatedPersona) {
+    public void execute(UUID id, PersonaDomain updatedPersona) {
         try {
             Optional<PersonaEntity> personaEntityOptional = repository.findById(id);
             if (personaEntityOptional.isPresent()) {
                 PersonaEntity personaEntity = personaEntityOptional.get();
-                personaEntity.setNombre(updatedPersona.getNombre());
-                personaEntity.setApellido(updatedPersona.getApellido());
-                personaEntity.setCorreo(updatedPersona.getCorreo());
-                personaEntity.setPassword(updatedPersona.getPassword());
+                BeanUtils.copyProperties(updatedPersona, personaEntity);
                 repository.save(personaEntity);
             } else {
                 throw new EntityNotFoundException("El usuario no existe");
