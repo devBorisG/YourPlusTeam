@@ -4,6 +4,8 @@ import java.util.UUID;
 
 import static com.uco.yourplus.crosscuttingyourplus.helper.ObjectHelper.getDefaultIfNull;
 import static com.uco.yourplus.crosscuttingyourplus.helper.StringHelper.EMPTY;
+import static com.uco.yourplus.crosscuttingyourplus.helper.StringHelper.getDefaultString;
+import static com.uco.yourplus.crosscuttingyourplus.helper.UUIDHelper.getDefaultUUID;
 import static com.uco.yourplus.dtoyourplus.builder.rol.RolDTOBuilder.getRolDTOBuilder;
 
 public class PersonaDTO {
@@ -33,12 +35,12 @@ public class PersonaDTO {
        setRolDTO(rolDTO);
     }
 
-    public static final PersonaDTO create(final UUID id, final String nombre, final String apellido, final String correo,
-                                          final String password, final RolDTO rolDTO){
+    public static PersonaDTO create(final UUID id, final String nombre, final String apellido, final String correo,
+                                    final String password, final RolDTO rolDTO){
         return new PersonaDTO(id,nombre,apellido,correo,password,rolDTO);
     }
 
-    public static final PersonaDTO create(final UUID id){
+    public static PersonaDTO create(final UUID id){
         return new PersonaDTO(id,EMPTY,EMPTY,EMPTY,EMPTY,new RolDTO());
     }
 
@@ -47,7 +49,7 @@ public class PersonaDTO {
     }
 
     public void setId(UUID id) {
-        this.id = id;
+        this.id = getDefaultUUID(id);
     }
 
     public String getNombre() {
@@ -55,7 +57,7 @@ public class PersonaDTO {
     }
 
     public void setNombre(String nombre) {
-        this.nombre = nombre;
+        this.nombre = getDefaultString(nombre);
     }
 
     public String getApellido() {
@@ -63,7 +65,7 @@ public class PersonaDTO {
     }
 
     public void setApellido(String apellido) {
-        this.apellido = apellido;
+        this.apellido = getDefaultString(apellido);
     }
 
     public String getCorreo() {
@@ -71,7 +73,7 @@ public class PersonaDTO {
     }
 
     public void setCorreo(String correo) {
-        this.correo = correo;
+        this.correo = getDefaultString(correo);
     }
 
     public String getPassword() {
@@ -79,7 +81,7 @@ public class PersonaDTO {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = getDefaultString(password);
     }
 
     public RolDTO getRolDTO() {

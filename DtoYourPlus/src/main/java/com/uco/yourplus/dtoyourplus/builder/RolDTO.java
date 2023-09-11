@@ -3,6 +3,7 @@ package com.uco.yourplus.dtoyourplus.builder;
 import java.util.UUID;
 
 import static com.uco.yourplus.crosscuttingyourplus.helper.StringHelper.EMPTY;
+import static com.uco.yourplus.crosscuttingyourplus.helper.StringHelper.getDefaultString;
 import static com.uco.yourplus.crosscuttingyourplus.helper.UUIDHelper.getDefaultUUID;
 
 public class RolDTO {
@@ -20,11 +21,11 @@ public class RolDTO {
         setDescripcion(descripcion);
     }
 
-    public static final RolDTO create(final UUID id, final String descripcion){
+    public static RolDTO create(final UUID id, final String descripcion){
         return new RolDTO(id,descripcion);
     }
 
-    public static final RolDTO create(final UUID id){
+    public static RolDTO create(final UUID id){
         return new RolDTO(id,EMPTY);
     }
 
@@ -33,7 +34,7 @@ public class RolDTO {
     }
 
     public void setId(UUID id) {
-        this.id = id;
+        this.id = getDefaultUUID(id);
     }
 
     public String getDescripcion() {
@@ -41,6 +42,6 @@ public class RolDTO {
     }
 
     public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
+        this.descripcion = getDefaultString(descripcion);
     }
 }

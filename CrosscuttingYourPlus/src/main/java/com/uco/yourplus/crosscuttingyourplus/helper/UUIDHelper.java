@@ -10,7 +10,7 @@ public class UUIDHelper {
     /**
      * Valor constante que representa el UUID predeterminado como una cadena de texto.
      */
-    private static final String DEFAULT_UUID_AS_STRING = "00000000-0000-0000-0000-00000000000";
+    private static final String DEFAULT_UUID_AS_STRING = "00000000-0000-0000-0000-000000000000";
     /**
      * Valor constante que representa el UUID predeterminado como un objeto UUID.
      */

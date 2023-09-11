@@ -23,15 +23,10 @@ public class RegistrarPersonaImpl implements RegistrarPersona {
     @Override
     public void execute(PersonaDomain domain) {
         try{
-            System.out.println("Se registro 1");
             specification.isSatisfied(domain);
-            System.out.println("Se registro 2");
             PersonaEntity personaEntity = new PersonaEntity();
-            System.out.println("Se registro 3");
             BeanUtils.copyProperties(domain,personaEntity);
-            System.out.println("Se registro 4");
             repository.save(personaEntity);
-            System.out.println("Se registro 5");
         }catch (ServiceCustomException exception) {
             throw exception;
         }catch (RepositoryCustomException exception){

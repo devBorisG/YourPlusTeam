@@ -70,9 +70,8 @@ public class PersonaSpecificationImpl implements PersonaSpecification {
     private boolean verifyEmailDoesNotExist(String email) {
         PersonaDTO dto = getPersonaDTOBuilder().build();
         PersonaDomain personaDomain = new PersonaDomain();
-        PersonaDTO personaDTO = new PersonaDTO();
         dto.setCorreo(email);
-        BeanUtils.copyProperties(personaDTO, personaDomain);
+        BeanUtils.copyProperties(dto, personaDomain);
         return consultarPersonas.execute(Optional.of(personaDomain)).isEmpty();
     }
 
