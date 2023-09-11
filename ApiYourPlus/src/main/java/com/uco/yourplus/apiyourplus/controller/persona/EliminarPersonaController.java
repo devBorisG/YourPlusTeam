@@ -25,6 +25,11 @@ public class EliminarPersonaController {
     public ResponseEntity<Response<PersonaDTO>>execute(@RequestBody PersonaDTO personaDTO){
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
+        if (personaDTO.getCorreo() == null || personaDTO.getCorreo().isEmpty()) {
+            httpStatus = HttpStatus.BAD_REQUEST;
+            response.addErrorMessage("El correo electrónico es obligatorio para la eliminación.");
+            return new ResponseEntity<>(response, httpStatus);
+        }
         try{
             facade.execute(personaDTO);
             List<PersonaDTO> data = new ArrayList<>();
