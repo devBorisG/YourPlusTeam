@@ -22,9 +22,8 @@ public class PersonaDeleteSpecifiaction implements PersonaDeleteSpecification{
     public void isSatisfied(PersonaDomain data) {
         PersonaDTO dto = getPersonaDTOBuilder().build();
         PersonaDomain personaDomain = new PersonaDomain();
-        PersonaDTO personaDTO =  new PersonaDTO();
         dto.setCorreo(data.getCorreo());
-        BeanUtils.copyProperties(personaDTO,personaDomain);
+        BeanUtils.copyProperties(dto,personaDomain);
         if(consultarPersonas.execute(Optional.of(personaDomain)).isEmpty()){
             throw ServiceCustomException.createUserException("No existe el usuario");
         }

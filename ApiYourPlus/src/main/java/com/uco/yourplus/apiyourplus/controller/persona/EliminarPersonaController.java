@@ -3,7 +3,6 @@ package com.uco.yourplus.apiyourplus.controller.persona;
 import com.uco.yourplus.apiyourplus.controller.response.Response;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.YourPlusCustomException;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
-import com.uco.yourplus.serviceyourplus.facade.persona.ConsultarPersonasFacade;
 import com.uco.yourplus.serviceyourplus.facade.persona.EliminarPersonaFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -25,11 +24,6 @@ public class EliminarPersonaController {
     public ResponseEntity<Response<PersonaDTO>>execute(@RequestBody PersonaDTO personaDTO){
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
-        if (personaDTO.getCorreo() == null || personaDTO.getCorreo().isEmpty()) {
-            httpStatus = HttpStatus.BAD_REQUEST;
-            response.addErrorMessage("El correo electrónico es obligatorio para la eliminación.");
-            return new ResponseEntity<>(response, httpStatus);
-        }
         try{
             facade.execute(personaDTO);
             List<PersonaDTO> data = new ArrayList<>();

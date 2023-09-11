@@ -29,7 +29,6 @@ public class EliminarPersonaImpl implements EliminarPersona {
         try {
             personaDeleteSpecification.isSatisfied(domain);
             Optional<PersonaDomain> consulta = consultarPersonas.execute(Optional.of(domain)).stream().findFirst();
-
             if (consulta.isPresent()) {
                 PersonaEntity personaEntity = new PersonaEntity();
                 BeanUtils.copyProperties(consulta.get(), personaEntity);
