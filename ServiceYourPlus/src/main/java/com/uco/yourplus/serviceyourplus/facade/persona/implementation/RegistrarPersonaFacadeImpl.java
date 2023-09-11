@@ -2,7 +2,6 @@ package com.uco.yourplus.serviceyourplus.facade.persona.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
-import com.uco.yourplus.repositoryyourplus.service.JwtService;
 import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
 import com.uco.yourplus.serviceyourplus.facade.persona.RegistrarPersonaFacade;
 import com.uco.yourplus.serviceyourplus.usecase.persona.RegistrarPersona;
@@ -20,11 +19,11 @@ public class RegistrarPersonaFacadeImpl implements RegistrarPersonaFacade {
     private RegistrarPersona registrarPersona;
 
     @Override
-    public void execute(PersonaDTO dto, String token) {
+    public String execute(PersonaDTO dto) {
         try{
             PersonaDomain personaDomain = new PersonaDomain();
             BeanUtils.copyProperties(dto, personaDomain);
-            registrarPersona.execute(personaDomain, token);
+            return registrarPersona.execute(personaDomain);
         } catch(ServiceCustomException serviceCustomException){
             throw serviceCustomException;
         } catch(Exception exception){

@@ -53,7 +53,6 @@ public class PersonaRepositoryCustomImpl implements PersonaRepositoryCustom {
                 }
             }
             query.select(personaEntityRoot).where(criteriaBuilder.and(predicates.toArray(new Predicate[0])));
-            System.out.println(query.getSelection());
             return entityManager.createQuery(query).getResultList();
         } catch (Exception exception){
             throw RepositoryCustomException.createTechnicalException(exception, "Ocurrio un error crenado el query para la consulta customizada");

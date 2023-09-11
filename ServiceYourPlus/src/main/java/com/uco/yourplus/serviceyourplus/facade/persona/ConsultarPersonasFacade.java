@@ -4,8 +4,6 @@ import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
 import com.uco.yourplus.serviceyourplus.facade.UseCaseFacade;
 import com.uco.yourplus.serviceyourplus.facade.UseCaseFacadeList;
 
-import java.util.Optional;
-
 /**
  * Esta interfaz representa la fachada para consultar personas en el sistema YourPlus.
  * Implementa la interfaz genérica UseCaseFacade, que define métodos para ejecutar casos de uso

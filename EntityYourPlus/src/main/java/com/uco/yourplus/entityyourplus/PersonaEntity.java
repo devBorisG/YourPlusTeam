@@ -26,7 +26,7 @@ public class PersonaEntity implements UserDetails {
     String password;
     @ManyToOne
     @JoinColumn(name = "id_rol")
-    RolEntity rolEntity;
+    transient RolEntity rolEntity;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {

@@ -41,9 +41,9 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
         if(domain.isPresent()){
             PersonaEntity personaEntity = new PersonaEntity();
             BeanUtils.copyProperties(domain.get(), personaEntity);
-            System.out.println(personaEntity.getNombre());
             try{
                 result = personaRepository.findCustom(personaEntity);
+
             }catch (RepositoryCustomException e){
                 throw ServiceCustomException.createTechnicalException(e, "no funca");
             }
@@ -54,6 +54,7 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
                 throw ServiceCustomException.createTechnicalException(e, "no funca x2");
             }
         }
+
         result.forEach(value -> {
             PersonaDomain personaDomain = new PersonaDomain();
             BeanUtils.copyProperties(value, personaDomain);

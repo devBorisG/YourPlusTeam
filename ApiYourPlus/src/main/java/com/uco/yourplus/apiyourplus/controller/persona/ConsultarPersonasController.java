@@ -42,7 +42,6 @@ public class ConsultarPersonasController {
         HttpStatus httpStatus = HttpStatus.OK;
         try{
             List<PersonaDTO> data = facade.execute(existDto);
-            System.out.println(data);
             response.addSuccesMessage("Lista de personas");
             response.setData(data);
         }catch (final YourPlusCustomException yourPlusCustomException){
