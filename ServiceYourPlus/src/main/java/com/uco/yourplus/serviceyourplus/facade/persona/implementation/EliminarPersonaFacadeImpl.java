@@ -15,8 +15,6 @@ import java.util.Optional;
 @Service
 public class EliminarPersonaFacadeImpl implements EliminarPersonaFacade {
     @Autowired
-    private PersonaRepository repository;
-    @Autowired
     private ConsultarPersonas consultarPersonas;
 
 

@@ -26,12 +26,17 @@ public class EliminarPersonaImpl implements EliminarPersona {
 
     @Override
     public void execute(PersonaDomain domain) {
-        try{
+        try {
             personaDeleteSpecification.isSatisfied(domain);
-            PersonaDomain consulta = consultarPersonas.execute(Optional.of(domain)).get(0);
-            PersonaEntity personaEntity = new PersonaEntity();
-            BeanUtils.copyProperties(consulta,personaEntity);
-            repository.delete(personaEntity);
+            Optional<PersonaDomain> consulta = consultarPersonas.execute(Optional.of(domain)).stream().findFirst();
+
+            if (consulta.isPresent()) {
+                PersonaEntity personaEntity = new PersonaEntity();
+                BeanUtils.copyProperties(consulta.get(), personaEntity);
+                repository.delete(personaEntity);
+            } else {
+                throw ServiceCustomException.createTechnicalException("no se ha logrado encontrar");
+            }
         } catch (ServiceCustomException exception){
             throw exception;
         } catch (RepositoryCustomException exception){
