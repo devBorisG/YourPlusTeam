@@ -4,11 +4,14 @@ import com.uco.yourplus.crosscuttingyourplus.exceptions.repository.RepositoryCus
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.entityyourplus.PersonaEntity;
 import com.uco.yourplus.repositoryyourplus.persona.PersonaRepository;
+import com.uco.yourplus.repositoryyourplus.service.JwtService;
+import com.uco.yourplus.serviceyourplus.authentication.jwt.AuthenticationJwt;
 import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
 import com.uco.yourplus.serviceyourplus.specification.persona.PersonaSpecification;
 import com.uco.yourplus.serviceyourplus.usecase.persona.RegistrarPersona;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -20,13 +23,18 @@ public class RegistrarPersonaImpl implements RegistrarPersona {
     @Autowired
     PersonaSpecification specification;
 
+    @Autowired
+    private JwtService jwtService;
+
     @Override
-    public void execute(PersonaDomain domain) {
+    public void execute(PersonaDomain domain, String token) {
         try{
             specification.isSatisfied(domain);
             PersonaEntity personaEntity = new PersonaEntity();
             BeanUtils.copyProperties(domain,personaEntity);
             repository.save(personaEntity);
+            System.out.println(jwtService.generateToken(personaEntity));
+            token = jwtService.generateToken(personaEntity);
         }catch (ServiceCustomException exception) {
             throw exception;
         }catch (RepositoryCustomException exception){

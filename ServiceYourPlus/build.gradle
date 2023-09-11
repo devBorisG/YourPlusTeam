@@ -22,6 +22,8 @@ dependencies {
 	implementation project(':RepositoryYourPlus')
 	implementation project(':EntityYourPlus')
 	implementation project(':DtoYourPlus')
+	compileOnly 'org.projectlombok:lombok:1.18.26'
+	annotationProcessor 'org.projectlombok:lombok:1.18.26'
 	implementation group: 'com.github.fge', name: 'json-patch', version: '1.7'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-security'

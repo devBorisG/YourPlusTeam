@@ -2,6 +2,7 @@ package com.uco.yourplus.apiyourplus.controller.response;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.messages.Message;
 import com.uco.yourplus.crosscuttingyourplus.helper.ObjectHelper;
+import com.uco.yourplus.crosscuttingyourplus.helper.StringHelper;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,12 +16,15 @@ public class Response<T>{
     private List<Message> messageList;
     private List<T> data;
 
+    private String token;
+
     /**
      * Constructor predeterminado que inicializa una instancia de Response sin mensajes ni datos.
      */
     public Response() {
         setMessageList(new ArrayList<>());
         setData(data);
+        setToken(token);
     }
 
     /**
@@ -29,12 +33,18 @@ public class Response<T>{
      * @param messages La lista de mensajes a incluir en la respuesta.
      * @param data     La lista de datos a incluir en la respuesta.
      */
-    public Response(List<Message> messages, List<T> data){
+    public Response(List<Message> messages, List<T> data, String token){
         super();
         setMessageList(messages);
         setData(data);
+        setToken(token);
     }
 
+    public String getToken(){ return token;}
+
+    public void setToken(String token){
+        this.token = ObjectHelper.getDefaultIfNull(token, StringHelper.EMPTY);
+    }
 
     /**
      * Obtiene la lista de mensajes de la respuesta.

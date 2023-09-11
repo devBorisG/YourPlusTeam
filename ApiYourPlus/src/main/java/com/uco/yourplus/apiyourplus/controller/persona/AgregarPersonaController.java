@@ -1,9 +1,12 @@
 package com.uco.yourplus.apiyourplus.controller.persona;
 
 import com.uco.yourplus.apiyourplus.controller.response.Response;
+import com.uco.yourplus.apiyourplus.jwt.AuthenticationRequest;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.YourPlusCustomException;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
+import com.uco.yourplus.serviceyourplus.authentication.AuthenticationGeneric;
 import com.uco.yourplus.serviceyourplus.facade.persona.RegistrarPersonaFacade;
+import com.uco.yourplus.serviceyourplus.authentication.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,11 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 @RestController
-@RequestMapping("apiyourplus/persona")
+@RequestMapping("/apiyourplus/persona")
 public class AgregarPersonaController {
+
+    @Autowired
+    AuthenticationGeneric authentication;
 
     @Autowired
     RegistrarPersonaFacade registrarPersonaFacade;
@@ -27,12 +32,16 @@ public class AgregarPersonaController {
     public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO){
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
+        String jwtToken = "";
         try{
-            registrarPersonaFacade.execute(personaDTO);
+            System.out.println("entra");
+            registrarPersonaFacade.execute(personaDTO, jwtToken);
             List<PersonaDTO> data = new ArrayList<>();
             data.add(personaDTO);
             response.addSuccesMessage("melito mi rey");
             response.setData(data);
+            response.setToken(jwtToken);
+
         } catch(final YourPlusCustomException yourPlusCustomException){
             httpStatus = HttpStatus.BAD_REQUEST;
             if(yourPlusCustomException.isTechnicalException()){
@@ -46,4 +55,19 @@ public class AgregarPersonaController {
         }
         return new ResponseEntity<>(response,httpStatus);
     }
+
+    @PostMapping("/authenticate")
+    public ResponseEntity<Response<PersonaDTO>> authenticate(@RequestBody PersonaDTO personaDTO) {
+        final Response<PersonaDTO> response = new Response<>();
+        HttpStatus httpStatus = HttpStatus.OK;
+        try{
+            String jwtToken = authentication.authenticate(personaDTO);
+            response.setToken(jwtToken);
+            response.addSuccesMessage("Persona autenticada");
+        }catch (Exception exception){
+            httpStatus = HttpStatus.BAD_REQUEST;
+            response.addErrorMessage("Persona no autenticada");
+        }
+        return new ResponseEntity<>(response,httpStatus);
+    };
 }
