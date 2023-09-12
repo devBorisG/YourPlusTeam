@@ -4,7 +4,6 @@ import com.uco.yourplus.apiyourplus.controller.response.Response;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.YourPlusCustomException;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
 import com.uco.yourplus.serviceyourplus.facade.persona.ActualizarPersonaFacade;
-import com.uco.yourplus.serviceyourplus.specification.Specification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,10 +21,6 @@ public class ActualizarPersona {
     @Autowired
     private ActualizarPersonaFacade facade;
 
-    // Inyecta la dependencia de Specification parametrizada con PersonaDTO
-    @Autowired
-    private Specification<PersonaDTO> personaSpecification;
-
     // Define un método para manejar solicitudes PUT en la ruta "/apiyourplus/persona/{id}"
     @PutMapping("/{id}")
     public ResponseEntity<Response<PersonaDTO>> actualizarPersona(@PathVariable UUID id, @RequestBody PersonaDTO personaDTO) {
@@ -35,9 +30,6 @@ public class ActualizarPersona {
         HttpStatus httpStatus = HttpStatus.OK;
 
         try {
-            // Verifica si la especificación de persona se cumple
-            personaSpecification.isSatisfied(personaDTO);
-
             // Ejecuta la actualización de la persona a través de la fachada
             facade.execute(id, personaDTO);
 
