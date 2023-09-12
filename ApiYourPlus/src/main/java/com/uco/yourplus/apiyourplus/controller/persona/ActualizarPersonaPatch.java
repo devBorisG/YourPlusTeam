@@ -17,7 +17,7 @@ import java.util.UUID;
  * Permite aplicar operaciones de parcheo a una entidad "Persona" identificada por su ID.
  */
 @RestController
-@RequestMapping("apiyourplus/persona")
+@RequestMapping("/apiyourplus/persona")
 public class ActualizarPersonaPatch {
 
     @Autowired
@@ -31,7 +31,7 @@ public class ActualizarPersonaPatch {
      * @return ResponseEntity que contiene una respuesta con detalles sobre el resultado de la operación.
      */
     @PatchMapping("/{id}")
-    ResponseEntity<Response<PersonaDTO>> execute(@PathVariable UUID id, @RequestBody JsonPatch patch) {
+    public ResponseEntity<Response<PersonaDTO>> execute(@PathVariable UUID id, @RequestBody JsonPatch patch) {
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
         try {
