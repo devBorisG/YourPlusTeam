@@ -7,6 +7,8 @@ import static com.uco.yourplus.crosscuttingyourplus.helper.ObjectHelper.getDefau
 import static com.uco.yourplus.crosscuttingyourplus.helper.StringHelper.EMPTY;
 import static com.uco.yourplus.crosscuttingyourplus.helper.StringHelper.getDefaultString;
 import static com.uco.yourplus.crosscuttingyourplus.helper.UUIDHelper.getDefaultUUID;
+import static com.uco.yourplus.dtoyourplus.builder.categoria.CategoriaDTOBuilder.getCategoriaDTOBuilder;
+import static com.uco.yourplus.dtoyourplus.builder.laboratorio.LaboratorioDTOBuilder.getLaboratorioDTOBuilder;
 
 public class ProductoDTO {
 
@@ -93,7 +95,7 @@ public class ProductoDTO {
     }
 
     public void setLaboratorio(LaboratorioDTO laboratorio) {
-        this.laboratorio = laboratorio;
+        this.laboratorio = getDefaultIfNull(laboratorio,getLaboratorioDTOBuilder().build());
     }
 
     public CategoriaDTO getCategoria() {
@@ -101,6 +103,6 @@ public class ProductoDTO {
     }
 
     public void setCategoria(CategoriaDTO categoria) {
-        this.categoria = categoria;
+        this.categoria = getDefaultIfNull(categoria,getCategoriaDTOBuilder().build());
     }
 }
