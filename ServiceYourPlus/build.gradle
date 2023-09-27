@@ -30,6 +30,7 @@ dependencies {
 	implementation group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 	implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.0'
 	implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '2.2.3-1'
+	implementation 'com.fasterxml.jackson.core:jackson-databind:2.12.5'
 }
 
 tasks.named('test') {
