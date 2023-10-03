@@ -1,5 +1,6 @@
 package com.uco.yourplus.serviceyourplus.usecase.rabbit.producto.implementation;
 
+import com.uco.yourplus.crosscuttingyourplus.exceptions.crosscutting.CrosscuttingCustomException;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
 import com.uco.yourplus.serviceyourplus.usecase.rabbit.ConfigRabbitContent;
@@ -31,11 +32,17 @@ public class RabbitMQUpdateProducerProductoImpl implements RabbitMQUpdateProduce
 
     @Override
     public void execute(ProductoDomain domain) {
-        MessageProperties messageProperties = configRabbitContent.generateMessageProperties(domain.getId());
-        Optional<Message> bodyContent = configRabbitContent.getBodyMessage(domain, messageProperties);
-        if (bodyContent.isEmpty()){
-            throw ServiceCustomException.createTechnicalException("Ocurrio un errror configurando las propiedades del Message");
+        try{
+            MessageProperties messageProperties = configRabbitContent.generateMessageProperties(domain.getId());
+            Optional<Message> bodyContent = configRabbitContent.getBodyMessage(domain, messageProperties);
+            if (bodyContent.isEmpty()){
+                throw ServiceCustomException.createTechnicalException("Ocurrió un error configurando las propiedades del Message");
+            }
+            rabbitTemplate.convertAndSend(exchange, routingKeyUpdate, bodyContent.get());
+        }catch (CrosscuttingCustomException exception){
+            throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error en el ConfigRabbitContent para configurar el mensaje");
+        }catch (Exception exception){
+            throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error inesperado intentando realizar las configuraciones del mensaje");
         }
-        rabbitTemplate.convertAndSend(exchange, routingKeyUpdate, bodyContent.get());
     }
 }

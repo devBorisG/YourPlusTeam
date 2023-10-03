@@ -8,8 +8,7 @@ import com.uco.yourplus.serviceyourplus.usecase.persona.RegistrarPersona;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import javax.transaction.Transactional;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional

@@ -1,20 +1,20 @@
 package com.uco.yourplus.apiyourplus.controller.producto;
 
 import com.uco.yourplus.dtoyourplus.builder.ProductoDTO;
-import com.uco.yourplus.serviceyourplus.facade.producto.SendSaveMessageFacade;
+import com.uco.yourplus.serviceyourplus.facade.producto.SendListMessageFacade;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("apiyourplus/productos")
-public class RegistrarProductoController {
+public class ListarProductoController {
 
-    private final SendSaveMessageFacade facade;
+    private final SendListMessageFacade facade;
 
-    public RegistrarProductoController(SendSaveMessageFacade facade) {
+    public ListarProductoController(SendListMessageFacade facade) {
         this.facade = facade;
     }
 
-    @PostMapping()
+    @GetMapping()
     public void execute(@RequestBody ProductoDTO productoDTO){
         facade.execute(productoDTO);
     }

@@ -1,5 +1,7 @@
 package com.uco.yourplus.serviceyourplus.usecase.rabbit;
 
+import com.uco.yourplus.crosscuttingyourplus.exceptions.crosscutting.CrosscuttingCustomException;
+import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.crosscuttingyourplus.helper.json.MapperJsonObject;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
 import org.springframework.amqp.core.Message;
@@ -21,11 +23,16 @@ public class ConfigRabbitContent {
     }
 
     public Optional<Message> getBodyMessage(ProductoDomain domain, MessageProperties messageProperties) {
-        Optional<String> textMessage = mapperJsonObject.executeGson(domain);
-
-        return textMessage.map(msg -> MessageBuilder.withBody(msg.getBytes())
-                .andProperties(messageProperties)
-                .build());
+        try{
+            Optional<String> textMessage = mapperJsonObject.executeGson(domain);
+            return textMessage.map(msg -> MessageBuilder.withBody(msg.getBytes())
+                    .andProperties(messageProperties)
+                    .build());
+        }catch (CrosscuttingCustomException exception){
+            throw exception;
+        }catch (Exception exception){
+            throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un Error inesperado generando el cuerpo del mensaje");
+        }
     }
 
     public MessageProperties generateMessageProperties(UUID id) {
