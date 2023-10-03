@@ -34,5 +34,4 @@ public class ConfigRabbitContent {
                 .setHeader("idMessage", id.toString())
                 .build();
     }
-
 }

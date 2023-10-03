@@ -5,7 +5,6 @@ import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
 import com.uco.yourplus.serviceyourplus.facade.producto.SendMessageFacade;
 import com.uco.yourplus.serviceyourplus.usecase.producto.SendRegistrarMessage;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -16,8 +15,7 @@ public class SendSaveMessageFacadeImpl implements SendMessageFacade {
 
     private final SendRegistrarMessage useCase;
 
-    @Autowired
-    public SendSaveMessageFacadeImpl(SendRegistrarMessage useCase) {
+    public SendSaveMessageFacadeImpl(SendRegistrarMessage useCase){
         this.useCase = useCase;
     }
 

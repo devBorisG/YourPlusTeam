@@ -35,6 +35,6 @@ public class RabbitMQSaveProducerProductoImpl implements RabbitMQSaveProducerPro
         if(bodyMessage.isEmpty()){
             return;
         }
-        rabbitTemplate.convertAndSend(exchange,routingKey,bodyMessage);
+        rabbitTemplate.convertAndSend(exchange,routingKey,bodyMessage.get());
     }
 }
