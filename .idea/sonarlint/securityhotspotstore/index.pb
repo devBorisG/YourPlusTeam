@@ -20,7 +20,7 @@ aCrosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingyourplus/helper
 è
 _CrosscuttingYourPlus/src/main/java/com/uco/yourplus/crosscuttingyourplus/helper/UUIDHelper.java,e\e\ee20b0d70c69c87de5423658950789f626be4405
 à
-XApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/rol/RolController.java,4\9\49c12968352d46b5bc1e961b9ff335fe0b71e478
+XApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/rol/RolController.java,4/9/49c12968352d46b5bc1e961b9ff335fe0b71e478
 ç
 ]DtoYourPlus/src/main/java/com/uco/yourplus/dtoyourplus/builder/persona/PersonaDTOBuilder.java,c\b\cb4343c365a73d9fc32b388693f413f5aca60b0d
 l
@@ -42,7 +42,7 @@ vServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/usecase/persona/
 ´
 {ServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/facade/persona/implementation/EliminarPersonaFacadeImpl.java,a\9\a93fff0e7938cd961e7bea3ce97565e0cdbd8949
 ≠
-}ServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/facade/persona/implementation/ActualizarPersonaFacadeImpl.java,f\9\f9203514c8edd8d53ebd552c3917e8253738e289
+}ServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/facade/persona/implementation/ActualizarPersonaFacadeImpl.java,f/9/f9203514c8edd8d53ebd552c3917e8253738e289
 à
 XApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/response/Response.java,a\5\a5a9cea46b2ca14f70610f0d2ed69fafeae3b0df
 é
@@ -62,7 +62,7 @@ XServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/usecase/UseCaseP
 É
 SServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/usecase/UseCase.java,f\e\fe9d69a630ef408d856a4c8fb02d4512af6459a7
 ò
-hApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/EliminarPersonaController.java,6\1\615744f62448faee92cf23ffb909280f4b08d860
+hApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/EliminarPersonaController.java,6/1/615744f62448faee92cf23ffb909280f4b08d860
 ≥
 ÇServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/facade/persona/implementation/ActualizarPersonaPatchFacadeImpl.java,e\2\e22a50321509c3ca3702e4b6ad76d67268a1568a
 ê
@@ -78,7 +78,7 @@ tServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/specification/pe
 å
 \ServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/facade/UseCaseFacadeList.java,c\5\c5cee708049883ac4d4b709baa834cc835ceb2f1
 ï
-eApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/ActualizarPersonaPatch.java,5\3\53550f090b097a87c7b471fe8b3c8f6e9cdbdc70
+eApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/ActualizarPersonaPatch.java,5/3/53550f090b097a87c7b471fe8b3c8f6e9cdbdc70
 å
 \ServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/usecase/rol/ConsultarRol.java,3\1\318bfb0c254f87899db6732ab85e0500c586bc33
 ¥
@@ -126,9 +126,9 @@ K
 k
 ;RepositoryYourPlus/gradle/wrapper/gradle-wrapper.properties,0\2\0231e8ef67386bf61a2f3fdac034cea91807d2f8
 H
-ApiYourPlus/build.gradle,b\1\b1c360ea3c1b799c2ad721bbf7a2c267a7cf343a
+ApiYourPlus/build.gradle,b/1/b1c360ea3c1b799c2ad721bbf7a2c267a7cf343a
 L
-ServiceYourPlus/build.gradle,c\9\c92d18ca815e1abdd5afc1ede9dbe4bb22a2ac3a
+ServiceYourPlus/build.gradle,c/9/c92d18ca815e1abdd5afc1ede9dbe4bb22a2ac3a
 è
 _ServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/specification/Specification.java,8\d\8d2b26ef93ac0344522ce2997968a63707b383a9
 Q
@@ -211,7 +211,7 @@ cServiceYourPlus/src/test/java/com/uco/yourplus/serviceyourplus/ServiceYourPlusA
 ê
 `EntityYourPlus/src/test/java/com/uco/yourplus/entityyourplus/EntityYourPlusApplicationTests.java,b\8\b876a9e3b25c5f3794ff5f6666e9449709517db2
 O
-RepositoryYourPlus/build.gradle,9\4\944bf83df7865a5cf7e7369d1e5bfa324d33c1fb
+RepositoryYourPlus/build.gradle,9/4/944bf83df7865a5cf7e7369d1e5bfa324d33c1fb
 ß
 wServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/usecase/persona/implementation/RegistrarPersonaImpl.java,1\5\1576383442f0fb28f409e72a3a0f323b40cbfb6e
 ô
@@ -219,15 +219,15 @@ iServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/facade/persona/R
 ®
 xServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/usecase/persona/implementation/ConsultarPersonasImpl.java,5\0\50708c8485136b71ee6bb6079a08f6af2cae816f
 ö
-jServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/facade/persona/ConsultarPersonasFacade.java,c\d\cdf1b2d307c56ee19ef5f476ec757b651b58ff2a
+jServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/facade/persona/ConsultarPersonasFacade.java,c/d/cdf1b2d307c56ee19ef5f476ec757b651b58ff2a
 í
 bRepositoryYourPlus/src/main/java/com/uco/yourplus/repositoryyourplus/config/ApplicationConfig.java,c\9\c992d1d6dc139d5ff103d1f686ce37e020b2af53
 ó
-gApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/AgregarPersonaController.java,7\1\71f6ab030c55a4e444fb38e3d7410da573e65348
+gApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/AgregarPersonaController.java,7/1/71f6ab030c55a4e444fb38e3d7410da573e65348
 ¨
 |ServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/facade/persona/implementation/RegistrarPersonaFacadeImpl.java,c\5\c52b7f38670614ba2b87b0b884f7e59a0cc8df91
 ö
-jApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/ConsultarPersonasController.java,3\7\37344c146056220d6baf25521af214aeebc1069b
+jApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/ConsultarPersonasController.java,3/7/37344c146056220d6baf25521af214aeebc1069b
 ù
 mRepositoryYourPlus/src/main/java/com/uco/yourplus/repositoryyourplus/persona/PersonaRepositoryCustomImpl.java,9\2\92acf7935a13642c23b6f8bd74755b838d0d1e95
 
@@ -241,4 +241,8 @@ YServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/usecase/UseCaseS
 ´
 {ServiceYourPlus/src/main/java/com/uco/yourplus/serviceyourplus/authentication/jwt/implementation/AuthenticationJwtImpl.java,c\f\cffb27f64e15df5e747cd7efc4136a61bc4f2970
 ï
-eApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/LoginPersonaController.java,6\3\631a3f39285b25d68bf4216493cf7dabb65e60a1
+eApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/LoginPersonaController.java,6/3/631a3f39285b25d68bf4216493cf7dabb65e60a1
+ê
+`RepositoryYourPlus/src/main/java/com/uco/yourplus/repositoryyourplus/config/MessagingConfig.java,c/9/c932e4ecd04142072fc274571383ddd9c55b5311
+õ
+kApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/producto/RegistrarProductoController.java,6/7/67045e1c094917150a6193ad3088256d627fef2a
