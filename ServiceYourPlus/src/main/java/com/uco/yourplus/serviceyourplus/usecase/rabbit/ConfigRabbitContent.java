@@ -1,4 +1,4 @@
-package com.uco.yourplus.serviceyourplus.usecase.rabbit.implementation;
+package com.uco.yourplus.serviceyourplus.usecase.rabbit;
 
 import com.uco.yourplus.crosscuttingyourplus.helper.json.MapperJsonObject;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;

@@ -2,7 +2,7 @@ package com.uco.yourplus.serviceyourplus.usecase.producto.implementation;
 
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
 import com.uco.yourplus.serviceyourplus.usecase.producto.SendRegistrarMessage;
-import com.uco.yourplus.serviceyourplus.usecase.rabbit.RabbitMQSaveProducerProducto;
+import com.uco.yourplus.serviceyourplus.usecase.rabbit.producto.RabbitMQSaveProducerProducto;
 import org.springframework.stereotype.Service;
 
 @Service

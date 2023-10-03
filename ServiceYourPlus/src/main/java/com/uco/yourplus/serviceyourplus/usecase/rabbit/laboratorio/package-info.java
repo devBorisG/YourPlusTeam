@@ -1,0 +1,1 @@
+package com.uco.yourplus.serviceyourplus.usecase.rabbit.laboratorio;

@@ -1,7 +1,9 @@
-package com.uco.yourplus.serviceyourplus.usecase.rabbit.implementation;
+package com.uco.yourplus.serviceyourplus.usecase.rabbit.producto.implementation;
 
+import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
-import com.uco.yourplus.serviceyourplus.usecase.rabbit.RabbitMQSaveProducerProducto;
+import com.uco.yourplus.serviceyourplus.usecase.rabbit.ConfigRabbitContent;
+import com.uco.yourplus.serviceyourplus.usecase.rabbit.producto.RabbitMQSaveProducerProducto;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -16,8 +18,8 @@ public class RabbitMQSaveProducerProductoImpl implements RabbitMQSaveProducerPro
     @Value("${yourplus.management.producto.exchange}")
     private String exchange;
 
-    @Value("${yourplus.management.producto.routingkey}")
-    private String routingKey;
+    @Value("${yourplus.management.producto.routingkey.save}")
+    private String routingKeySave;
 
     private final RabbitTemplate rabbitTemplate;
     private final ConfigRabbitContent configRabbitContent;
@@ -30,11 +32,10 @@ public class RabbitMQSaveProducerProductoImpl implements RabbitMQSaveProducerPro
     @Override
     public void execute(ProductoDomain domain) {
         MessageProperties messageProperties = configRabbitContent.generateMessageProperties(domain.getId());
-
         Optional<Message> bodyMessage = configRabbitContent.getBodyMessage(domain, messageProperties);
         if(bodyMessage.isEmpty()){
-            return;
+            throw ServiceCustomException.createTechnicalException("Ocurrio un error configurando las propiedades del Message");
         }
-        rabbitTemplate.convertAndSend(exchange,routingKey,bodyMessage.get());
+        rabbitTemplate.convertAndSend(exchange,routingKeySave,bodyMessage.get());
     }
 }
