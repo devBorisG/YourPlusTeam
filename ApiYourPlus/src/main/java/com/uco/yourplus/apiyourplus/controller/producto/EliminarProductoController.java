@@ -3,28 +3,28 @@ package com.uco.yourplus.apiyourplus.controller.producto;
 import com.uco.yourplus.apiyourplus.controller.response.Response;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.YourPlusCustomException;
 import com.uco.yourplus.dtoyourplus.builder.ProductoDTO;
-import com.uco.yourplus.serviceyourplus.facade.producto.SendSaveMessageFacade;
+import com.uco.yourplus.serviceyourplus.facade.producto.SendDeleteMessageFacade;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("apiyourplus/productos")
-public class RegistrarProductoController {
+public class EliminarProductoController {
 
-    private final SendSaveMessageFacade facade;
+    private final SendDeleteMessageFacade facade;
 
-    public RegistrarProductoController(SendSaveMessageFacade facade) {
+    public EliminarProductoController(SendDeleteMessageFacade facade) {
         this.facade = facade;
     }
 
-    @PostMapping()
+    @DeleteMapping()
     public ResponseEntity<Response<ProductoDTO>> execute(@RequestBody ProductoDTO productoDTO){
         final Response<ProductoDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
         try {
             facade.execute(productoDTO);
-            response.addSuccesMessage("Producto Creado c");
+            response.addSuccesMessage("Producto eliminado");
         }catch (final YourPlusCustomException exception){
             httpStatus = HttpStatus.BAD_REQUEST;
             if (exception.isTechnicalException()){
