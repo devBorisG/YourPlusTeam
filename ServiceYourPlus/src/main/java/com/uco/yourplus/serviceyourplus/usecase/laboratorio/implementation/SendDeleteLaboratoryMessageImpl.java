@@ -4,7 +4,9 @@ import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomExc
 import com.uco.yourplus.serviceyourplus.domain.LaboratorioDomain;
 import com.uco.yourplus.serviceyourplus.usecase.laboratorio.SendDeleteLaboratoryMessage;
 import com.uco.yourplus.serviceyourplus.usecase.rabbit.laboratorio.RabbitMQDeleteProducerLaboratorio;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SendDeleteLaboratoryMessageImpl implements SendDeleteLaboratoryMessage {
 
     private final RabbitMQDeleteProducerLaboratorio producerLaboratorio;

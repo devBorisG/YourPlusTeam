@@ -4,7 +4,9 @@ import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomExc
 import com.uco.yourplus.serviceyourplus.domain.LaboratorioDomain;
 import com.uco.yourplus.serviceyourplus.usecase.laboratorio.SendUpdateLaboratoryMessage;
 import com.uco.yourplus.serviceyourplus.usecase.rabbit.laboratorio.RabbitMQUpdateProducerLaboratorio;
+import org.springframework.stereotype.Service;
 
+@Service
 public class SendUpdateLaboratoryMessageImpl implements SendUpdateLaboratoryMessage {
 
     private final RabbitMQUpdateProducerLaboratorio producerLaboratorio;
