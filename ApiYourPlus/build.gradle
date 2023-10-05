@@ -22,6 +22,9 @@ dependencies {
 	implementation project(':DtoYourPlus')
 	implementation project(':ServiceYourPlus')
 	implementation group: 'com.github.fge', name: 'json-patch', version: '1.7'
+    implementation project(path: ':RepositoryYourPlus')
+	implementation project(path: ':RepositoryYourPlus')
+	implementation project(path: ':EntityYourPlus')
 	runtimeOnly 'org.postgresql:postgresql'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'

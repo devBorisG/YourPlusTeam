@@ -3,6 +3,9 @@ package com.uco.yourplus.apiyourplus.controller.persona;
 import com.uco.yourplus.apiyourplus.controller.response.Response;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.YourPlusCustomException;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
+import com.uco.yourplus.dtoyourplus.builder.RolDTO;
+import com.uco.yourplus.entityyourplus.RolEntity;
+import com.uco.yourplus.repositoryyourplus.rol.RolRepository;
 import com.uco.yourplus.serviceyourplus.facade.persona.ConsultarPersonasFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.UUID;
 
 /**
  * Esta clase representa un controlador REST para consultar personas en el sistema YourPlus.
@@ -29,32 +33,44 @@ public class ConsultarPersonasController {
     @Autowired
     private ConsultarPersonasFacade facade;
 
-    /**
-     * Endpoint para consultar personas.
-     *
-     * @param personaDTO El objeto PersonaDTO que contiene los parámetros de la consulta.
-     * @return Una ResponseEntity que incluye un objeto Response con los resultados de la consulta.
-     */
+    @Autowired
+    private RolRepository rolRepository; // Repositorio de Rol
+
     @GetMapping()
-    public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO){
+    public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO) {
         Optional<PersonaDTO> existDto = Optional.ofNullable(personaDTO);
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
-        try{
+        try {
             List<PersonaDTO> data = facade.execute(existDto);
+
+            // Consultar los datos de rol y agregarlos al PersonaDTO
+            for (PersonaDTO rolDTO : data) {
+                UUID rolId = rolDTO.getRolDTO().getId();
+                if (rolId != null) {
+                    // Consultar el rol directamente desde el repositorio de Rol
+                    Optional<RolEntity> optionalRol = rolRepository.findById(rolId);
+                    if (optionalRol.isPresent()) {
+                        RolEntity rol = optionalRol.get();
+                        rol.setDescripcion(rol.getDescripcion()); // Establece el nombre del rol en PersonaDTO
+                    }
+                }
+            }
+
             response.addSuccesMessage("Lista de personas");
             response.setData(data);
-        }catch (final YourPlusCustomException yourPlusCustomException){
+        } catch (final YourPlusCustomException yourPlusCustomException) {
             httpStatus = HttpStatus.BAD_REQUEST;
-            if(yourPlusCustomException.isTechnicalException()){
-                response.addErrorMessage("Ocurrio un error consultando, intente nuevamente");
-            }else {
+            if (yourPlusCustomException.isTechnicalException()) {
+                response.addErrorMessage("Ocurrió un error consultando, intente nuevamente");
+            } else {
                 response.addErrorMessage(yourPlusCustomException.getMessage());
             }
-        }catch (final Exception exception){
+        } catch (final Exception exception) {
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
-            response.addFatalMessage("Ocurrio un error interno en el servidor, intente nuevamente");
+            response.addFatalMessage("Ocurrió un error interno en el servidor, intente nuevamente");
         }
         return new ResponseEntity<>(response, httpStatus);
     }
 }
+
