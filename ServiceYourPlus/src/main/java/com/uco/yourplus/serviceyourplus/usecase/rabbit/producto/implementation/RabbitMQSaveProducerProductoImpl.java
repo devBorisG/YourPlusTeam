@@ -36,7 +36,7 @@ public class RabbitMQSaveProducerProductoImpl implements RabbitMQSaveProducerPro
             MessageProperties messageProperties = configRabbitProductContent.generateMessageProperties(domain.getId());
             Optional<Message> bodyMessage = configRabbitProductContent.getBodyMessage(domain, messageProperties);
             if(bodyMessage.isEmpty()){
-                throw ServiceCustomException.createTechnicalException("Ocurrió un error configurando las propiedades del Message");
+                throw ServiceCustomException.createTechnicalException("Ocurrió un error configurando las propiedades del Message para registrar");
             }
             rabbitTemplate.convertAndSend(exchange,routingKeySave,bodyMessage.get());
         }catch (CrosscuttingCustomException exception){

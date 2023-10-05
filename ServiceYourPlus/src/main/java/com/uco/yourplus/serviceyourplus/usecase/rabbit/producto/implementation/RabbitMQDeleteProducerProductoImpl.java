@@ -36,7 +36,7 @@ public class RabbitMQDeleteProducerProductoImpl implements RabbitMQDeleteProduce
             MessageProperties messageProperties = configRabbitProductContent.generateMessageProperties(domain.getId());
             Optional<Message> bodyMessage = configRabbitProductContent.getBodyMessage(domain,messageProperties);
             if(bodyMessage.isEmpty()){
-                throw ServiceCustomException.createTechnicalException("Ocurrió un error configurando las propiedades del Message");
+                throw ServiceCustomException.createTechnicalException("Ocurrió un error configurando las propiedades del Message para eliminar");
             }
             rabbitTemplate.convertAndSend(exchange, routingKeyDelete, bodyMessage.get());
         }catch (CrosscuttingCustomException exception){

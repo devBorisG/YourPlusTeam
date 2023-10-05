@@ -36,7 +36,7 @@ public class RabbitMQUpdateProducerProductoImpl implements RabbitMQUpdateProduce
             MessageProperties messageProperties = configRabbitProductContent.generateMessageProperties(domain.getId());
             Optional<Message> bodyContent = configRabbitProductContent.getBodyMessage(domain, messageProperties);
             if (bodyContent.isEmpty()){
-                throw ServiceCustomException.createTechnicalException("Ocurrió un error configurando las propiedades del Message");
+                throw ServiceCustomException.createTechnicalException("Ocurrió un error configurando las propiedades del Message para actualizar");
             }
             rabbitTemplate.convertAndSend(exchange, routingKeyUpdate, bodyContent.get());
         }catch (CrosscuttingCustomException exception){

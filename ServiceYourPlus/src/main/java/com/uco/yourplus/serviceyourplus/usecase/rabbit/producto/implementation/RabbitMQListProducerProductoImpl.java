@@ -36,7 +36,7 @@ public class RabbitMQListProducerProductoImpl implements RabbitMQListProducerPro
             MessageProperties messageProperties = configRabbitProductContent.generateMessageProperties(domain.getId());
             Optional<Message> bodyMessage = configRabbitProductContent.getBodyMessage(domain, messageProperties);
             if (bodyMessage.isEmpty()){
-                throw ServiceCustomException.createTechnicalException("No se pudo configurar las propiedades del Message");
+                throw ServiceCustomException.createTechnicalException("No se pudo configurar las propiedades del Message para listar");
             }
             rabbitTemplate.convertAndSend(exchange, routingKeyList, bodyMessage.get());
         }catch (CrosscuttingCustomException exception){
