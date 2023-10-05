@@ -38,7 +38,6 @@ public class MessagingConfig {
     @Value("${yourplus.management.producto.routingkey.list}")
     private String routingKeyList;
 
-
     //Spring bean for rabbit save queue
     @Bean
     public Queue saveQueue(){

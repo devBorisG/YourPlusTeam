@@ -3,7 +3,7 @@ package com.uco.yourplus.serviceyourplus.usecase.rabbit.producto.implementation;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.crosscutting.CrosscuttingCustomException;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
-import com.uco.yourplus.serviceyourplus.usecase.rabbit.ConfigRabbitContent;
+import com.uco.yourplus.serviceyourplus.usecase.rabbit.configuration.producto.ConfigRabbitContentProductoDomain;
 import com.uco.yourplus.serviceyourplus.usecase.rabbit.producto.RabbitMQSaveProducerProducto;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,18 +23,18 @@ public class RabbitMQSaveProducerProductoImpl implements RabbitMQSaveProducerPro
     private String routingKeySave;
 
     private final RabbitTemplate rabbitTemplate;
-    private final ConfigRabbitContent configRabbitContent;
+    private final ConfigRabbitContentProductoDomain configRabbitProductContent;
 
-    public RabbitMQSaveProducerProductoImpl(RabbitTemplate rabbitTemplate, ConfigRabbitContent configRabbitContent) {
+    public RabbitMQSaveProducerProductoImpl(RabbitTemplate rabbitTemplate, ConfigRabbitContentProductoDomain configRabbitProductContent) {
         this.rabbitTemplate = rabbitTemplate;
-        this.configRabbitContent = configRabbitContent;
+        this.configRabbitProductContent = configRabbitProductContent;
     }
 
     @Override
     public void execute(ProductoDomain domain) {
         try {
-            MessageProperties messageProperties = configRabbitContent.generateMessageProperties(domain.getId());
-            Optional<Message> bodyMessage = configRabbitContent.getBodyMessage(domain, messageProperties);
+            MessageProperties messageProperties = configRabbitProductContent.generateMessageProperties(domain.getId());
+            Optional<Message> bodyMessage = configRabbitProductContent.getBodyMessage(domain, messageProperties);
             if(bodyMessage.isEmpty()){
                 throw ServiceCustomException.createTechnicalException("Ocurrió un error configurando las propiedades del Message");
             }
