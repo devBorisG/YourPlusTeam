@@ -1,10 +1,10 @@
-package com.uco.yourplus.serviceyourplus.usecase.rabbit.producto.implementation;
+package com.uco.yourplus.serviceyourplus.usecase.producer.producto.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.crosscutting.CrosscuttingCustomException;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
-import com.uco.yourplus.serviceyourplus.usecase.rabbit.configuration.producto.ConfigRabbitContentProductoDomain;
-import com.uco.yourplus.serviceyourplus.usecase.rabbit.producto.RabbitMQListProducerProducto;
+import com.uco.yourplus.serviceyourplus.usecase.producer.configuration.producto.ConfigRabbitContentProductoDomain;
+import com.uco.yourplus.serviceyourplus.usecase.producer.producto.RabbitMQListProducerProducto;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

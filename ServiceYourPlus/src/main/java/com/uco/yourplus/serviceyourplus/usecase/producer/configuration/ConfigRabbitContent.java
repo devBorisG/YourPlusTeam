@@ -1,4 +1,4 @@
-package com.uco.yourplus.serviceyourplus.usecase.rabbit.configuration;
+package com.uco.yourplus.serviceyourplus.usecase.producer.configuration;
 
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;

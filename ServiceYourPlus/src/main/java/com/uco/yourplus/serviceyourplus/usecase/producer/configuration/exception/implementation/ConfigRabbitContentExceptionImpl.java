@@ -1,9 +1,9 @@
-package com.uco.yourplus.serviceyourplus.usecase.rabbit.configuration.exception.implementation;
+package com.uco.yourplus.serviceyourplus.usecase.producer.configuration.exception.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.crosscutting.CrosscuttingCustomException;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.crosscuttingyourplus.helper.json.MapperJsonObject;
-import com.uco.yourplus.serviceyourplus.usecase.rabbit.configuration.exception.ConfigRabbitContentException;
+import com.uco.yourplus.serviceyourplus.usecase.producer.configuration.exception.ConfigRabbitContentException;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.core.MessageProperties;

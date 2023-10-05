@@ -3,7 +3,7 @@ package com.uco.yourplus.serviceyourplus.usecase.laboratorio.implementation;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.serviceyourplus.domain.LaboratorioDomain;
 import com.uco.yourplus.serviceyourplus.usecase.laboratorio.SendDeleteLaboratoryMessage;
-import com.uco.yourplus.serviceyourplus.usecase.rabbit.laboratorio.RabbitMQDeleteProducerLaboratorio;
+import com.uco.yourplus.serviceyourplus.usecase.producer.laboratorio.RabbitMQDeleteProducerLaboratorio;
 import org.springframework.stereotype.Service;
 
 @Service
