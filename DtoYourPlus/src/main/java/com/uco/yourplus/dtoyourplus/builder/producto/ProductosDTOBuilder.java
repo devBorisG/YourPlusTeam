@@ -2,11 +2,11 @@ package com.uco.yourplus.dtoyourplus.builder.producto;
 
 import com.uco.yourplus.dtoyourplus.builder.CategoriaDTO;
 import com.uco.yourplus.dtoyourplus.builder.LaboratorioDTO;
-import com.uco.yourplus.dtoyourplus.builder.ProductoDTO;
+import com.uco.yourplus.dtoyourplus.builder.ProductosDTO;
 
 import java.util.UUID;
 
-public class ProductoDTOBuilder implements ProductoBuilder{
+public class ProductosDTOBuilder implements ProductosBuilder {
 
     private UUID id;
     private String nombre;
@@ -16,57 +16,57 @@ public class ProductoDTOBuilder implements ProductoBuilder{
     private CategoriaDTO categoria;
     private LaboratorioDTO laboratorio;
 
-    private ProductoDTOBuilder(){
+    private ProductosDTOBuilder(){
         super();
     }
 
-    public static ProductoDTOBuilder getProductoDTOBuilder(){
-        return new ProductoDTOBuilder();
+    public static ProductosDTOBuilder getProductoDTOBuilder(){
+        return new ProductosDTOBuilder();
     }
 
     @Override
-    public ProductoDTOBuilder setId(UUID id) {
+    public ProductosDTOBuilder setId(UUID id) {
         this.id = id;
         return this;
     }
 
     @Override
-    public ProductoDTOBuilder setNombre(String nombre) {
+    public ProductosDTOBuilder setNombre(String nombre) {
         this.nombre = nombre;
         return this;
     }
 
     @Override
-    public ProductoDTOBuilder setPrecio(int precio) {
+    public ProductosDTOBuilder setPrecio(int precio) {
         this.precio = precio;
         return this;
     }
 
     @Override
-    public ProductoDTOBuilder setDescripcion(String descripcion) {
+    public ProductosDTOBuilder setDescripcion(String descripcion) {
         this.descripcion = descripcion;
         return this;
     }
 
     @Override
-    public ProductoDTOBuilder setImagen(String imagen) {
+    public ProductosDTOBuilder setImagen(String imagen) {
         this.imagen = imagen;
         return this;
     }
 
     @Override
-    public ProductoDTOBuilder setCategoria(CategoriaDTO categoria) {
+    public ProductosDTOBuilder setCategoria(CategoriaDTO categoria) {
         this.categoria = categoria;
         return this;
     }
 
     @Override
-    public ProductoDTOBuilder setLaboratorio(LaboratorioDTO laboratorio) {
+    public ProductosDTOBuilder setLaboratorio(LaboratorioDTO laboratorio) {
         this.laboratorio = laboratorio;
         return this;
     }
 
-    public ProductoDTO build(){
-        return ProductoDTO.create(id,nombre,precio,descripcion,imagen,laboratorio,categoria);
+    public ProductosDTO build(){
+        return ProductosDTO.create(id,nombre,precio,descripcion,imagen,laboratorio,categoria);
     }
 }

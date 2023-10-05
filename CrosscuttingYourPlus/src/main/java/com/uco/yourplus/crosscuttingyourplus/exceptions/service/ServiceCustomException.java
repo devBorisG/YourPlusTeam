@@ -108,4 +108,10 @@ public class ServiceCustomException extends YourPlusCustomException {
         }
         return exception;
     }
+
+
+    public static YourPlusCustomException createProductException(final String productMessage) {
+
+        return new ServiceCustomException(null, productMessage, productMessage);
+    }
 }

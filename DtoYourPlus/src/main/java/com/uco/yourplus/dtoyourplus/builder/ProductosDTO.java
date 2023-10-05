@@ -10,7 +10,7 @@ import static com.uco.yourplus.crosscuttingyourplus.helper.UUIDHelper.getDefault
 import static com.uco.yourplus.dtoyourplus.builder.categoria.CategoriaDTOBuilder.getCategoriaDTOBuilder;
 import static com.uco.yourplus.dtoyourplus.builder.laboratorio.LaboratorioDTOBuilder.getLaboratorioDTOBuilder;
 
-public class ProductoDTO {
+public class ProductosDTO {
 
     private UUID id;
     private String nombre;
@@ -20,8 +20,8 @@ public class ProductoDTO {
     private LaboratorioDTO laboratorio;
     private CategoriaDTO categoria;
 
-    public ProductoDTO(){
-        setId(id);
+    public ProductosDTO(){
+        setId(null);
         setNombre(EMPTY);
         setPrecio(ZERO);
         setDescripcion(EMPTY);
@@ -30,8 +30,8 @@ public class ProductoDTO {
         setCategoria(new CategoriaDTO());
     }
 
-    public ProductoDTO(final UUID id, final String nombre, final int precio, final String descripcion,
-    final String imagen, final LaboratorioDTO laboratorio, final CategoriaDTO categoria){
+    public ProductosDTO(final UUID id, final String nombre, final int precio, final String descripcion,
+                        final String imagen, final LaboratorioDTO laboratorio, final CategoriaDTO categoria){
         setId(id);
         setNombre(nombre);
         setDescripcion(descripcion);
@@ -41,13 +41,13 @@ public class ProductoDTO {
         setCategoria(categoria);
     }
 
-    public static ProductoDTO create(final UUID id, final String nombre,final int precio, final String descripcion,
-                                     final String imagen, final LaboratorioDTO laboratorio, final CategoriaDTO categoria){
-        return new ProductoDTO(id,nombre,precio,descripcion,imagen,laboratorio,categoria);
+    public static ProductosDTO create(final UUID id, final String nombre, final int precio, final String descripcion,
+                                      final String imagen, final LaboratorioDTO laboratorio, final CategoriaDTO categoria){
+        return new ProductosDTO(id,nombre,precio,descripcion,imagen,laboratorio,categoria);
     }
 
-    public static ProductoDTO create(final UUID id){
-        return new ProductoDTO(id,EMPTY,ZERO,EMPTY,EMPTY,new LaboratorioDTO(),new CategoriaDTO());
+    public static ProductosDTO create(final UUID id){
+        return new ProductosDTO(id,EMPTY,ZERO,EMPTY,EMPTY,new LaboratorioDTO(),new CategoriaDTO());
     }
 
     public UUID getId() {

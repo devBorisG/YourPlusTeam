@@ -3,7 +3,7 @@ package com.uco.yourplus.apiyourplus.rabbit.mensajeria;
 import com.uco.yourplus.apiyourplus.rabbit.config.ClientQueueConfig;
 import com.uco.yourplus.apiyourplus.rabbit.util.MapperJsonObjeto;
 import com.uco.yourplus.apiyourplus.rabbit.util.MessageSender;
-import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
+import com.uco.yourplus.serviceyourplus.domain.ProductosDomain;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.core.MessageProperties;
@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 import java.util.Optional;
 
 @Component
-public class MessageSenderBroker implements MessageSender<ProductoDomain> {
+public class MessageSenderBroker implements MessageSender<ProductosDomain> {
 
     private final RabbitTemplate rabbitTemplate;
     private final MapperJsonObjeto mapperJsonObjeto;
@@ -27,7 +27,7 @@ public class MessageSenderBroker implements MessageSender<ProductoDomain> {
     }
 
     @Override
-    public void execute(ProductoDomain message, String idMessage) {
+    public void execute(ProductosDomain message, String idMessage) {
         MessageProperties propiedadMensaje = generarPropiedadesMensaje(idMessage);
         Optional<Message> cuerpoMensaje = obtenerCuerpoMensaje(message,propiedadMensaje);
         if(!cuerpoMensaje.isPresent()){
