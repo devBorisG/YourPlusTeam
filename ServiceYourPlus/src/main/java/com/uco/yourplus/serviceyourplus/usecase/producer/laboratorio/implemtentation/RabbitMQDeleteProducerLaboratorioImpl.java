@@ -1,7 +1,7 @@
-package com.uco.yourplus.serviceyourplus.usecase.rabbit.laboratorio.implemtentation;
+package com.uco.yourplus.serviceyourplus.usecase.producer.laboratorio.implemtentation;
 
 import com.uco.yourplus.serviceyourplus.domain.LaboratorioDomain;
-import com.uco.yourplus.serviceyourplus.usecase.rabbit.laboratorio.RabbitMQDeleteProducerLaboratorio;
+import com.uco.yourplus.serviceyourplus.usecase.producer.laboratorio.RabbitMQDeleteProducerLaboratorio;
 import org.springframework.stereotype.Service;
 
 

@@ -3,7 +3,7 @@ package com.uco.yourplus.serviceyourplus.usecase.producto.implementation;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
 import com.uco.yourplus.serviceyourplus.usecase.producto.SendDeleteProductMessage;
-import com.uco.yourplus.serviceyourplus.usecase.rabbit.producto.RabbitMQDeleteProducerProducto;
+import com.uco.yourplus.serviceyourplus.usecase.producer.producto.RabbitMQDeleteProducerProducto;
 import org.springframework.stereotype.Service;
 
 @Service

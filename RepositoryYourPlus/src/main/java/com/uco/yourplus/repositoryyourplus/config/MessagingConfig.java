@@ -38,31 +38,31 @@ public class MessagingConfig {
     @Value("${yourplus.management.producto.routingkey.list}")
     private String routingKeyList;
 
-    //Spring bean for rabbit save queue
+    //Spring bean for producer save queue
     @Bean
     public Queue saveQueue(){
         return new Queue(queueSave);
     }
 
-    //Spring bean for rabbit delete queue
+    //Spring bean for producer delete queue
     @Bean
     public Queue deleteQueue(){
         return new Queue(queueDelete);
     }
 
-    //Spring bean for rabbit update queue
+    //Spring bean for producer update queue
     @Bean
     public Queue updateQueue(){
         return new Queue(queueUpdate);
     }
 
-    //Spring bean for rabbit list queue
+    //Spring bean for producer list queue
     @Bean
     public Queue listQueue(){
         return new Queue(queueList);
     }
 
-    //Spring bean for rabbit exchange
+    //Spring bean for producer exchange
     @Bean
     public TopicExchange exchange(){
         return new TopicExchange(exchange);
