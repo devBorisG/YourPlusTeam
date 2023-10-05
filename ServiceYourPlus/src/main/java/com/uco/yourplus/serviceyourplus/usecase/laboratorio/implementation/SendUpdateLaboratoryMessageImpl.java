@@ -22,7 +22,7 @@ public class SendUpdateLaboratoryMessageImpl implements SendUpdateLaboratoryMess
         }catch (ServiceCustomException exception){
             throw exception;
         }catch (Exception exception){
-            throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error inesperado ejecutando el caso de uso de enviar el producto por la cola de actualizar");
+            throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error inesperado ejecutando el caso de uso de enviar el laboratorio por la cola de actualizar");
         }
     }
 }
