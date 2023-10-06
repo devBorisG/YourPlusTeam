@@ -7,7 +7,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class SendConsultMessageFacadeImpl implements SendConsultLaboratoryMessageFacade {
+public class SendConsultLaboratoryMessageFacadeImpl implements SendConsultLaboratoryMessageFacade {
 
 
     @Override

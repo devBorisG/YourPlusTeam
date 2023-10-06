@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ApiYourPlus/YourPlusTeam.ApiYourPlus.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ApiYourPlus/YourPlusTeam.ApiYourPlus.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ApiYourPlus/YourPlusTeam.ApiYourPlus.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ApiYourPlus/YourPlusTeam.ApiYourPlus.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/EntityYourPlus/YourPlusTeam.EntityYourPlus.main.iml" filepath="$PROJECT_DIR$/.idea/modules/EntityYourPlus/YourPlusTeam.EntityYourPlus.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RepositoryYourPlus/YourPlusTeam.RepositoryYourPlus.main.iml" filepath="$PROJECT_DIR$/.idea/modules/RepositoryYourPlus/YourPlusTeam.RepositoryYourPlus.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/RepositoryYourPlus/YourPlusTeam.RepositoryYourPlus.test.iml" filepath="$PROJECT_DIR$/.idea/modules/RepositoryYourPlus/YourPlusTeam.RepositoryYourPlus.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ServiceYourPlus/YourPlusTeam.ServiceYourPlus.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ServiceYourPlus/YourPlusTeam.ServiceYourPlus.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/ServiceYourPlus/YourPlusTeam.ServiceYourPlus.test.iml" filepath="$PROJECT_DIR$/.idea/modules/ServiceYourPlus/YourPlusTeam.ServiceYourPlus.test.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/EntityYourPlus/com.uco.yourplus.YourPlusTeam.EntityYourPlus.main.iml" filepath="$PROJECT_DIR$/.idea/modules/EntityYourPlus/com.uco.yourplus.YourPlusTeam.EntityYourPlus.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/RepositoryYourPlus/com.uco.yourplus.YourPlusTeam.RepositoryYourPlus.main.iml" filepath="$PROJECT_DIR$/.idea/modules/RepositoryYourPlus/com.uco.yourplus.YourPlusTeam.RepositoryYourPlus.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/ServiceYourPlus/com.uco.yourplus.YourPlusTeam.ServiceYourPlus.main.iml" filepath="$PROJECT_DIR$/.idea/modules/ServiceYourPlus/com.uco.yourplus.YourPlusTeam.ServiceYourPlus.main.iml" />
