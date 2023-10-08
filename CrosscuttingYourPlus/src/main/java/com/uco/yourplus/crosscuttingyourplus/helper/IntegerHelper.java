@@ -17,6 +17,10 @@ public class IntegerHelper {
      */
     public static final int ZERO = 0;
 
+    //Tiempo de espera estimado para 10 segundo entre micro-servicios
+    public static final long DEFAULT_TIMEOUT_MILLIS = 60000;
+
+
     /**
      * Obtiene el valor entero proporcionado o el valor predeterminado si es nulo.
      *

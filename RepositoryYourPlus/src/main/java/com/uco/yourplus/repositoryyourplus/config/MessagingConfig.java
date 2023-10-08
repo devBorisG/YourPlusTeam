@@ -1,6 +1,7 @@
 package com.uco.yourplus.repositoryyourplus.config;
 
 import com.uco.yourplus.crosscuttingyourplus.properties.PropertiesCatalogProductoProducer;
+import com.uco.yourplus.crosscuttingyourplus.properties.PropertiesCatalogProductoReceiver;
 import org.springframework.amqp.core.*;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -8,13 +9,16 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@EnableConfigurationProperties(PropertiesCatalogProductoProducer.class)
+@EnableConfigurationProperties({PropertiesCatalogProductoProducer.class, PropertiesCatalogProductoReceiver.class})
 public class MessagingConfig {
 
     private PropertiesCatalogProductoProducer productoProducer;
+    private PropertiesCatalogProductoReceiver productoReceiver;
 
-    public MessagingConfig(@Qualifier("propertiesCatalogProductoProducer") PropertiesCatalogProductoProducer productoProducer) {
+
+    public MessagingConfig(@Qualifier("propertiesCatalogProductoProducer") PropertiesCatalogProductoProducer productoProducer, @Qualifier("propertiesCatalogProductoReceiver") PropertiesCatalogProductoReceiver productoReceiver) {
         this.productoProducer = productoProducer;
+        this.productoReceiver = productoReceiver;
     }
 
     //Spring bean for producer save queue
@@ -41,10 +45,18 @@ public class MessagingConfig {
         return new Queue(productoProducer.getQueue().getList());
     }
 
+    @Bean
+    public Queue responseSaveQueue(){return new Queue(productoReceiver.getQueue().getSave());}
+
     //Spring bean for producer exchange
     @Bean
     public TopicExchange exchange(){
         return new TopicExchange(productoProducer.getExchange());
+    }
+
+    @Bean
+    public TopicExchange exchangeResponseProcesador(){
+        return new TopicExchange(productoReceiver.getExchange());
     }
 
     //Binding between queue save an exchange using routing key
@@ -77,5 +89,12 @@ public class MessagingConfig {
         return BindingBuilder.bind(listQueue)
                 .to(exchange)
                 .with(productoProducer.getRoutingkey().getList());
+    }
+
+    @Bean
+    public Binding responseSaveBinding(Queue saveQueue, TopicExchange exchange){
+        return BindingBuilder.bind(saveQueue)
+                .to(exchange)
+                .with(productoReceiver.getRoutingkey().getSave());
     }
 }
