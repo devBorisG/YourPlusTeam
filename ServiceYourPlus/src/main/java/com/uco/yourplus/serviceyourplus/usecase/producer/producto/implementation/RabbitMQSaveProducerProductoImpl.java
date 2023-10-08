@@ -2,11 +2,13 @@ package com.uco.yourplus.serviceyourplus.usecase.producer.producto.implementatio
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.crosscutting.CrosscuttingCustomException;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
+import com.uco.yourplus.crosscuttingyourplus.properties.PropertiesCatalogProductoProducer;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
 import com.uco.yourplus.serviceyourplus.usecase.producer.configuration.producto.ConfigRabbitContentProductoDomain;
 import com.uco.yourplus.serviceyourplus.usecase.producer.producto.RabbitMQSaveProducerProducto;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Service;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
@@ -14,18 +16,15 @@ import org.springframework.amqp.core.MessageProperties;
 import java.util.Optional;
 
 @Service
+@EnableConfigurationProperties(PropertiesCatalogProductoProducer.class)
 public class RabbitMQSaveProducerProductoImpl implements RabbitMQSaveProducerProducto {
 
-    @Value("${yourplus.management.producto.exchange}")
-    private String exchange;
-
-    @Value("${yourplus.management.producto.routingkey.save}")
-    private String routingKeySave;
-
+    private final PropertiesCatalogProductoProducer producer;
     private final RabbitTemplate rabbitTemplate;
     private final ConfigRabbitContentProductoDomain configRabbitProductContent;
 
-    public RabbitMQSaveProducerProductoImpl(RabbitTemplate rabbitTemplate, ConfigRabbitContentProductoDomain configRabbitProductContent) {
+    public RabbitMQSaveProducerProductoImpl(@Qualifier("propertiesCatalogProductoProducer") PropertiesCatalogProductoProducer producer, RabbitTemplate rabbitTemplate, ConfigRabbitContentProductoDomain configRabbitProductContent) {
+        this.producer = producer;
         this.rabbitTemplate = rabbitTemplate;
         this.configRabbitProductContent = configRabbitProductContent;
     }
@@ -38,7 +37,7 @@ public class RabbitMQSaveProducerProductoImpl implements RabbitMQSaveProducerPro
             if(bodyMessage.isEmpty()){
                 throw ServiceCustomException.createTechnicalException("Ocurrió un error configurando las propiedades del Message para registrar");
             }
-            rabbitTemplate.convertAndSend(exchange,routingKeySave,bodyMessage.get());
+            rabbitTemplate.convertAndSend(producer.getExchange(),producer.getRoutingkey().getSave(),bodyMessage.get());
         }catch (CrosscuttingCustomException exception){
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error en el ConfigRabbitContent para configurar el mensaje");
         }catch (Exception exception){
