@@ -11,11 +11,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @Transactional
-public class SendUpdateMessageFacadeImpl implements SendUpdateLaboratoryMessageFacade {
+public class SendUpdateLaboratoryMessageFacadeImpl implements SendUpdateLaboratoryMessageFacade {
 
     private final SendUpdateLaboratoryMessage  useCase;
 
-    public SendUpdateMessageFacadeImpl(SendUpdateLaboratoryMessage useCase) {
+    public SendUpdateLaboratoryMessageFacadeImpl(SendUpdateLaboratoryMessage useCase) {
         this.useCase = useCase;
     }
 
