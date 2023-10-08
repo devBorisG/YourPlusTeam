@@ -12,8 +12,8 @@ import org.springframework.context.annotation.Configuration;
 @EnableConfigurationProperties({PropertiesCatalogProductoProducer.class, PropertiesCatalogProductoReceiver.class})
 public class MessagingConfig {
 
-    private PropertiesCatalogProductoProducer productoProducer;
-    private PropertiesCatalogProductoReceiver productoReceiver;
+    private final PropertiesCatalogProductoProducer productoProducer;
+    private final PropertiesCatalogProductoReceiver productoReceiver;
 
 
     public MessagingConfig(@Qualifier("propertiesCatalogProductoProducer") PropertiesCatalogProductoProducer productoProducer, @Qualifier("propertiesCatalogProductoReceiver") PropertiesCatalogProductoReceiver productoReceiver) {
