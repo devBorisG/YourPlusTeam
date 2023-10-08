@@ -2,10 +2,10 @@ package com.uco.yourplus.serviceyourplus.usecase.producto.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.repository.RepositoryCustomException;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
-import com.uco.yourplus.entityyourplus.ProductosEntity;
-import com.uco.yourplus.repositoryyourplus.producto.ProductosRepository;
-import com.uco.yourplus.serviceyourplus.domain.ProductosDomain;
-import com.uco.yourplus.serviceyourplus.usecase.producto.ConsultarProductos;
+import com.uco.yourplus.entityyourplus.ProductoEntity;
+import com.uco.yourplus.repositoryyourplus.producto.ProductoRepository;
+import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
+import com.uco.yourplus.serviceyourplus.usecase.producto.ConsultarProducto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,19 +15,19 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ConsultarProductosImpl implements ConsultarProductos {
+public class ConsultarProductoImpl implements ConsultarProducto {
 
     @Autowired
-    private ProductosRepository productoRepository;
+    private ProductoRepository productoRepository;
 
     @Override
-    public List<ProductosDomain> execute(Optional<ProductosDomain> domain) {
-        List<ProductosEntity> result;
-        List<ProductosDomain> convertResult = new ArrayList<>();
+    public List<ProductoDomain> execute(Optional<ProductoDomain> domain) {
+        List<ProductoEntity> result;
+        List<ProductoDomain> convertResult = new ArrayList<>();
 
         if (domain.isPresent()) {
             // Si se proporciona un ProductoDomain, copia sus propiedades a una ProductoEntity
-            ProductosEntity productoEntity = new ProductosEntity();
+            ProductoEntity productoEntity = new ProductoEntity();
             BeanUtils.copyProperties(domain.get(), productoEntity);
 
             try {
@@ -49,7 +49,7 @@ public class ConsultarProductosImpl implements ConsultarProductos {
 
         // Convierte los resultados de ProductoEntity a ProductoDomain
         result.forEach(value -> {
-            ProductosDomain productoDomain = new ProductosDomain();
+            ProductoDomain productoDomain = new ProductoDomain();
             BeanUtils.copyProperties(value, productoDomain);
             convertResult.add(productoDomain);
         });

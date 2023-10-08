@@ -2,7 +2,7 @@ package com.uco.yourplus.repositoryyourplus.producto;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.repository.RepositoryCustomException;
 import com.uco.yourplus.crosscuttingyourplus.helper.StringHelper;
-import com.uco.yourplus.entityyourplus.ProductosEntity;
+import com.uco.yourplus.entityyourplus.ProductoEntity;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -14,17 +14,17 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class ProductosRepositoryCustomImpl implements ProductosRepositoryCustom {
+public class ProductoRepositoryCustomImpl implements ProductoRepositoryCustom {
 
     @PersistenceContext
     private EntityManager entityManager;
 
     @Override
-    public List<ProductosEntity> findCustom(ProductosEntity productosEntity) {
+    public List<ProductoEntity> findCustom(ProductoEntity productosEntity) {
         try {
             CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
-            CriteriaQuery<ProductosEntity> query = criteriaBuilder.createQuery(ProductosEntity.class);
-            Root<ProductosEntity> productosEntityRoot = query.from(ProductosEntity.class);
+            CriteriaQuery<ProductoEntity> query = criteriaBuilder.createQuery(ProductoEntity.class);
+            Root<ProductoEntity> productosEntityRoot = query.from(ProductoEntity.class);
             List<Predicate> predicates = new ArrayList<>();
 
             if (!Objects.isNull(productosEntity)) {

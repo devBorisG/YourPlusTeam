@@ -1,25 +1,25 @@
 package com.uco.yourplus.serviceyourplus.specification.producto.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
-import com.uco.yourplus.repositoryyourplus.producto.ProductosRepository;
-import com.uco.yourplus.serviceyourplus.domain.ProductosDomain;
-import com.uco.yourplus.serviceyourplus.specification.producto.ProductosConsultarSpecification;
+import com.uco.yourplus.repositoryyourplus.producto.ProductoRepository;
+import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
+import com.uco.yourplus.serviceyourplus.specification.producto.ConsultarProductoSpecification;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
 @Service
-public class ProductosConsultarSpecificationImpl implements ProductosConsultarSpecification {
+public class ConsultarProductoSpecificationImpl implements ConsultarProductoSpecification {
 
     @Autowired
-    ProductosRepository productoRepository;
+    ProductoRepository productoRepository;
 
     @Override
-    public void isSatisfied(ProductosDomain data) {
+    public void isSatisfied(ProductoDomain data) {
         verifyProductIntegrity(data);
     }
 
-    private void verifyProductIntegrity(ProductosDomain productoDomain) {
+    private void verifyProductIntegrity(ProductoDomain productoDomain) {
         if (productoRepository.findById(productoDomain.getId()).isPresent()) {
             throw ServiceCustomException.createProductException("El producto ya existe");
         }

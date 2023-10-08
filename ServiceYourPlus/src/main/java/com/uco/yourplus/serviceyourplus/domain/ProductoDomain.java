@@ -7,7 +7,7 @@ import lombok.Getter;
 import java.util.UUID;
 
 @Getter
-public class ProductosDomain {
+public class ProductoDomain {
 
     UUID id;
     String nombre;

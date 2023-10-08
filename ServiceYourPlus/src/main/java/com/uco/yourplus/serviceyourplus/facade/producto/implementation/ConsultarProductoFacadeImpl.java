@@ -3,10 +3,10 @@ package com.uco.yourplus.serviceyourplus.facade.producto.implementation;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.crosscuttingyourplus.helper.IntegerHelper;
 import com.uco.yourplus.crosscuttingyourplus.helper.StringHelper;
-import com.uco.yourplus.dtoyourplus.builder.ProductosDTO;
-import com.uco.yourplus.serviceyourplus.domain.ProductosDomain;
-import com.uco.yourplus.serviceyourplus.facade.producto.ConsultarProductosFacade;
-import com.uco.yourplus.serviceyourplus.usecase.producto.ConsultarProductos;
+import com.uco.yourplus.dtoyourplus.builder.ProductoDTO;
+import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
+import com.uco.yourplus.serviceyourplus.facade.producto.ConsultarProductoFacade;
+import com.uco.yourplus.serviceyourplus.usecase.producto.ConsultarProducto;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,30 +17,30 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
-public class ConsultarProductosFacadeImpl implements ConsultarProductosFacade {
+public class ConsultarProductoFacadeImpl implements ConsultarProductoFacade {
 
     @Autowired
-    private ConsultarProductos consultarProductos;
+    private ConsultarProducto consultarProductos;
 
     @Override
-    public List<ProductosDTO> execute(Optional<ProductosDTO> dto) {
+    public List<ProductoDTO> execute(Optional<ProductoDTO> dto) {
         try {
-            List<ProductosDomain> listDomain;
+            List<ProductoDomain> listDomain;
             if (dto.isPresent() &&
                     (!Objects.equals(dto.get().getNombre(), StringHelper.EMPTY) ||
                             !Objects.equals(dto.get().getPrecio(), IntegerHelper.ZERO) ||
                             !Objects.equals(dto.get().getDescripcion(), StringHelper.EMPTY) ||
                             !Objects.equals(dto.get().getImagen(), StringHelper.EMPTY))) {
 
-                ProductosDomain productoDomain = new ProductosDomain();
+                ProductoDomain productoDomain = new ProductoDomain();
                 BeanUtils.copyProperties(dto.get(), productoDomain);
                 listDomain = consultarProductos.execute(Optional.of(productoDomain));
             } else {
                 listDomain = consultarProductos.execute(Optional.empty());
             }
-            List<ProductosDTO> convertResult = new ArrayList<>();
+            List<ProductoDTO> convertResult = new ArrayList<>();
             listDomain.forEach(value -> {
-                ProductosDTO productoDTO = new ProductosDTO();
+                ProductoDTO productoDTO = new ProductoDTO();
                 BeanUtils.copyProperties(value, productoDTO);
                 convertResult.add(productoDTO);
             });

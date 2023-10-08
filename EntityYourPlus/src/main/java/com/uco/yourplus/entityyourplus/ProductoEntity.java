@@ -6,9 +6,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.UUID;
 
 @Data
@@ -17,7 +15,7 @@ import java.util.UUID;
 @Entity
 @Table(name = "Producto", schema = "public")
 
-public class ProductosEntity {
+public class ProductoEntity {
 
     @Id
     UUID id;
@@ -25,6 +23,14 @@ public class ProductosEntity {
     int precio;
     String descripcion;
     String imagen;
+
+    /*@ManyToOne
+    @JoinColumn(name = "id_laboratorio")
+    transient LaboratorioEntity laboratorioEntity;
+
+    @ManyToOne
+    @JoinColumn(name = "id_categoria")
+    transient CategoriaEntity categoriaEntity;*/
 
     @JsonProperty("id")
     public void setId(UUID id) {
@@ -50,6 +56,18 @@ public class ProductosEntity {
     public void setimagen(String imagen){
         this.imagen = imagen;
     }
+
+    /*@JsonProperty("laboratorioEntity")
+    public void setLaboratorioEntity(LaboratorioEntity laboratorioEntity) {
+        this.laboratorioEntity = laboratorioEntity;
+
+    }
+
+    @JsonProperty("categoriaEntity")
+    public void setCategoriaEntity(CategoriaEntity categoriaEntity) {
+        this.categoriaEntity = categoriaEntity;  }*/
+
+
 
     
 }
