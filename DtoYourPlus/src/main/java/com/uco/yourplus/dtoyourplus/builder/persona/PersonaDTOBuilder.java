@@ -3,6 +3,7 @@ package com.uco.yourplus.dtoyourplus.builder.persona;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
 import com.uco.yourplus.dtoyourplus.builder.RolDTO;
 
+import java.util.List;
 import java.util.UUID;
 
 public class PersonaDTOBuilder implements PersonaBuilder{

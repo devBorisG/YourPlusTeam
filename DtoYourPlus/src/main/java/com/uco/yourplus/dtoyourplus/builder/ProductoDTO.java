@@ -21,7 +21,7 @@ public class ProductoDTO {
     private CategoriaDTO categoria;
 
     public ProductoDTO(){
-        setId(null);
+        setId(id);
         setNombre(EMPTY);
         setPrecio(ZERO);
         setDescripcion(EMPTY);

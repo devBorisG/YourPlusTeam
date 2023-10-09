@@ -30,7 +30,7 @@ public class PersonaEntity implements UserDetails {
     String password;
     @ManyToOne
     @JoinColumn(name = "id_rol")
-    transient RolEntity rolEntity;
+    transient List<RolEntity> rolEntity;
 
     @JsonProperty("id")
     public void setId(UUID id) {
@@ -58,7 +58,7 @@ public class PersonaEntity implements UserDetails {
     }
 
     @JsonProperty("rolEntity")
-    public void setRolEntity(RolEntity rolEntity) {
+    public void setRolEntity(List<RolEntity> rolEntity) {
         this.rolEntity = rolEntity;
     }
 

@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.UUID;
 
 @Data
@@ -24,13 +25,13 @@ public class ProductoEntity {
     String descripcion;
     String imagen;
 
-    /*@ManyToOne
+    @ManyToOne
     @JoinColumn(name = "id_laboratorio")
-    transient LaboratorioEntity laboratorioEntity;
+    transient List<LaboratorioEntity> laboratorioEntity;
 
     @ManyToOne
     @JoinColumn(name = "id_categoria")
-    transient CategoriaEntity categoriaEntity;*/
+    transient List<CategoriaEntity> categoriaEntity;
 
     @JsonProperty("id")
     public void setId(UUID id) {
@@ -57,15 +58,15 @@ public class ProductoEntity {
         this.imagen = imagen;
     }
 
-    /*@JsonProperty("laboratorioEntity")
-    public void setLaboratorioEntity(LaboratorioEntity laboratorioEntity) {
+    @JsonProperty("laboratorioEntity")
+    public void setLaboratorioEntity(List<LaboratorioEntity> laboratorioEntity) {
         this.laboratorioEntity = laboratorioEntity;
 
     }
 
     @JsonProperty("categoriaEntity")
-    public void setCategoriaEntity(CategoriaEntity categoriaEntity) {
-        this.categoriaEntity = categoriaEntity;  }*/
+    public void setCategoriaEntity(List<CategoriaEntity> categoriaEntity) {
+        this.categoriaEntity = categoriaEntity;  }
 
 
 

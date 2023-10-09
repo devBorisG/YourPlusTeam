@@ -29,16 +29,8 @@ public class RolDTO {
         return new RolDTO(id,EMPTY);
     }
 
-    public UUID getId() {
-        return id;
-    }
-
     public void setId(UUID id) {
         this.id = getDefaultUUID(id);
-    }
-
-    public String getDescripcion() {
-        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {

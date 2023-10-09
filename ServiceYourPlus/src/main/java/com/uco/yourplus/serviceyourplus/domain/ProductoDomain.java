@@ -4,6 +4,7 @@ import com.uco.yourplus.dtoyourplus.builder.CategoriaDTO;
 import com.uco.yourplus.dtoyourplus.builder.LaboratorioDTO;
 import lombok.Getter;
 
+import java.util.List;
 import java.util.UUID;
 
 @Getter
@@ -14,8 +15,8 @@ public class ProductoDomain {
     int precio;
     String descripcion;
     String imagen;
-    CategoriaDTO categoria;
-    LaboratorioDTO laboratorio;
+    List<CategoriaDTO> categoria;
+    List<LaboratorioDTO> laboratorio;
 
     public void setId(final UUID id) {
         this.id = id;
@@ -37,11 +38,11 @@ public class ProductoDomain {
         this.imagen = imagen;
     }
 
-    public void setCategoria(final CategoriaDTO categoria) {
+    public void setCategoria(List<CategoriaDTO> categoria) {
         this.categoria = categoria;
     }
 
-    public void setLaboratorio(final LaboratorioDTO laboratorio) {
+    public void setLaboratorio(List<LaboratorioDTO> laboratorio) {
         this.laboratorio = laboratorio;
     }
 }

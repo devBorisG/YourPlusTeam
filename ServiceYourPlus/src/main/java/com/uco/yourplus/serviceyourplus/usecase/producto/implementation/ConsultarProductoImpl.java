@@ -2,6 +2,10 @@ package com.uco.yourplus.serviceyourplus.usecase.producto.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.repository.RepositoryCustomException;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
+import com.uco.yourplus.dtoyourplus.builder.CategoriaDTO;
+import com.uco.yourplus.dtoyourplus.builder.LaboratorioDTO;
+import com.uco.yourplus.entityyourplus.CategoriaEntity;
+import com.uco.yourplus.entityyourplus.LaboratorioEntity;
 import com.uco.yourplus.entityyourplus.ProductoEntity;
 import com.uco.yourplus.repositoryyourplus.producto.ProductoRepository;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
@@ -22,40 +26,67 @@ public class ConsultarProductoImpl implements ConsultarProducto {
 
     @Override
     public List<ProductoDomain> execute(Optional<ProductoDomain> domain) {
-        List<ProductoEntity> result;
-        List<ProductoDomain> convertResult = new ArrayList<>();
+
+        List<ProductoEntity> result; // Lista para almacenar resultados de consulta en la base de datos
+
+        List<ProductoDomain> convertResult = new ArrayList<>(); // Lista para almacenar resultados convertidos
 
         if (domain.isPresent()) {
-            // Si se proporciona un ProductoDomain, copia sus propiedades a una ProductoEntity
+
             ProductoEntity productoEntity = new ProductoEntity();
-            BeanUtils.copyProperties(domain.get(), productoEntity);
+
+            BeanUtils.copyProperties(domain.get(), productoEntity); // Copiar propiedades del objeto domain a productoEntity
 
             try {
-                // Realiza una consulta personalizada utilizando la ProductoEntity proporcionada
-                result = productoRepository.findCustom(productoEntity);
+
+                result = productoRepository.findCustom(productoEntity); // Realizar una consulta personalizada en la base de datos
+
             } catch (RepositoryCustomException e) {
-                // Maneja excepciones y lanza una ServiceCustomException si ocurre un error
-                throw ServiceCustomException.createTechnicalException(e, "Error en la consulta de productos.");
+                throw ServiceCustomException.createTechnicalException(e, "Producto no encontrado");
             }
         } else {
             try {
-                // Si no se proporciona un ProductoDomain, obtiene todos los productos
-                result = productoRepository.findAll();
+                result = productoRepository.findAll(); // Consulta para obtener todos los productos en la base de datos
             } catch (RepositoryCustomException e) {
-                // Maneja excepciones y lanza una ServiceCustomException si ocurre un error
-                throw ServiceCustomException.createTechnicalException(e, "Error en la consulta de productos.");
+                throw ServiceCustomException.createTechnicalException(e, "Productos no encontrados");
             }
         }
 
-        // Convierte los resultados de ProductoEntity a ProductoDomain
-        result.forEach(value -> {
+        // Iterar a través de los resultados de la consulta
+        for (ProductoEntity productoEntity : result) {
             ProductoDomain productoDomain = new ProductoDomain();
-            BeanUtils.copyProperties(value, productoDomain);
-            convertResult.add(productoDomain);
-        });
+            BeanUtils.copyProperties(productoEntity, productoDomain);
+
+            // Obtener una lista de laboratorios asociados al producto
+            List<LaboratorioEntity> laboratorios = productoEntity.getLaboratorioEntity();
+
+            // Obtener una lista de categorías asociadas al producto
+            List<CategoriaEntity> categorias = productoEntity.getCategoriaEntity();
+
+            // convertir las entidades LaboratorioEntity y CategoriaEntity en sus correspondientes DTOs si es necesario
+            List<LaboratorioDTO> laboratoriosDTOs = new ArrayList<>();
+            List<CategoriaDTO> categoriasDTOs = new ArrayList<>();
+
+            for (LaboratorioEntity laboratorioEntity : laboratorios){
+                LaboratorioDTO laboratorioDTO = new LaboratorioDTO();
+                BeanUtils.copyProperties(laboratorioEntity,laboratorioDTO);
+                laboratoriosDTOs.add(laboratorioDTO);
+            }
+            for (CategoriaEntity categoriaEntity : categorias){
+                CategoriaDTO categoriaDTO = new CategoriaDTO();
+                BeanUtils.copyProperties(categoriaEntity,categoriaDTO);
+                categoriasDTOs.add(categoriaDTO);
+            }
+
+
+            productoDomain.setLaboratorio(laboratoriosDTOs); // Establecer la lista de laboratorios en productoDomain
+            productoDomain.setCategoria(categoriasDTOs); // Establecer la lista de categorías en productoDomain
+            convertResult.add(productoDomain); // Agregar productoDomain a la lista de resultados convertidos
+        }
 
         return convertResult;
     }
+
 
 
 }

@@ -127,6 +127,4 @@ public class Response<T>{
         getMessageList().add(Message.createSuccesMessage(content));
     }
 
-    public void addSuccessMessage(String productoConsultadoExitosamente) {
-    }
 }
