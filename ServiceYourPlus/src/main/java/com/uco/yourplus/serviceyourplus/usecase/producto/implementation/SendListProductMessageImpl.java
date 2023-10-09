@@ -3,7 +3,7 @@ package com.uco.yourplus.serviceyourplus.usecase.producto.implementation;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
 import com.uco.yourplus.serviceyourplus.usecase.producto.SendListProductMessage;
-import com.uco.yourplus.serviceyourplus.usecase.producer.producto.RabbitMQListProducerProducto;
+import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.producto.RabbitMQListProducerProducto;
 import org.springframework.stereotype.Service;
 
 @Service

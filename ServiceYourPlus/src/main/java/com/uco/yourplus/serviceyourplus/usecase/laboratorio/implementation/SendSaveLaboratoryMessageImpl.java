@@ -3,7 +3,7 @@ package com.uco.yourplus.serviceyourplus.usecase.laboratorio.implementation;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.serviceyourplus.domain.LaboratorioDomain;
 import com.uco.yourplus.serviceyourplus.usecase.laboratorio.SendSaveLaboratoryMessage;
-import com.uco.yourplus.serviceyourplus.usecase.producer.laboratorio.RabbitMQSaveProducerLaboratorio;
+import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.laboratorio.RabbitMQSaveProducerLaboratorio;
 import org.springframework.stereotype.Service;
 
 @Service
