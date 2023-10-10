@@ -2,7 +2,7 @@ package com.uco.yourplus.serviceyourplus.usecase.producto.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
-import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.response.microservices.procesador.HandlerReceiveMessageSave;
+import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.response.producto.HandlerReceiveMessageSaveProducto;
 import com.uco.yourplus.serviceyourplus.usecase.producto.SendSaveProductMessage;
 import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.producto.RabbitMQSaveProducerProducto;
 import org.springframework.stereotype.Service;
@@ -12,9 +12,9 @@ public class SendSaveProductMessageImpl implements SendSaveProductMessage {
 
     private final RabbitMQSaveProducerProducto producerProducto;
 
-    private final HandlerReceiveMessageSave receiverProducto;
+    private final HandlerReceiveMessageSaveProducto receiverProducto;
 
-    public SendSaveProductMessageImpl(RabbitMQSaveProducerProducto producerProducto, HandlerReceiveMessageSave receiverProducto) {
+    public SendSaveProductMessageImpl(RabbitMQSaveProducerProducto producerProducto, HandlerReceiveMessageSaveProducto receiverProducto) {
         this.producerProducto = producerProducto;
         this.receiverProducto = receiverProducto;
     }
@@ -23,9 +23,7 @@ public class SendSaveProductMessageImpl implements SendSaveProductMessage {
     public void execute(ProductoDomain domain) {
         try {
             producerProducto.execute(domain);
-            if(!receiverProducto.waitForResponse(domain.getId().toString())){
-                throw ServiceCustomException.createUserException("Algo salio mal, intentalo de nuevo");
-            }
+            receiverProducto.waitForResponse(domain.getId().toString());
         }catch (ServiceCustomException exception){
             throw exception;
         }catch (Exception exception){
