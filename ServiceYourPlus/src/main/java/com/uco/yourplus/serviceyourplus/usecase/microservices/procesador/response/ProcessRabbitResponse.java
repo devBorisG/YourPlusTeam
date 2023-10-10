@@ -15,7 +15,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Component
-public class ProcessRabbitResponse<T>{
+public class ProcessRabbitResponse<T> {
 
     private final MapperJsonObject mapperJsonObject;
 
@@ -23,11 +23,11 @@ public class ProcessRabbitResponse<T>{
         this.mapperJsonObject = mapperJsonObject;
     }
 
-    public List<T> verifyContent(Object response, String requestId){
-        if(response != null){
+    public List<T> verifyContent(Object response, String requestId) {
+        if (response != null) {
             ResponseDomain<T> responseDomain = convertResponse(response);
-            if(Objects.equals(responseDomain.getId().toString(),requestId)){
-                if(responseDomain.getStateResponse() == StateResponse.ERROR){
+            if (Objects.equals(responseDomain.getId().toString(), requestId)) {
+                if (responseDomain.getStateResponse() == StateResponse.ERROR) {
                     throw ServiceCustomException.createUserException(responseDomain.getMessage());
                 }
                 return responseDomain.getData();
@@ -36,8 +36,8 @@ public class ProcessRabbitResponse<T>{
         return null;
     }
 
-    private ResponseDomain<T> convertResponse(Object object){
-        try{
+    private ResponseDomain<T> convertResponse(Object object) {
+        try {
             ObjectMapper objectMapper = new ObjectMapper();
             Optional<String> response = mapperJsonObject.execute(object);
             String base64 = response.get().replace("\"", "");
@@ -47,7 +47,7 @@ public class ProcessRabbitResponse<T>{
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error mappeando el json");
         } catch (IOException exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error procesando el json");
-        } catch (Exception exception){
+        } catch (Exception exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error inesperado convirtiendo el objeto");
         }
     }

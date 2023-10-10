@@ -10,7 +10,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
-import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -30,7 +29,7 @@ public class PersonaEntity implements UserDetails {
     String password;
     @ManyToOne
     @JoinColumn(name = "id_rol")
-    transient RolEntity rolEntity;
+    RolEntity rolEntity;
 
     @JsonProperty("id")
     public void setId(UUID id) {
@@ -52,11 +51,6 @@ public class PersonaEntity implements UserDetails {
         this.correo = correo;
     }
 
-    @JsonProperty("password")
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     @JsonProperty("rolEntity")
     public void setRolEntity(RolEntity rolEntity) {
         this.rolEntity = rolEntity;
@@ -72,6 +66,11 @@ public class PersonaEntity implements UserDetails {
     @Override
     public String getPassword() {
         return password;
+    }
+
+    @JsonProperty("password")
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @JsonIgnore

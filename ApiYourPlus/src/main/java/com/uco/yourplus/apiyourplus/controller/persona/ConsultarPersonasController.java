@@ -19,8 +19,8 @@ import java.util.Optional;
  * Esta clase representa un controlador REST para consultar personas en el sistema YourPlus.
  * Permite realizar consultas de personas utilizando la fachada ConsultarPersonasFacade.
  *
- * @see ConsultarPersonasFacade
  * @author David Andrés
+ * @see ConsultarPersonasFacade
  */
 @RestController
 @RequestMapping("apiyourplus/persona")
@@ -36,22 +36,22 @@ public class ConsultarPersonasController {
      * @return Una ResponseEntity que incluye un objeto Response con los resultados de la consulta.
      */
     @GetMapping()
-    public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO){
+    public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO) {
         Optional<PersonaDTO> existDto = Optional.ofNullable(personaDTO);
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
-        try{
+        try {
             List<PersonaDTO> data = facade.execute(existDto);
             response.addSuccesMessage("Lista de personas");
             response.setData(data);
-        }catch (final YourPlusCustomException yourPlusCustomException){
+        } catch (final YourPlusCustomException yourPlusCustomException) {
             httpStatus = HttpStatus.BAD_REQUEST;
-            if(yourPlusCustomException.isTechnicalException()){
+            if (yourPlusCustomException.isTechnicalException()) {
                 response.addErrorMessage("Ocurrio un error consultando, intente nuevamente");
-            }else {
+            } else {
                 response.addErrorMessage(yourPlusCustomException.getMessage());
             }
-        }catch (final Exception exception){
+        } catch (final Exception exception) {
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
             response.addFatalMessage("Ocurrio un error interno en el servidor, intente nuevamente");
         }

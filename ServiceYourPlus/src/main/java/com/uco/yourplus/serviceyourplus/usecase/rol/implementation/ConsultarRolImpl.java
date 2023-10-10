@@ -18,18 +18,19 @@ public class ConsultarRolImpl implements ConsultarRol {
 
     @Autowired
     private RolRepository rolRepository;
+
     @Override
     public List<RolDomain> execute(Optional<RolDomain> domain) {
         List<RolEntity> result;
         List<RolDomain> castResult = new ArrayList<>();
-        try{
+        try {
             result = rolRepository.findAll();
-        } catch(Exception e){
-            throw ServiceCustomException.createTechnicalException(e,"se ha generado un error intenando consultar el rol");
+        } catch (Exception e) {
+            throw ServiceCustomException.createTechnicalException(e, "se ha generado un error intenando consultar el rol");
         }
         result.stream().map(value -> {
             RolDomain rolDomain = new RolDomain();
-            BeanUtils.copyProperties(value,rolDomain);
+            BeanUtils.copyProperties(value, rolDomain);
             return rolDomain;
         }).forEach(castResult::add);
 

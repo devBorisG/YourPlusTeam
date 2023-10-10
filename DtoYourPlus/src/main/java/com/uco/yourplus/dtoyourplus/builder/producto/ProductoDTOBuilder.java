@@ -6,7 +6,7 @@ import com.uco.yourplus.dtoyourplus.builder.ProductoDTO;
 
 import java.util.UUID;
 
-public class ProductoDTOBuilder implements ProductoBuilder{
+public class ProductoDTOBuilder implements ProductoBuilder {
 
     private UUID id;
     private String nombre;
@@ -16,11 +16,11 @@ public class ProductoDTOBuilder implements ProductoBuilder{
     private CategoriaDTO categoria;
     private LaboratorioDTO laboratorio;
 
-    private ProductoDTOBuilder(){
+    private ProductoDTOBuilder() {
         super();
     }
 
-    public static ProductoDTOBuilder getProductoDTOBuilder(){
+    public static ProductoDTOBuilder getProductoDTOBuilder() {
         return new ProductoDTOBuilder();
     }
 
@@ -66,7 +66,7 @@ public class ProductoDTOBuilder implements ProductoBuilder{
         return this;
     }
 
-    public ProductoDTO build(){
-        return ProductoDTO.create(id,nombre,precio,descripcion,imagen,laboratorio,categoria);
+    public ProductoDTO build() {
+        return ProductoDTO.create(id, nombre, precio, descripcion, imagen, laboratorio, categoria);
     }
 }

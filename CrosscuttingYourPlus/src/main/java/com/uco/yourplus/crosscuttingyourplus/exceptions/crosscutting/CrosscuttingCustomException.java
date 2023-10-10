@@ -21,9 +21,9 @@ public class CrosscuttingCustomException extends YourPlusCustomException {
     /**
      * Crea una nueva instancia de ServiceCustomException con un mensaje técnico y un mensaje amigable para el usuario.
      *
-     * @param rootException   La excepción raíz que causó este error, o null si no hay una excepción raíz.
+     * @param rootException    La excepción raíz que causó este error, o null si no hay una excepción raíz.
      * @param technicalMessage El mensaje técnico que describe la causa del error.
-     * @param userMessage     El mensaje amigable para el usuario que se muestra en la interfaz de usuario.
+     * @param userMessage      El mensaje amigable para el usuario que se muestra en la interfaz de usuario.
      */
     private CrosscuttingCustomException(Exception rootException, String technicalMessage, String userMessage) {
         super(rootException, technicalMessage, userMessage, LayerException.CROSSCUTTING);
@@ -43,8 +43,8 @@ public class CrosscuttingCustomException extends YourPlusCustomException {
     /**
      * Crea una excepción de servicio con una excepción raíz, un mensaje técnico y un mensaje amigable para el usuario.
      *
-     * @param rootException   La excepción raíz que causó este error.
-     * @param userMessage     El mensaje amigable para el usuario que se muestra en la interfaz de usuario.
+     * @param rootException    La excepción raíz que causó este error.
+     * @param userMessage      El mensaje amigable para el usuario que se muestra en la interfaz de usuario.
      * @param technicalMessage El mensaje técnico que describe la causa del error.
      * @return Una nueva instancia de ServiceCustomException.
      */
@@ -70,7 +70,7 @@ public class CrosscuttingCustomException extends YourPlusCustomException {
      * @param technicalMessage El mensaje técnico que describe la causa del error.
      * @return Una nueva instancia de ServiceCustomException.
      */
-    public static YourPlusCustomException createTechnicalException(final Exception rootException, final String technicalMessage){
+    public static YourPlusCustomException createTechnicalException(final Exception rootException, final String technicalMessage) {
         return new CrosscuttingCustomException(rootException, technicalMessage, EMPTY);
     }
 }

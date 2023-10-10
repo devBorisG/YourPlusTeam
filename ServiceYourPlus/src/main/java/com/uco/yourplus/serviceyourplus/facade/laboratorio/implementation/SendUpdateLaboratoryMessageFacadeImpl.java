@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 @Transactional
 public class SendUpdateLaboratoryMessageFacadeImpl implements SendUpdateLaboratoryMessageFacade {
 
-    private final SendUpdateLaboratoryMessage  useCase;
+    private final SendUpdateLaboratoryMessage useCase;
 
     public SendUpdateLaboratoryMessageFacadeImpl(SendUpdateLaboratoryMessage useCase) {
         this.useCase = useCase;
@@ -25,10 +25,10 @@ public class SendUpdateLaboratoryMessageFacadeImpl implements SendUpdateLaborato
         try {
             BeanUtils.copyProperties(dto, laboratorioDomain);
             useCase.execute(laboratorioDomain);
-        }catch (ServiceCustomException exception){
+        } catch (ServiceCustomException exception) {
             throw exception;
-        }catch (Exception exception){
-            throw ServiceCustomException.createTechnicalException(exception,"Ocurrió un error ejecutando el caso de uso de enviar mensaje para actualizar el laboratorio");
+        } catch (Exception exception) {
+            throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error ejecutando el caso de uso de enviar mensaje para actualizar el laboratorio");
         }
     }
 }

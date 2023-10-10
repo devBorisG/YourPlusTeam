@@ -36,11 +36,11 @@ public class EliminarPersonaImpl implements EliminarPersona {
             } else {
                 throw ServiceCustomException.createTechnicalException("no se ha logrado encontrar");
             }
-        } catch (ServiceCustomException exception){
+        } catch (ServiceCustomException exception) {
             throw exception;
-        } catch (RepositoryCustomException exception){
+        } catch (RepositoryCustomException exception) {
             throw ServiceCustomException.createTechnicalException("No se ha logrado consultar");
-        } catch (Exception e){
+        } catch (Exception e) {
             throw ServiceCustomException.createTechnicalException("Alv c murio");
         }
     }

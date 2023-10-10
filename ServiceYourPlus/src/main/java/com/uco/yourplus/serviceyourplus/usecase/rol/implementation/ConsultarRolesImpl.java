@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class ConsultarRolesImpl implements ConsultarRoles {  
+public class ConsultarRolesImpl implements ConsultarRoles {
 
     @Autowired
     private RolRepository rolRepository;
@@ -25,18 +25,18 @@ public class ConsultarRolesImpl implements ConsultarRoles {
         List<RolEntity> result;
         List<RolDomain> castResult = new ArrayList<>();
 
-        if (domain.isPresent()){
-            try{
+        if (domain.isPresent()) {
+            try {
                 RolEntity rolEntity = new RolEntity();
                 BeanUtils.copyProperties(domain, rolEntity);
                 result = rolRepository.findCustom(rolEntity);
-            }catch (RepositoryCustomException e){
+            } catch (RepositoryCustomException e) {
                 throw ServiceCustomException.createTechnicalException(e, "no funca");
             }
-        }else {
-            try{
+        } else {
+            try {
                 result = rolRepository.findAll();
-            }catch (RepositoryCustomException e){
+            } catch (RepositoryCustomException e) {
                 throw ServiceCustomException.createTechnicalException(e, "no funca");
             }
         }

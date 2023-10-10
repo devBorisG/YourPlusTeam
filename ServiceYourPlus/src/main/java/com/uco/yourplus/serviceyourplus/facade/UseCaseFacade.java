@@ -8,7 +8,7 @@ package com.uco.yourplus.serviceyourplus.facade;
  * @param <T> El tipo de objeto correspondiente de DTO, que se utilizará como entrada para la ejecución del caso de uso.
  * @author David Andres
  */
-public interface UseCaseFacade <T>{
+public interface UseCaseFacade<T> {
     /**
      * Ejecuta un caso de uso utilizando un objeto de tipo T como entrada.
      *

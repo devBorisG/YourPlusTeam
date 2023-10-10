@@ -25,7 +25,7 @@ public class Message {
      * @param level   El nivel de importancia del mensaje.
      * @param content El contenido del mensaje.
      */
-    public Message(MessageLevel level, String content){
+    public Message(MessageLevel level, String content) {
         super();
         setLevel(level);
         setContent(content);
@@ -37,7 +37,7 @@ public class Message {
      * @param content El contenido del mensaje.
      * @return Un objeto Message con nivel FATAL y el contenido proporcionado.
      */
-    public static Message createFatalMessage(final String content){
+    public static Message createFatalMessage(final String content) {
         return new Message(MessageLevel.FATAL, content);
     }
 
@@ -47,7 +47,7 @@ public class Message {
      * @param content El contenido del mensaje.
      * @return Un objeto Message con nivel ERROR y el contenido proporcionado.
      */
-    public static Message createErrorMessage(final String content){
+    public static Message createErrorMessage(final String content) {
         return new Message(MessageLevel.ERROR, content);
     }
 
@@ -57,7 +57,7 @@ public class Message {
      * @param content El contenido del mensaje.
      * @return Un objeto Message con nivel WARNING y el contenido proporcionado.
      */
-    public static Message createWarningMessage(final String content){
+    public static Message createWarningMessage(final String content) {
         return new Message(MessageLevel.WARNING, content);
     }
 
@@ -67,7 +67,7 @@ public class Message {
      * @param content El contenido del mensaje.
      * @return Un objeto Message con nivel INFO y el contenido proporcionado.
      */
-    public static Message createInfoMessage(final String content){
+    public static Message createInfoMessage(final String content) {
         return new Message(MessageLevel.INFO, content);
     }
 
@@ -77,7 +77,7 @@ public class Message {
      * @param content El contenido del mensaje.
      * @return Un objeto Message con nivel SUCCESS y el contenido proporcionado.
      */
-    public static Message createSuccesMessage(final String content){
+    public static Message createSuccesMessage(final String content) {
         return new Message(MessageLevel.SUCCESS, content);
     }
 

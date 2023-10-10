@@ -4,17 +4,17 @@ import com.uco.yourplus.dtoyourplus.builder.CategoriaDTO;
 
 import java.util.UUID;
 
-public class CategoriaDTOBuilder implements CategoriaBuilder{
+public class CategoriaDTOBuilder implements CategoriaBuilder {
 
     private UUID id;
     private String nombre;
     private String descripcion;
 
-    private CategoriaDTOBuilder(){
+    private CategoriaDTOBuilder() {
         super();
     }
 
-    public static CategoriaDTOBuilder getCategoriaDTOBuilder(){
+    public static CategoriaDTOBuilder getCategoriaDTOBuilder() {
         return new CategoriaDTOBuilder();
     }
 
@@ -37,7 +37,7 @@ public class CategoriaDTOBuilder implements CategoriaBuilder{
         return this;
     }
 
-    public CategoriaDTO build(){
-        return CategoriaDTO.create(id,nombre,descripcion);
+    public CategoriaDTO build() {
+        return CategoriaDTO.create(id, nombre, descripcion);
     }
 }

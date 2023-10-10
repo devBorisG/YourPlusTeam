@@ -12,7 +12,7 @@ import java.util.List;
  *
  * @param <T> El tipo de datos de los elementos de datos contenidos en la respuesta.
  */
-public class Response<T>{
+public class Response<T> {
     private List<Message> messageList;
     private List<T> data;
 
@@ -33,16 +33,18 @@ public class Response<T>{
      * @param messages La lista de mensajes a incluir en la respuesta.
      * @param data     La lista de datos a incluir en la respuesta.
      */
-    public Response(List<Message> messages, List<T> data, String token){
+    public Response(List<Message> messages, List<T> data, String token) {
         super();
         setMessageList(messages);
         setData(data);
         setToken(token);
     }
 
-    public String getToken(){ return token;}
+    public String getToken() {
+        return token;
+    }
 
-    public void setToken(String token){
+    public void setToken(String token) {
         this.token = ObjectHelper.getDefaultIfNull(token, StringHelper.EMPTY);
     }
 
@@ -87,7 +89,7 @@ public class Response<T>{
      *
      * @param content El contenido del mensaje fatal.
      */
-    public void addFatalMessage(final String content){
+    public void addFatalMessage(final String content) {
         getMessageList().add(Message.createFatalMessage(content));
     }
 
@@ -96,7 +98,7 @@ public class Response<T>{
      *
      * @param content El contenido del mensaje de error.
      */
-    public void addErrorMessage(final String content){
+    public void addErrorMessage(final String content) {
         getMessageList().add(Message.createErrorMessage(content));
     }
 
@@ -105,7 +107,7 @@ public class Response<T>{
      *
      * @param content El contenido del mensaje de advertencia.
      */
-    public void addWarningMessage(final String content){
+    public void addWarningMessage(final String content) {
         getMessageList().add(Message.createWarningMessage(content));
     }
 
@@ -114,7 +116,7 @@ public class Response<T>{
      *
      * @param content El contenido del mensaje informativo.
      */
-    public void addInfoMessage(final String content){
+    public void addInfoMessage(final String content) {
         getMessageList().add(Message.createInfoMessage(content));
     }
 
@@ -123,7 +125,7 @@ public class Response<T>{
      *
      * @param content El contenido del mensaje de éxito.
      */
-    public void addSuccesMessage(final String content){
+    public void addSuccesMessage(final String content) {
         getMessageList().add(Message.createSuccesMessage(content));
     }
 }

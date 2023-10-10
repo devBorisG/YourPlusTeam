@@ -19,9 +19,9 @@ public class SendUpdateLaboratoryMessageImpl implements SendUpdateLaboratoryMess
     public void execute(LaboratorioDomain domain) {
         try {
             producerLaboratorio.execute(domain);
-        }catch (ServiceCustomException exception){
+        } catch (ServiceCustomException exception) {
             throw exception;
-        }catch (Exception exception){
+        } catch (Exception exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error inesperado ejecutando el caso de uso de enviar el producto por la cola de actualizar");
         }
     }

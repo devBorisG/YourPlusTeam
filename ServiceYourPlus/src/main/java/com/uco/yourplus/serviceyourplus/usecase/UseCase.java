@@ -7,7 +7,7 @@ package com.uco.yourplus.serviceyourplus.usecase;
  *
  * @param <D> El tipo de objeto de dominio que se utiliza como entrada para el caso de uso.
  */
-public interface UseCase <D>{
+public interface UseCase<D> {
     /**
      * Ejecuta el caso de uso con un objeto de dominio de tipo D como entrada.
      *

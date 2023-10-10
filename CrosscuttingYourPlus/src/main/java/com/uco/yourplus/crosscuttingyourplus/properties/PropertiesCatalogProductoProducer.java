@@ -12,84 +12,6 @@ public class PropertiesCatalogProductoProducer {
 
     private RoutingKey routingkey = new RoutingKey();
 
-    public static class Queue{
-        private String save;
-        private String delete;
-        private String update;
-        private String list;
-
-        public String getSave() {
-            return save;
-        }
-
-        public void setSave(String save) {
-            this.save = save;
-        }
-
-        public String getDelete() {
-            return delete;
-        }
-
-        public void setDelete(String delete) {
-            this.delete = delete;
-        }
-
-        public String getUpdate() {
-            return update;
-        }
-
-        public void setUpdate(String update) {
-            this.update = update;
-        }
-
-        public String getList() {
-            return list;
-        }
-
-        public void setList(String list) {
-            this.list = list;
-        }
-    }
-
-    public static class RoutingKey{
-        private String save;
-        private String delete;
-        private String update;
-        private String list;
-
-        public String getSave() {
-            return save;
-        }
-
-        public void setSave(String save) {
-            this.save = save;
-        }
-
-        public String getDelete() {
-            return delete;
-        }
-
-        public void setDelete(String delete) {
-            this.delete = delete;
-        }
-
-        public String getUpdate() {
-            return update;
-        }
-
-        public void setUpdate(String update) {
-            this.update = update;
-        }
-
-        public String getList() {
-            return list;
-        }
-
-        public void setList(String list) {
-            this.list = list;
-        }
-    }
-
     public String getExchange() {
         return exchange;
     }
@@ -112,5 +34,83 @@ public class PropertiesCatalogProductoProducer {
 
     public void setRoutingkey(RoutingKey routingkey) {
         this.routingkey = routingkey;
+    }
+
+    public static class Queue {
+        private String save;
+        private String delete;
+        private String update;
+        private String list;
+
+        public String getSave() {
+            return save;
+        }
+
+        public void setSave(String save) {
+            this.save = save;
+        }
+
+        public String getDelete() {
+            return delete;
+        }
+
+        public void setDelete(String delete) {
+            this.delete = delete;
+        }
+
+        public String getUpdate() {
+            return update;
+        }
+
+        public void setUpdate(String update) {
+            this.update = update;
+        }
+
+        public String getList() {
+            return list;
+        }
+
+        public void setList(String list) {
+            this.list = list;
+        }
+    }
+
+    public static class RoutingKey {
+        private String save;
+        private String delete;
+        private String update;
+        private String list;
+
+        public String getSave() {
+            return save;
+        }
+
+        public void setSave(String save) {
+            this.save = save;
+        }
+
+        public String getDelete() {
+            return delete;
+        }
+
+        public void setDelete(String delete) {
+            this.delete = delete;
+        }
+
+        public String getUpdate() {
+            return update;
+        }
+
+        public void setUpdate(String update) {
+            this.update = update;
+        }
+
+        public String getList() {
+            return list;
+        }
+
+        public void setList(String list) {
+            this.list = list;
+        }
     }
 }

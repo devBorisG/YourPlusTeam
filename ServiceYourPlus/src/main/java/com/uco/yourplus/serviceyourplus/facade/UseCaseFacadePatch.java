@@ -8,7 +8,7 @@ import java.util.UUID;
  *
  * @param <T> El tipo de objeto que representa las operaciones de parcheo (por ejemplo, JsonPatch).
  */
-public interface UseCaseFacadePatch <T>{
+public interface UseCaseFacadePatch<T> {
     /**
      * Ejecuta un caso de uso para aplicar operaciones de parcheo a una entidad o recurso identificado por su UUID.
      *

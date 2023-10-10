@@ -31,16 +31,16 @@ public class RabbitMQUpdateProducerProductoImpl implements RabbitMQUpdateProduce
 
     @Override
     public void execute(ProductoDomain domain) {
-        try{
+        try {
             MessageProperties messageProperties = configRabbitProductContent.generateMessageProperties(domain.getId());
             Optional<Message> bodyContent = configRabbitProductContent.getBodyMessage(domain, messageProperties);
-            if (bodyContent.isEmpty()){
+            if (bodyContent.isEmpty()) {
                 throw ServiceCustomException.createTechnicalException("Ocurrió un error configurando las propiedades del Message para actualizar");
             }
             rabbitTemplate.convertAndSend(producer.getExchange(), producer.getRoutingkey().getUpdate(), bodyContent.get());
-        }catch (CrosscuttingCustomException exception){
+        } catch (CrosscuttingCustomException exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error en el ConfigRabbitContent para configurar el mensaje");
-        }catch (Exception exception){
+        } catch (Exception exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error inesperado intentando realizar las configuraciones del mensaje");
         }
     }

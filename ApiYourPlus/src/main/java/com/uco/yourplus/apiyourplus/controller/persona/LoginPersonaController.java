@@ -19,14 +19,14 @@ public class LoginPersonaController {
     AuthenticationGeneric authentication;
 
     @PostMapping("/authenticate")
-    public ResponseEntity<Response<PersonaDTO>> login(@RequestBody PersonaDTO personaDTO){
+    public ResponseEntity<Response<PersonaDTO>> login(@RequestBody PersonaDTO personaDTO) {
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
-        try{
+        try {
             String token = authentication.authenticate(personaDTO);
             response.setToken(token);
             response.addSuccesMessage("Bienvenido de nuevo");
-        }catch (Exception exception){
+        } catch (Exception exception) {
             httpStatus = HttpStatus.BAD_REQUEST;
             response.addErrorMessage("Acceso no autorizado");
         }

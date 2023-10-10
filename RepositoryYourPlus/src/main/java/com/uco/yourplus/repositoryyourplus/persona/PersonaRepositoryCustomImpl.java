@@ -35,26 +35,26 @@ public class PersonaRepositoryCustomImpl implements PersonaRepositoryCustom {
      */
     @Override
     public List<PersonaEntity> findCustom(PersonaEntity personaEntity) {
-        try{
+        try {
             CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
             CriteriaQuery<PersonaEntity> query = criteriaBuilder.createQuery(PersonaEntity.class);
             Root<PersonaEntity> personaEntityRoot = query.from(PersonaEntity.class);
             List<Predicate> predicates = new ArrayList<>();
 
-            if(!Objects.isNull(personaEntity)){
-                if(!StringHelper.isEmpty(personaEntity.getNombre())){
-                    predicates.add((criteriaBuilder.equal(personaEntityRoot.get("nombre"),personaEntity.getNombre())));
+            if (!Objects.isNull(personaEntity)) {
+                if (!StringHelper.isEmpty(personaEntity.getNombre())) {
+                    predicates.add((criteriaBuilder.equal(personaEntityRoot.get("nombre"), personaEntity.getNombre())));
                 }
-                if(!StringHelper.isEmpty(personaEntity.getApellido())){
-                    predicates.add(criteriaBuilder.equal(personaEntityRoot.get("apellido"),personaEntity.getApellido()));
+                if (!StringHelper.isEmpty(personaEntity.getApellido())) {
+                    predicates.add(criteriaBuilder.equal(personaEntityRoot.get("apellido"), personaEntity.getApellido()));
                 }
-                if(!StringHelper.isEmpty(personaEntity.getCorreo())){
-                    predicates.add(criteriaBuilder.equal(personaEntityRoot.get("correo"),personaEntity.getCorreo()));
+                if (!StringHelper.isEmpty(personaEntity.getCorreo())) {
+                    predicates.add(criteriaBuilder.equal(personaEntityRoot.get("correo"), personaEntity.getCorreo()));
                 }
             }
             query.select(personaEntityRoot).where(criteriaBuilder.and(predicates.toArray(new Predicate[0])));
             return entityManager.createQuery(query).getResultList();
-        } catch (Exception exception){
+        } catch (Exception exception) {
             throw RepositoryCustomException.createTechnicalException(exception, "Ocurrio un error crenado el query para la consulta customizada");
         }
     }

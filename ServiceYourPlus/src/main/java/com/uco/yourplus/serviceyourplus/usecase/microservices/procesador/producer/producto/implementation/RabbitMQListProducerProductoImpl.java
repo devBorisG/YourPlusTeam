@@ -34,13 +34,13 @@ public class RabbitMQListProducerProductoImpl implements RabbitMQListProducerPro
         try {
             MessageProperties messageProperties = configRabbitProductContent.generateMessageProperties(domain.getId());
             Optional<Message> bodyMessage = configRabbitProductContent.getBodyMessage(domain, messageProperties);
-            if (bodyMessage.isEmpty()){
+            if (bodyMessage.isEmpty()) {
                 throw ServiceCustomException.createTechnicalException("No se pudo configurar las propiedades del Message para listar");
             }
             rabbitTemplate.convertAndSend(producer.getExchange(), producer.getRoutingkey().getList(), bodyMessage.get());
-        }catch (CrosscuttingCustomException exception){
+        } catch (CrosscuttingCustomException exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error en el ConfigRabbitContent para configurar el mensaje");
-        }catch (Exception exception){
+        } catch (Exception exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error inesperado intentando realizar las configuraciones del mensaje");
         }
     }

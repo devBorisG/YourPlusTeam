@@ -19,27 +19,25 @@ import org.springframework.stereotype.Service;
 public class AuthenticationJwtImpl implements AuthenticationJwt {
 
     @Autowired
-    private AuthenticationManager authenticationManager;
-
-    @Autowired
     PersonaRepository personaRepository;
-
     @Autowired
     JwtService jwtService;
+    @Autowired
+    private AuthenticationManager authenticationManager;
 
     @Override
     public String authenticate(PersonaDTO personaDTO) {
-        try{
+        try {
             authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(
                             personaDTO.getCorreo(),
                             personaDTO.getPassword()
                     )
             );
-        }catch (AuthenticationException e){
-            throw ServiceCustomException.createTechnicalException(e, "Error en el authentication manager"+e.getMessage());
-        }catch (Exception e){
-            throw ServiceCustomException.createTechnicalException(e, "Error inesperado"+e.getMessage());
+        } catch (AuthenticationException e) {
+            throw ServiceCustomException.createTechnicalException(e, "Error en el authentication manager" + e.getMessage());
+        } catch (Exception e) {
+            throw ServiceCustomException.createTechnicalException(e, "Error inesperado" + e.getMessage());
         }
         PersonaEntity personaEntity = new PersonaEntity();
         BeanUtils.copyProperties(personaDTO, personaEntity);

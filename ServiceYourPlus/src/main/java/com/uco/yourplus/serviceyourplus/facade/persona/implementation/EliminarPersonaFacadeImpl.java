@@ -16,14 +16,14 @@ public class EliminarPersonaFacadeImpl implements EliminarPersonaFacade {
 
     @Override
     public void execute(PersonaDTO dto) {
-        try{
+        try {
             PersonaDomain personaDomain = new PersonaDomain();
-            BeanUtils.copyProperties(dto,personaDomain);
+            BeanUtils.copyProperties(dto, personaDomain);
             eliminarPersona.execute(personaDomain);
-        } catch(ServiceCustomException serviceCustomException){
+        } catch (ServiceCustomException serviceCustomException) {
             throw serviceCustomException;
-        } catch(Exception exception){
-            throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error eliminando la persona"+exception.getMessage());
+        } catch (Exception exception) {
+            throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error eliminando la persona" + exception.getMessage());
         }
     }
 }

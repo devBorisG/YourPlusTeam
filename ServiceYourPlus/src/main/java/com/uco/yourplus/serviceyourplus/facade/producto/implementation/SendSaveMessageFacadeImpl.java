@@ -15,20 +15,20 @@ public class SendSaveMessageFacadeImpl implements SendSaveMessageFacade {
 
     private final SendSaveProductMessage useCase;
 
-    public SendSaveMessageFacadeImpl(SendSaveProductMessage useCase){
+    public SendSaveMessageFacadeImpl(SendSaveProductMessage useCase) {
         this.useCase = useCase;
     }
 
     @Override
     public void execute(ProductoDTO dto) {
         ProductoDomain productoDomain = new ProductoDomain();
-        try{
+        try {
             BeanUtils.copyProperties(dto, productoDomain);
             useCase.execute(productoDomain);
-        }catch (ServiceCustomException exception){
+        } catch (ServiceCustomException exception) {
             throw exception;
-        }catch (Exception exception){
-            throw ServiceCustomException.createTechnicalException(exception,"Ocurrió un error ejecutando el caso de uso de enviar mensaje para eliminar el producto");
+        } catch (Exception exception) {
+            throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error ejecutando el caso de uso de enviar mensaje para eliminar el producto");
         }
     }
 }

@@ -20,12 +20,12 @@ public class SecurityConfig {
     private final AuthenticationProvider authenticationProvider;
 
     @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception{
+    public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/apiyourplus/persona/**","/apiyourplus/productos/**")
+                .antMatchers("/apiyourplus/persona/**", "/apiyourplus/productos/**")
                 .permitAll()
                 .anyRequest()
                 .authenticated()
@@ -35,6 +35,6 @@ public class SecurityConfig {
                 .and()
                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
-        return  httpSecurity.build();
+        return httpSecurity.build();
     }
 }

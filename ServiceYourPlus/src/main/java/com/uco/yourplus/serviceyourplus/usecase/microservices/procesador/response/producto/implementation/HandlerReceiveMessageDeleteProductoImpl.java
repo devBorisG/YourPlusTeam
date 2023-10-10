@@ -11,7 +11,6 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
-
 import static com.uco.yourplus.crosscuttingyourplus.helper.IntegerHelper.DEFAULT_TIMEOUT_MILLIS;
 
 @Component
@@ -30,16 +29,16 @@ public class HandlerReceiveMessageDeleteProductoImpl implements HandlerReceiveMe
 
     @Override
     public void waitForResponse(String requestId) {
-        try{
+        try {
             Object response = rabbitTemplate.receiveAndConvert(productoReceiver.getQueue().getDelete(), DEFAULT_TIMEOUT_MILLIS);
-            if(processRabbitResponse.verifyContent(response,requestId)==null){
+            if (processRabbitResponse.verifyContent(response, requestId) == null) {
                 throw ServiceCustomException.createUserException("Algo salio mal, intenta nuevamente");
             }
-        }catch (ServiceCustomException exception){
+        } catch (ServiceCustomException exception) {
             throw exception;
-        }catch (AmqpException exception){
+        } catch (AmqpException exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error ejecutando la tarea AMQP");
-        }catch (Exception exception){
+        } catch (Exception exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurro un error inesperado");
         }
     }

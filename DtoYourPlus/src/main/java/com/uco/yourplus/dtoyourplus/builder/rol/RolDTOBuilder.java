@@ -9,11 +9,11 @@ public class RolDTOBuilder implements RolBuilder {
     private UUID id;
     private String descripcion;
 
-    private RolDTOBuilder(){
+    private RolDTOBuilder() {
         super();
     }
 
-    public static RolDTOBuilder getRolDTOBuilder(){
+    public static RolDTOBuilder getRolDTOBuilder() {
         return new RolDTOBuilder();
     }
 
@@ -29,7 +29,7 @@ public class RolDTOBuilder implements RolBuilder {
         return this;
     }
 
-    public RolDTO build(){
-        return RolDTO.create(id,descripcion);
+    public RolDTO build() {
+        return RolDTO.create(id, descripcion);
     }
 }

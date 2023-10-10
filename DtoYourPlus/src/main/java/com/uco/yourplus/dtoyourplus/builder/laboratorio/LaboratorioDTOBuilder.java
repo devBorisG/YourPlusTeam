@@ -10,11 +10,11 @@ public class LaboratorioDTOBuilder implements LaboratorioBuilder {
     private String nombre;
     private String descripcion;
 
-    private LaboratorioDTOBuilder(){
+    private LaboratorioDTOBuilder() {
         super();
     }
 
-    public static LaboratorioDTOBuilder getLaboratorioDTOBuilder(){
+    public static LaboratorioDTOBuilder getLaboratorioDTOBuilder() {
         return new LaboratorioDTOBuilder();
     }
 
@@ -36,7 +36,7 @@ public class LaboratorioDTOBuilder implements LaboratorioBuilder {
         return this;
     }
 
-    public LaboratorioDTO build(){
-        return LaboratorioDTO.create(id,nombre,descripcion);
+    public LaboratorioDTO build() {
+        return LaboratorioDTO.create(id, nombre, descripcion);
     }
 }

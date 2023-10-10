@@ -22,20 +22,20 @@ public class RegistrarLaboratorioController {
     }
 
     @PostMapping()
-    public ResponseEntity<Response<LaboratorioDTO>> execute(@RequestBody LaboratorioDTO laboratorioDTO){
+    public ResponseEntity<Response<LaboratorioDTO>> execute(@RequestBody LaboratorioDTO laboratorioDTO) {
         final Response<LaboratorioDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
         try {
             facade.execute(laboratorioDTO);
             response.addSuccesMessage("Laboratorio Creado con exito");
-        }catch (final YourPlusCustomException exception){
+        } catch (final YourPlusCustomException exception) {
             httpStatus = HttpStatus.BAD_REQUEST;
-            if (exception.isTechnicalException()){
+            if (exception.isTechnicalException()) {
                 response.addErrorMessage("Ocurrio un error tecnico, intente nuevamente");
-            }else {
+            } else {
                 response.addErrorMessage(exception.getMessage());
             }
-        }catch (final Exception exception){
+        } catch (final Exception exception) {
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
             response.addFatalMessage("Ocurrio un error del servidor, intente nuevamente");
         }

@@ -1,4 +1,4 @@
-rootProject.name="YourPlusTeam"
+rootProject.name = "YourPlusTeam"
 
 include 'CrosscuttingYourPlus'
 include 'ApiYourPlus'

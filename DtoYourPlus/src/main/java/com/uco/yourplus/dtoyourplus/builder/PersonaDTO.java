@@ -17,7 +17,7 @@ public class PersonaDTO {
     private String password;
     private RolDTO rolDTO;
 
-    public PersonaDTO(){
+    public PersonaDTO() {
         setId(id);
         setNombre(EMPTY);
         setApellido(EMPTY);
@@ -25,23 +25,24 @@ public class PersonaDTO {
         setPassword(EMPTY);
         setRolDTO(new RolDTO());
     }
+
     public PersonaDTO(final UUID id, final String nombre, final String apellido, final String correo,
-                      final String password, final RolDTO rolDTO){
-       setId(id);
-       setNombre(nombre);
-       setApellido(apellido);
-       setCorreo(correo);
-       setPassword(password);
-       setRolDTO(rolDTO);
+                      final String password, final RolDTO rolDTO) {
+        setId(id);
+        setNombre(nombre);
+        setApellido(apellido);
+        setCorreo(correo);
+        setPassword(password);
+        setRolDTO(rolDTO);
     }
 
     public static PersonaDTO create(final UUID id, final String nombre, final String apellido, final String correo,
-                                    final String password, final RolDTO rolDTO){
-        return new PersonaDTO(id,nombre,apellido,correo,password,rolDTO);
+                                    final String password, final RolDTO rolDTO) {
+        return new PersonaDTO(id, nombre, apellido, correo, password, rolDTO);
     }
 
-    public static PersonaDTO create(final UUID id){
-        return new PersonaDTO(id,EMPTY,EMPTY,EMPTY,EMPTY,new RolDTO());
+    public static PersonaDTO create(final UUID id) {
+        return new PersonaDTO(id, EMPTY, EMPTY, EMPTY, EMPTY, new RolDTO());
     }
 
     public UUID getId() {
@@ -89,6 +90,6 @@ public class PersonaDTO {
     }
 
     public void setRolDTO(final RolDTO rolDTO) {
-        this.rolDTO = getDefaultIfNull(rolDTO,getRolDTOBuilder().build());
+        this.rolDTO = getDefaultIfNull(rolDTO, getRolDTOBuilder().build());
     }
 }

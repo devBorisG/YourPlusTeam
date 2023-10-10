@@ -12,7 +12,7 @@ import static com.uco.yourplus.crosscuttingyourplus.helper.StringHelper.isEmpty;
  * Esta excepción se utiliza para representar errores en diferentes capas de la aplicación
  * y proporciona información técnica y mensajes amigables para el usuario.
  */
-public class YourPlusCustomException extends RuntimeException{
+public class YourPlusCustomException extends RuntimeException {
     @Serial
     private static final long serialVersionUID = 1L;
     private final String userMessage;
@@ -21,12 +21,12 @@ public class YourPlusCustomException extends RuntimeException{
     /**
      * Crea una nueva instancia de YourPlusCustomException.
      *
-     * @param rootException   La excepción raíz que causó este error, o null si no hay una excepción raíz.
+     * @param rootException    La excepción raíz que causó este error, o null si no hay una excepción raíz.
      * @param technicalMessage El mensaje técnico que describe la causa del error.
-     * @param userMessage     El mensaje amigable para el usuario que se muestra en la interfaz de usuario.
-     * @param layerException  La capa de la aplicación en la que ocurrió el error.
+     * @param userMessage      El mensaje amigable para el usuario que se muestra en la interfaz de usuario.
+     * @param layerException   La capa de la aplicación en la que ocurrió el error.
      */
-    protected YourPlusCustomException(final Throwable rootException, final String technicalMessage, final String userMessage, final LayerException layerException){
+    protected YourPlusCustomException(final Throwable rootException, final String technicalMessage, final String userMessage, final LayerException layerException) {
         super(technicalMessage, getDefaultIfNull(rootException, new Exception()));
         this.userMessage = userMessage;
         this.layerException = layerException;
@@ -55,7 +55,7 @@ public class YourPlusCustomException extends RuntimeException{
      *
      * @return true si es una excepción técnica, false si tiene un mensaje de usuario.
      */
-    public final boolean isTechnicalException(){
+    public final boolean isTechnicalException() {
         return isEmpty(getUserMessage());
     }
 }

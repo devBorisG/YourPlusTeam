@@ -3,6 +3,7 @@ package com.uco.yourplus.serviceyourplus.facade.persona.implementation;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.crosscuttingyourplus.helper.StringHelper;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
+import com.uco.yourplus.dtoyourplus.builder.RolDTO;
 import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
 import com.uco.yourplus.serviceyourplus.facade.persona.ConsultarPersonasFacade;
 import com.uco.yourplus.serviceyourplus.usecase.persona.ConsultarPersonas;
@@ -35,29 +36,32 @@ public class ConsultarPersonasFacadeImpl implements ConsultarPersonasFacade {
      */
     @Override
     public List<PersonaDTO> execute(Optional<PersonaDTO> dto) {
-        try{
+        try {
             List<PersonaDomain> listDomain;
             if (dto.isPresent() &&
-            (!Objects.equals(dto.get().getNombre(), StringHelper.EMPTY) ||
-            !Objects.equals(dto.get().getApellido(), StringHelper.EMPTY) ||
-            !Objects.equals(dto.get().getCorreo(), StringHelper.EMPTY))){
+                    (!Objects.equals(dto.get().getNombre(), StringHelper.EMPTY) ||
+                            !Objects.equals(dto.get().getApellido(), StringHelper.EMPTY) ||
+                            !Objects.equals(dto.get().getCorreo(), StringHelper.EMPTY))) {
                 PersonaDomain personaDomain = new PersonaDomain();
                 BeanUtils.copyProperties(dto.get(), personaDomain);
                 listDomain = consultarPersonas.execute(Optional.of(personaDomain));
-            }else {
+            } else {
                 listDomain = consultarPersonas.execute(Optional.empty());
             }
             List<PersonaDTO> convertResult = new ArrayList<>();
             listDomain.forEach(value -> {
                 PersonaDTO personaDTO = new PersonaDTO();
+                RolDTO rolDTO = new RolDTO();
+                BeanUtils.copyProperties(value.getRolDomain(), rolDTO);
                 BeanUtils.copyProperties(value, personaDTO);
+                personaDTO.setRolDTO(rolDTO);
                 convertResult.add(personaDTO);
             });
             return convertResult;
-        }catch (ServiceCustomException serviceCustomException){
+        } catch (ServiceCustomException serviceCustomException) {
             throw serviceCustomException;
-        }catch (Exception exception){
-            throw  ServiceCustomException.createTechnicalException("Ocurrio un error intentando implementar el caso de uso de registrar usuarios"+":"+exception.getMessage());
+        } catch (Exception exception) {
+            throw ServiceCustomException.createTechnicalException("Ocurrio un error intentando implementar el caso de uso de registrar usuarios" + ":" + exception.getMessage());
         }
     }
 }

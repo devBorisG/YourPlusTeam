@@ -19,14 +19,14 @@ public class RegistrarPersonaFacadeImpl implements RegistrarPersonaFacade {
 
     @Override
     public String execute(PersonaDTO dto) {
-        try{
+        try {
             PersonaDomain personaDomain = new PersonaDomain();
             BeanUtils.copyProperties(dto, personaDomain);
             return registrarPersona.execute(personaDomain);
-        } catch(ServiceCustomException serviceCustomException){
+        } catch (ServiceCustomException serviceCustomException) {
             throw serviceCustomException;
-        } catch(Exception exception){
-            throw ServiceCustomException.createTechnicalException(exception,"Ocurrio un error registrando la persona");
+        } catch (Exception exception) {
+            throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error registrando la persona");
         }
     }
 }

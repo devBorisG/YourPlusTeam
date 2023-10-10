@@ -25,10 +25,10 @@ public class SendDeleteMessageFacadeImpl implements SendDeleteMessageFacade {
         try {
             BeanUtils.copyProperties(dto, productoDomain);
             useCase.execute(productoDomain);
-        }catch (ServiceCustomException exception){
+        } catch (ServiceCustomException exception) {
             throw exception;
-        }catch (Exception exception){
-            throw ServiceCustomException.createTechnicalException(exception,"Ocurrió un error ejecutando el caso de uso de enviar mensaje para eliminar el producto");
+        } catch (Exception exception) {
+            throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error ejecutando el caso de uso de enviar mensaje para eliminar el producto");
         }
     }
 }

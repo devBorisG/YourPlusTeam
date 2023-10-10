@@ -5,7 +5,7 @@ import com.uco.yourplus.dtoyourplus.builder.RolDTO;
 
 import java.util.UUID;
 
-public class PersonaDTOBuilder implements PersonaBuilder{
+public class PersonaDTOBuilder implements PersonaBuilder {
 
     private UUID id;
     private String nombre;
@@ -14,13 +14,14 @@ public class PersonaDTOBuilder implements PersonaBuilder{
     private String password;
     private RolDTO rolDTO;
 
-    private PersonaDTOBuilder(){
+    private PersonaDTOBuilder() {
         super();
     }
 
-    public static PersonaDTOBuilder getPersonaDTOBuilder(){
+    public static PersonaDTOBuilder getPersonaDTOBuilder() {
         return new PersonaDTOBuilder();
     }
+
     @Override
     public PersonaDTOBuilder setId(UUID id) {
         this.id = id;
@@ -57,7 +58,7 @@ public class PersonaDTOBuilder implements PersonaBuilder{
         return this;
     }
 
-    public PersonaDTO build(){
-        return PersonaDTO.create(id,nombre,apellido,correo,password,rolDTO);
+    public PersonaDTO build() {
+        return PersonaDTO.create(id, nombre, apellido, correo, password, rolDTO);
     }
 }

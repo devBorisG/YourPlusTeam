@@ -14,17 +14,18 @@ import java.util.Optional;
 import static com.uco.yourplus.dtoyourplus.builder.persona.PersonaDTOBuilder.getPersonaDTOBuilder;
 
 @Service
-public class PersonaDeleteSpecifiaction implements PersonaDeleteSpecification{
+public class PersonaDeleteSpecifiaction implements PersonaDeleteSpecification {
 
     @Autowired
     private ConsultarPersonas consultarPersonas;
+
     @Override
     public void isSatisfied(PersonaDomain data) {
         PersonaDTO dto = getPersonaDTOBuilder().build();
         PersonaDomain personaDomain = new PersonaDomain();
         dto.setCorreo(data.getCorreo());
-        BeanUtils.copyProperties(dto,personaDomain);
-        if(consultarPersonas.execute(Optional.of(personaDomain)).isEmpty()){
+        BeanUtils.copyProperties(dto, personaDomain);
+        if (consultarPersonas.execute(Optional.of(personaDomain)).isEmpty()) {
             throw ServiceCustomException.createUserException("No existe el usuario");
         }
     }

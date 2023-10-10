@@ -11,22 +11,22 @@ public class RolDTO {
     private UUID id;
     private String descripcion;
 
-    public RolDTO(){
+    public RolDTO() {
         setId(getDefaultUUID(id));
         setDescripcion(EMPTY);
     }
 
-    public RolDTO(final UUID id, final String descripcion){
+    public RolDTO(final UUID id, final String descripcion) {
         setId(id);
         setDescripcion(descripcion);
     }
 
-    public static RolDTO create(final UUID id, final String descripcion){
-        return new RolDTO(id,descripcion);
+    public static RolDTO create(final UUID id, final String descripcion) {
+        return new RolDTO(id, descripcion);
     }
 
-    public static RolDTO create(final UUID id){
-        return new RolDTO(id,EMPTY);
+    public static RolDTO create(final UUID id) {
+        return new RolDTO(id, EMPTY);
     }
 
     public UUID getId() {

@@ -17,11 +17,9 @@ import org.springframework.stereotype.Service;
 public class RegistrarPersonaImpl implements RegistrarPersona {
 
     @Autowired
-    private PersonaRepository repository;
-
-    @Autowired
     PersonaSpecification specification;
-
+    @Autowired
+    private PersonaRepository repository;
     @Autowired
     private JwtService jwtService;
 
@@ -30,18 +28,18 @@ public class RegistrarPersonaImpl implements RegistrarPersona {
 
     @Override
     public String execute(PersonaDomain domain) {
-        try{
+        try {
             specification.isSatisfied(domain);
             domain.setPassword(passwordEncoder.encode(domain.getPassword()));
             PersonaEntity personaEntity = new PersonaEntity();
-            BeanUtils.copyProperties(domain,personaEntity);
+            BeanUtils.copyProperties(domain, personaEntity);
             repository.save(personaEntity);
             return jwtService.generateToken(personaEntity);
-        }catch (ServiceCustomException exception) {
+        } catch (ServiceCustomException exception) {
             throw exception;
-        }catch (RepositoryCustomException exception){
-            throw ServiceCustomException.createTechnicalException(exception,"No se ha logrado ingresar con exito al nuevo usuario, por favor intente de nuevo");
-        }catch (Exception e) {
+        } catch (RepositoryCustomException exception) {
+            throw ServiceCustomException.createTechnicalException(exception, "No se ha logrado ingresar con exito al nuevo usuario, por favor intente de nuevo");
+        } catch (Exception e) {
             throw ServiceCustomException.createTechnicalException(e, "Error");
         }
     }

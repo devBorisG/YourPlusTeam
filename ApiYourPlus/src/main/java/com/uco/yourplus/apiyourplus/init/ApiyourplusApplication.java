@@ -12,8 +12,8 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EntityScan("com.uco.yourplus")
 public class ApiyourplusApplication {
 
-	public static void main(String[] args) {
-		SpringApplication.run(ApiyourplusApplication.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(ApiyourplusApplication.class, args);
+    }
 
 }

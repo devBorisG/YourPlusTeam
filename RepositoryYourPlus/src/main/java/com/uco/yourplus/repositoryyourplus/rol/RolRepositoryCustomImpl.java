@@ -15,10 +15,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class RolRepositoryCustomImpl implements RolRepositoryCustom{
+public class RolRepositoryCustomImpl implements RolRepositoryCustom {
 
     @PersistenceContext
     EntityManager entityManager;
+
     @Override
     public List<RolEntity> findCustom(RolEntity rolEntity) {
         try {
@@ -27,18 +28,18 @@ public class RolRepositoryCustomImpl implements RolRepositoryCustom{
             Root<RolEntity> rolEntityRoot = query.from(RolEntity.class);
             List<Predicate> predicates = new ArrayList<>();
 
-            if(!Objects.isNull(rolEntity)){
-                if(UUIDHelper.isDefaultUUID(rolEntity.getId())){
-                    predicates.add(criteriaBuilder.equal(rolEntityRoot.get("id"),rolEntity.getId()));
+            if (!Objects.isNull(rolEntity)) {
+                if (UUIDHelper.isDefaultUUID(rolEntity.getId())) {
+                    predicates.add(criteriaBuilder.equal(rolEntityRoot.get("id"), rolEntity.getId()));
                 }
-                if(!StringHelper.isEmpty(rolEntity.getDescripcion())){
-                    predicates.add(criteriaBuilder.equal(rolEntityRoot.get("descripcion"),rolEntity.getDescripcion()));
+                if (!StringHelper.isEmpty(rolEntity.getDescripcion())) {
+                    predicates.add(criteriaBuilder.equal(rolEntityRoot.get("descripcion"), rolEntity.getDescripcion()));
                 }
             }
             query.select(rolEntityRoot).where(criteriaBuilder.and(predicates.toArray(new Predicate[0])));
             return entityManager.createQuery(query).getResultList();
-        } catch(Exception exception){
-            throw ServiceCustomException.createTechnicalException(exception,"Se ha generado un error relacionado al rol");
+        } catch (Exception exception) {
+            throw ServiceCustomException.createTechnicalException(exception, "Se ha generado un error relacionado al rol");
         }
     }
 }

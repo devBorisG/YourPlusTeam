@@ -12,8 +12,8 @@ import com.uco.yourplus.serviceyourplus.facade.UseCaseFacadeList;
  * La implementación concreta de esta interfaz proporcionará una forma estandarizada de acceder al
  * caso de uso para consultar información de personas, utilizando objetos PersonaDTO.
  *
- * @see UseCaseFacade
  * @author David Andrés
+ * @see UseCaseFacade
  */
 public interface ConsultarPersonasFacade extends UseCaseFacadeList<PersonaDTO> {
 }

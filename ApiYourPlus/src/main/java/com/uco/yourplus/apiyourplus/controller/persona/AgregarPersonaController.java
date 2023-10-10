@@ -23,10 +23,10 @@ public class AgregarPersonaController {
     RegistrarPersonaFacade registrarPersonaFacade;
 
     @PostMapping()
-    public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO){
+    public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO) {
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
-        try{
+        try {
             String jwtToken = registrarPersonaFacade.execute(personaDTO);
             List<PersonaDTO> data = new ArrayList<>();
             data.add(personaDTO);
@@ -34,17 +34,17 @@ public class AgregarPersonaController {
             response.setData(data);
             response.setToken(jwtToken);
 
-        } catch(final YourPlusCustomException yourPlusCustomException){
+        } catch (final YourPlusCustomException yourPlusCustomException) {
             httpStatus = HttpStatus.BAD_REQUEST;
-            if(yourPlusCustomException.isTechnicalException()){
+            if (yourPlusCustomException.isTechnicalException()) {
                 response.addErrorMessage("c daño el sistema");
-            } else{
+            } else {
                 response.addErrorMessage(yourPlusCustomException.getMessage());
             }
-        } catch(final Exception exception){
+        } catch (final Exception exception) {
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
             response.addFatalMessage("apague y vuelva a prender que c murio el sistema");
         }
-        return new ResponseEntity<>(response,httpStatus);
+        return new ResponseEntity<>(response, httpStatus);
     }
 }

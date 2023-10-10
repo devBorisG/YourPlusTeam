@@ -20,7 +20,7 @@ public class ProductoDTO {
     private LaboratorioDTO laboratorio;
     private CategoriaDTO categoria;
 
-    public ProductoDTO(){
+    public ProductoDTO() {
         setId(id);
         setNombre(EMPTY);
         setPrecio(ZERO);
@@ -31,7 +31,7 @@ public class ProductoDTO {
     }
 
     public ProductoDTO(final UUID id, final String nombre, final int precio, final String descripcion,
-    final String imagen, final LaboratorioDTO laboratorio, final CategoriaDTO categoria){
+                       final String imagen, final LaboratorioDTO laboratorio, final CategoriaDTO categoria) {
         setId(id);
         setNombre(nombre);
         setDescripcion(descripcion);
@@ -41,13 +41,13 @@ public class ProductoDTO {
         setCategoria(categoria);
     }
 
-    public static ProductoDTO create(final UUID id, final String nombre,final int precio, final String descripcion,
-                                     final String imagen, final LaboratorioDTO laboratorio, final CategoriaDTO categoria){
-        return new ProductoDTO(id,nombre,precio,descripcion,imagen,laboratorio,categoria);
+    public static ProductoDTO create(final UUID id, final String nombre, final int precio, final String descripcion,
+                                     final String imagen, final LaboratorioDTO laboratorio, final CategoriaDTO categoria) {
+        return new ProductoDTO(id, nombre, precio, descripcion, imagen, laboratorio, categoria);
     }
 
-    public static ProductoDTO create(final UUID id){
-        return new ProductoDTO(id,EMPTY,ZERO,EMPTY,EMPTY,new LaboratorioDTO(),new CategoriaDTO());
+    public static ProductoDTO create(final UUID id) {
+        return new ProductoDTO(id, EMPTY, ZERO, EMPTY, EMPTY, new LaboratorioDTO(), new CategoriaDTO());
     }
 
     public UUID getId() {
@@ -71,7 +71,7 @@ public class ProductoDTO {
     }
 
     public void setPrecio(int precio) {
-        this.precio = getDefaultIfNull(precio,ZERO);
+        this.precio = getDefaultIfNull(precio, ZERO);
     }
 
     public String getDescripcion() {
@@ -95,7 +95,7 @@ public class ProductoDTO {
     }
 
     public void setLaboratorio(LaboratorioDTO laboratorio) {
-        this.laboratorio = getDefaultIfNull(laboratorio,getLaboratorioDTOBuilder().build());
+        this.laboratorio = getDefaultIfNull(laboratorio, getLaboratorioDTOBuilder().build());
     }
 
     public CategoriaDTO getCategoria() {
@@ -103,6 +103,6 @@ public class ProductoDTO {
     }
 
     public void setCategoria(CategoriaDTO categoria) {
-        this.categoria = getDefaultIfNull(categoria,getCategoriaDTOBuilder().build());
+        this.categoria = getDefaultIfNull(categoria, getCategoriaDTOBuilder().build());
     }
 }

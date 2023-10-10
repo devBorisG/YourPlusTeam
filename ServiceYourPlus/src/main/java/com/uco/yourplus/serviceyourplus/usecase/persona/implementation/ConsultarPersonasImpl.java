@@ -32,26 +32,26 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
      *
      * @param domain Un objeto de dominio opcional que puede contener parámetros para la consulta.
      * @return Una lista de objetos PersonaDomain que representan las personas encontradas en la consulta.
-     * @throws ServiceCustomException Sí ocurre un error en el servicio durante la consulta.
+     * @throws ServiceCustomException    Sí ocurre un error en el servicio durante la consulta.
      * @throws RepositoryCustomException Sí ocurre un error en el repositorio durante la consulta.
      */
     @Override
     public List<PersonaDomain> execute(Optional<PersonaDomain> domain) {
         List<PersonaEntity> result;
         List<PersonaDomain> convertResult = new ArrayList<>();
-        if(domain.isPresent()){
+        if (domain.isPresent()) {
             PersonaEntity personaEntity = new PersonaEntity();
             BeanUtils.copyProperties(domain.get(), personaEntity);
-            try{
+            try {
                 result = personaRepository.findCustom(personaEntity);
 
-            }catch (RepositoryCustomException e){
+            } catch (RepositoryCustomException e) {
                 throw ServiceCustomException.createTechnicalException(e, "no funca");
             }
-        }else {
-            try{
+        } else {
+            try {
                 result = personaRepository.findAll();
-            }catch (RepositoryCustomException e){
+            } catch (RepositoryCustomException e) {
                 throw ServiceCustomException.createTechnicalException(e, "no funca x2");
             }
         }

@@ -19,9 +19,9 @@ public class SendDeleteLaboratoryMessageImpl implements SendDeleteLaboratoryMess
     public void execute(LaboratorioDomain domain) {
         try {
             producerLaboratorio.execute(domain);
-        }catch (ServiceCustomException exception){
+        } catch (ServiceCustomException exception) {
             throw exception;
-        }catch (Exception exception){
+        } catch (Exception exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error inesperado ejecutando el caso de uso de enviar el laboratorio por la cola de eliminar");
         }
     }

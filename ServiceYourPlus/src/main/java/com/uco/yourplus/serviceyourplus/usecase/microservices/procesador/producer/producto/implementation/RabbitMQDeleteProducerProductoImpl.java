@@ -33,14 +33,14 @@ public class RabbitMQDeleteProducerProductoImpl implements RabbitMQDeleteProduce
     public void execute(ProductoDomain domain) {
         try {
             MessageProperties messageProperties = configRabbitProductContent.generateMessageProperties(domain.getId());
-            Optional<Message> bodyMessage = configRabbitProductContent.getBodyMessage(domain,messageProperties);
-            if(bodyMessage.isEmpty()){
+            Optional<Message> bodyMessage = configRabbitProductContent.getBodyMessage(domain, messageProperties);
+            if (bodyMessage.isEmpty()) {
                 throw ServiceCustomException.createTechnicalException("Ocurrió un error configurando las propiedades del Message para eliminar");
             }
             rabbitTemplate.convertAndSend(producer.getExchange(), producer.getRoutingkey().getDelete(), bodyMessage.get());
-        }catch (CrosscuttingCustomException exception){
+        } catch (CrosscuttingCustomException exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error en el ConfigRabbitContent para configurar el mensaje");
-        }catch (Exception exception){
+        } catch (Exception exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrió un error inesperado intentando realizar las configuraciones del mensaje");
         }
     }
