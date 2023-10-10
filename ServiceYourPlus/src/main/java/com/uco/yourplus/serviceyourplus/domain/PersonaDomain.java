@@ -1,7 +1,5 @@
 package com.uco.yourplus.serviceyourplus.domain;
 
-import com.uco.yourplus.dtoyourplus.builder.RolDTO;
-
 import java.util.UUID;
 
 public class PersonaDomain {
@@ -11,7 +9,7 @@ public class PersonaDomain {
     String apellido;
     String correo;
     String password;
-    RolDTO rolDTO;
+    RolDomain rolDomain;
 
     public UUID getId() {
         return id;
@@ -53,11 +51,11 @@ public class PersonaDomain {
         this.password = password;
     }
 
-    public RolDTO getRolDTO() {
-        return rolDTO;
+    public RolDomain getRolDomain() {
+        return rolDomain;
     }
 
-    public void setRolDTO(final RolDTO rolDTO) {
-        this.rolDTO = rolDTO;
+    public void setRolDomain(final RolDomain rolDomain) {
+        this.rolDomain = rolDomain;
     }
 }

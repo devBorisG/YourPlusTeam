@@ -5,6 +5,7 @@ import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomExc
 import com.uco.yourplus.entityyourplus.PersonaEntity;
 import com.uco.yourplus.repositoryyourplus.persona.PersonaRepository;
 import com.uco.yourplus.serviceyourplus.domain.PersonaDomain;
+import com.uco.yourplus.serviceyourplus.domain.RolDomain;
 import com.uco.yourplus.serviceyourplus.usecase.persona.ConsultarPersonas;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,7 +58,10 @@ public class ConsultarPersonasImpl implements ConsultarPersonas {
 
         result.forEach(value -> {
             PersonaDomain personaDomain = new PersonaDomain();
+            RolDomain rolDomain = new RolDomain();
+            BeanUtils.copyProperties(value.getRolEntity(), rolDomain);
             BeanUtils.copyProperties(value, personaDomain);
+            personaDomain.setRolDomain(rolDomain);
             convertResult.add(personaDomain);
         });
         return convertResult;

@@ -82,7 +82,7 @@ public class PersonaSpecificationImpl implements PersonaSpecification {
     private boolean verifyRol(PersonaDomain personaDomain){
         RolDomain rolDomain = new RolDomain();
         RolEntity rolEntity = new RolEntity();
-        rolDomain.setDescripcion(personaDomain.getRolDTO().getDescripcion());
+        rolDomain.setDescripcion(personaDomain.getRolDomain().getDescripcion());
         BeanUtils.copyProperties(rolDomain,rolEntity);
         return rolRepository.findCustom(rolEntity).isEmpty();
     }
