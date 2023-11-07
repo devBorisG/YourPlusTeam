@@ -33,7 +33,6 @@ public class AgregarPersonaController {
             response.addSuccesMessage("melito mi rey");
             response.setData(data);
             response.setToken(jwtToken);
-
         } catch (final YourPlusCustomException yourPlusCustomException) {
             httpStatus = HttpStatus.BAD_REQUEST;
             if (yourPlusCustomException.isTechnicalException()) {
