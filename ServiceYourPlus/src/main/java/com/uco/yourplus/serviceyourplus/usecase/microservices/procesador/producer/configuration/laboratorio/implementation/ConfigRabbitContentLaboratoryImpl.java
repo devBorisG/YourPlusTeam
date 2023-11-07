@@ -1,10 +1,10 @@
-package com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.configuration.producto.implementation;
+package com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.configuration.laboratorio.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.crosscutting.CrosscuttingCustomException;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.crosscuttingyourplus.helper.json.MapperJsonObject;
-import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
-import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.configuration.producto.ConfigRabbitContentProductoDomain;
+import com.uco.yourplus.serviceyourplus.domain.LaboratorioDomain;
+import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.configuration.laboratorio.ConfigRabbitContentLaboratory;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.core.MessageProperties;
@@ -15,16 +15,16 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Component
-public class ConfigRabbitContentProductoDomainImpl implements ConfigRabbitContentProductoDomain {
+public class ConfigRabbitContentLaboratoryImpl implements ConfigRabbitContentLaboratory {
 
     private final MapperJsonObject mapperJsonObject;
 
-    public ConfigRabbitContentProductoDomainImpl(MapperJsonObject mapperJsonObject) {
+    public ConfigRabbitContentLaboratoryImpl(MapperJsonObject mapperJsonObject) {
         this.mapperJsonObject = mapperJsonObject;
     }
 
     @Override
-    public Optional<Message> getBodyMessage(ProductoDomain object, MessageProperties messageProperties) {
+    public Optional<Message> getBodyMessage(LaboratorioDomain object, MessageProperties messageProperties) {
         try {
             Optional<String> textMessage = mapperJsonObject.executeGson(object);
             return textMessage.map(msg -> MessageBuilder.withBody(msg.getBytes())

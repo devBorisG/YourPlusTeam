@@ -1,9 +1,10 @@
-package com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.configuration.exception.implementation;
+package com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.configuration.producto.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.crosscutting.CrosscuttingCustomException;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.crosscuttingyourplus.helper.json.MapperJsonObject;
-import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.configuration.exception.ConfigRabbitContentException;
+import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
+import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.configuration.producto.ConfigRabbitContentProduct;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageBuilder;
 import org.springframework.amqp.core.MessageProperties;
@@ -14,16 +15,16 @@ import java.util.Optional;
 import java.util.UUID;
 
 @Component
-public class ConfigRabbitContentExceptionImpl implements ConfigRabbitContentException {
+public class ConfigRabbitContentProductImpl implements ConfigRabbitContentProduct {
 
     private final MapperJsonObject mapperJsonObject;
 
-    public ConfigRabbitContentExceptionImpl(MapperJsonObject mapperJsonObject) {
+    public ConfigRabbitContentProductImpl(MapperJsonObject mapperJsonObject) {
         this.mapperJsonObject = mapperJsonObject;
     }
 
     @Override
-    public Optional<Message> getBodyMessage(Exception object, MessageProperties messageProperties) {
+    public Optional<Message> getBodyMessage(ProductoDomain object, MessageProperties messageProperties) {
         try {
             Optional<String> textMessage = mapperJsonObject.executeGson(object);
             return textMessage.map(msg -> MessageBuilder.withBody(msg.getBytes())

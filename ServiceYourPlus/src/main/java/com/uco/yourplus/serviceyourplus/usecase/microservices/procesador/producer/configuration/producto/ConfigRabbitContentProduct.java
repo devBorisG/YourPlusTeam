@@ -3,5 +3,5 @@ package com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.produc
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
 import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.configuration.ConfigRabbitContent;
 
-public interface ConfigRabbitContentProductoDomain extends ConfigRabbitContent<ProductoDomain> {
+public interface ConfigRabbitContentProduct extends ConfigRabbitContent<ProductoDomain> {
 }
