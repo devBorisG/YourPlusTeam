@@ -23,7 +23,7 @@ import java.util.Optional;
  * @see ConsultarPersonasFacade
  */
 @RestController
-@RequestMapping("apiyourplus/persona")
+@RequestMapping("/yourplus/v1/personas")
 public class ConsultarPersonasController {
 
     @Autowired

@@ -17,7 +17,7 @@ import java.util.UUID;
  * Permite aplicar operaciones de parcheo a una entidad "Persona" identificada por su ID.
  */
 @RestController
-@RequestMapping("/apiyourplus/persona")
+@RequestMapping("/yourplus/v1/personas")
 public class ActualizarPersonaPatch {
 
     @Autowired

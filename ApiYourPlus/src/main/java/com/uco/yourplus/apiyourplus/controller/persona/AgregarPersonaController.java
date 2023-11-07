@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RestController
-@RequestMapping("/apiyourplus/persona")
+@RequestMapping("/yourplus/v1/personas")
 public class AgregarPersonaController {
 
     @Autowired

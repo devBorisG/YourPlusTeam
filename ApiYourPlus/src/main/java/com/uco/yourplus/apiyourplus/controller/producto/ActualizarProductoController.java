@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("apiyourplus/productos")
+@RequestMapping("/yourplus/v1/productos")
 public class ActualizarProductoController {
 
     private final SendUpdateMessageFacade facade;

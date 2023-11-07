@@ -14,7 +14,7 @@ import java.util.UUID;
 
 // Define el paquete y el nombre de la clase
 @RestController
-@RequestMapping("apiyourplus/persona")
+@RequestMapping("/yourplus/v1/personas")
 public class ActualizarPersona {
 
     // Inyecta la dependencia de ActualizarPersonaFacade
