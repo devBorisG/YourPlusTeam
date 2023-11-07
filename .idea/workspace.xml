@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0d24072-1192-4ad9-a5d1-ca65ae60f87b" name="Changes" comment="Creacion de caso de uso para enviar objeto de laboratorio para consultar por Rabbit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/laboratorio/ActualizarLaboratorioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/laboratorio/ActualizarLaboratorioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/laboratorio/ConsultarLaboratorioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/laboratorio/ConsultarLaboratorioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/laboratorio/EliminarLaboratorioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/laboratorio/EliminarLaboratorioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/laboratorio/RegistrarLaboratorioController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/laboratorio/RegistrarLaboratorioController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/ActualizarPersona.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/ActualizarPersona.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/ActualizarPersonaPatch.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/ActualizarPersonaPatch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/AgregarPersonaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/AgregarPersonaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/ConsultarPersonasController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/ConsultarPersonasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/EliminarPersonaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/EliminarPersonaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/LoginPersonaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/LoginPersonaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/producto/ActualizarProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/producto/ActualizarProductoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/producto/EliminarProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/producto/EliminarProductoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/producto/ListarProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/producto/ListarProductoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/producto/RegistrarProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/producto/RegistrarProductoController.java" afterDir="false" />
-    </list>
+    <list default="true" id="a0d24072-1192-4ad9-a5d1-ca65ae60f87b" name="Changes" comment="Mejora de nombramiento en los paths" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -103,34 +87,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "YourPlusTeam.ApiYourPlus.main.wasFacetEverAdded": "true",
-    "YourPlusTeam.ApiYourPlus.test.wasFacetEverAdded": "true",
-    "YourPlusTeam.RepositoryYourPlus.main.wasFacetEverAdded": "true",
-    "YourPlusTeam.RepositoryYourPlus.test.wasFacetEverAdded": "true",
-    "YourPlusTeam.ServiceYourPlus.main.wasFacetEverAdded": "true",
-    "YourPlusTeam.ServiceYourPlus.test.wasFacetEverAdded": "true",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "boris",
-    "ignore.virus.scanning.warn.message": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;YourPlusTeam.ApiYourPlus.main.wasFacetEverAdded&quot;: &quot;true&quot;,
+    &quot;YourPlusTeam.ApiYourPlus.test.wasFacetEverAdded&quot;: &quot;true&quot;,
+    &quot;YourPlusTeam.RepositoryYourPlus.main.wasFacetEverAdded&quot;: &quot;true&quot;,
+    &quot;YourPlusTeam.RepositoryYourPlus.test.wasFacetEverAdded&quot;: &quot;true&quot;,
+    &quot;YourPlusTeam.ServiceYourPlus.main.wasFacetEverAdded&quot;: &quot;true&quot;,
+    &quot;YourPlusTeam.ServiceYourPlus.test.wasFacetEverAdded&quot;: &quot;true&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;boris&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
