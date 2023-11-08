@@ -4,6 +4,7 @@ import com.uco.yourplus.repositoryyourplus.filter.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationProvider;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -18,6 +19,8 @@ public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
+    private static final String PRODUCTO = "/yourplus/v1/productos";
+    private static final String ADMIN = "administrador";
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
@@ -25,8 +28,16 @@ public class SecurityConfig {
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers("/apiyourplus/persona/**", "/apiyourplus/productos/**")
+                .antMatchers(HttpMethod.POST,"/yourplus/v1/personas/**")
                 .permitAll()
+                .antMatchers("/yourplus/v1/laboratorios/**")
+                .hasAuthority(ADMIN)
+                .antMatchers(HttpMethod.POST, PRODUCTO)
+                .hasAuthority(ADMIN)
+                .antMatchers(HttpMethod.PUT, PRODUCTO)
+                .hasAuthority(ADMIN)
+                .antMatchers(HttpMethod.DELETE, PRODUCTO)
+                .hasAuthority(ADMIN)
                 .anyRequest()
                 .authenticated()
                 .and()
