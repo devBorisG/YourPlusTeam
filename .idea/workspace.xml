@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0d24072-1192-4ad9-a5d1-ca65ae60f87b" name="Changes" comment="Mejora de nombramiento en los paths" />
+    <list default="true" id="a0d24072-1192-4ad9-a5d1-ca65ae60f87b" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -190,6 +192,8 @@
       <workItem from="1699320528725" duration="1765000" />
       <workItem from="1699322349266" duration="4280000" />
       <workItem from="1699376832160" duration="5319000" />
+      <workItem from="1699395356356" duration="768000" />
+      <workItem from="1699402316672" duration="488000" />
     </task>
     <task id="LOCAL-00001" summary="Reformat code and solve copy properties to Persona">
       <option name="closed" value="true" />
@@ -223,7 +227,15 @@
       <option name="project" value="LOCAL" />
       <updated>1699393849176</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="commit">
+      <option name="closed" value="true" />
+      <created>1699395450975</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1699395450975</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -231,9 +243,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reformat code and solve copy properties to Persona" />
-    <MESSAGE value="commit" />
     <MESSAGE value="Creacion de caso de uso para enviar objeto de laboratorio para consultar por Rabbit" />
-    <option name="LAST_COMMIT_MESSAGE" value="Creacion de caso de uso para enviar objeto de laboratorio para consultar por Rabbit" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

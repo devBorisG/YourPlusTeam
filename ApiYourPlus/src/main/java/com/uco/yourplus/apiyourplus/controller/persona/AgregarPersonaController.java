@@ -4,7 +4,6 @@ import com.uco.yourplus.apiyourplus.controller.response.Response;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.YourPlusCustomException;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
 import com.uco.yourplus.serviceyourplus.facade.persona.RegistrarPersonaFacade;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -19,20 +18,22 @@ import java.util.List;
 @RequestMapping("/yourplus/v1/personas")
 public class AgregarPersonaController {
 
-    @Autowired
-    RegistrarPersonaFacade registrarPersonaFacade;
+    private final RegistrarPersonaFacade registrarPersonaFacade;
+
+    public AgregarPersonaController(RegistrarPersonaFacade registrarPersonaFacade) {
+        this.registrarPersonaFacade = registrarPersonaFacade;
+    }
 
     @PostMapping()
     public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO) {
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
         try {
-            String jwtToken = registrarPersonaFacade.execute(personaDTO);
+            registrarPersonaFacade.execute(personaDTO);
             List<PersonaDTO> data = new ArrayList<>();
             data.add(personaDTO);
             response.addSuccesMessage("melito mi rey");
             response.setData(data);
-            response.setToken(jwtToken);
         } catch (final YourPlusCustomException yourPlusCustomException) {
             httpStatus = HttpStatus.BAD_REQUEST;
             if (yourPlusCustomException.isTechnicalException()) {
