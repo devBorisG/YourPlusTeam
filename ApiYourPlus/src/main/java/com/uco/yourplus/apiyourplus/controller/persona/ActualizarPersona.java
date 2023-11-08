@@ -4,7 +4,6 @@ import com.uco.yourplus.apiyourplus.controller.response.Response;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.YourPlusCustomException;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
 import com.uco.yourplus.serviceyourplus.facade.persona.ActualizarPersonaFacade;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -14,12 +13,15 @@ import java.util.UUID;
 
 // Define el paquete y el nombre de la clase
 @RestController
-@RequestMapping("apiyourplus/persona")
+@RequestMapping("/yourplus/v1/personas")
 public class ActualizarPersona {
 
     // Inyecta la dependencia de ActualizarPersonaFacade
-    @Autowired
-    private ActualizarPersonaFacade facade;
+    private final ActualizarPersonaFacade facade;
+
+    public ActualizarPersona(ActualizarPersonaFacade facade) {
+        this.facade = facade;
+    }
 
     // Define un método para manejar solicitudes PUT en la ruta "/apiyourplus/persona/{id}"
     @PutMapping("/{id}")

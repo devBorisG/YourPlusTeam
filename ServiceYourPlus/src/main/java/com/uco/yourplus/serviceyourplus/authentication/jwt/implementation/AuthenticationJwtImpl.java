@@ -3,12 +3,12 @@ package com.uco.yourplus.serviceyourplus.authentication.jwt.implementation;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.dtoyourplus.builder.PersonaDTO;
 import com.uco.yourplus.entityyourplus.PersonaEntity;
+import com.uco.yourplus.entityyourplus.RolEntity;
 import com.uco.yourplus.repositoryyourplus.persona.PersonaRepository;
 import com.uco.yourplus.repositoryyourplus.service.JwtService;
 import com.uco.yourplus.serviceyourplus.authentication.jwt.AuthenticationJwt;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.AuthenticationException;
@@ -18,12 +18,12 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class AuthenticationJwtImpl implements AuthenticationJwt {
 
-    @Autowired
-    PersonaRepository personaRepository;
-    @Autowired
-    JwtService jwtService;
-    @Autowired
-    private AuthenticationManager authenticationManager;
+
+    private final PersonaRepository personaRepository;
+
+    private final JwtService jwtService;
+
+    private final AuthenticationManager authenticationManager;
 
     @Override
     public String authenticate(PersonaDTO personaDTO) {
@@ -40,7 +40,10 @@ public class AuthenticationJwtImpl implements AuthenticationJwt {
             throw ServiceCustomException.createTechnicalException(e, "Error inesperado" + e.getMessage());
         }
         PersonaEntity personaEntity = new PersonaEntity();
+        RolEntity rolEntity = new RolEntity();
         BeanUtils.copyProperties(personaDTO, personaEntity);
+        BeanUtils.copyProperties(personaDTO.getRolDTO(),rolEntity);
+        personaEntity.setRolEntity(rolEntity);
         PersonaEntity user = personaRepository.findByCorreo(personaEntity.getCorreo())
                 .orElseThrow();
         return jwtService.generateToken(user);

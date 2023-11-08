@@ -4,7 +4,7 @@ import com.uco.yourplus.crosscuttingyourplus.exceptions.crosscutting.Crosscuttin
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.crosscuttingyourplus.properties.PropertiesCatalogProductoProducer;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
-import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.configuration.producto.ConfigRabbitContentProductoDomain;
+import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.configuration.producto.ConfigRabbitContentProduct;
 import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.producer.producto.RabbitMQDeleteProducerProducto;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.core.MessageProperties;
@@ -21,9 +21,9 @@ public class RabbitMQDeleteProducerProductoImpl implements RabbitMQDeleteProduce
 
     private final PropertiesCatalogProductoProducer producer;
     private final RabbitTemplate rabbitTemplate;
-    private final ConfigRabbitContentProductoDomain configRabbitProductContent;
+    private final ConfigRabbitContentProduct configRabbitProductContent;
 
-    public RabbitMQDeleteProducerProductoImpl(@Qualifier("propertiesCatalogProductoProducer") PropertiesCatalogProductoProducer producer, RabbitTemplate rabbitTemplate, ConfigRabbitContentProductoDomain configRabbitProductContent) {
+    public RabbitMQDeleteProducerProductoImpl(@Qualifier("propertiesCatalogProductoProducer") PropertiesCatalogProductoProducer producer, RabbitTemplate rabbitTemplate, ConfigRabbitContentProduct configRabbitProductContent) {
         this.producer = producer;
         this.rabbitTemplate = rabbitTemplate;
         this.configRabbitProductContent = configRabbitProductContent;

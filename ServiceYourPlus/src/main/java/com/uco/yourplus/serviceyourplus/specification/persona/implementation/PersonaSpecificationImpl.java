@@ -61,7 +61,6 @@ public class PersonaSpecificationImpl implements PersonaSpecification {
         }
     }
 
-
     private boolean verifyMandatoryPersonaAttributes(PersonaDomain personaDomain) {
         return isDefaultUUID(personaDomain.getId()) || isEmpty(personaDomain.getNombre()) || isEmpty(personaDomain.getApellido()) ||
                 isEmpty(personaDomain.getCorreo()) || isEmpty(personaDomain.getPassword());
