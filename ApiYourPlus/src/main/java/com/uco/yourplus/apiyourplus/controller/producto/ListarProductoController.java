@@ -11,6 +11,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+import java.util.Optional;
+
 @RestController
 @RequestMapping("/yourplus/v1/productos")
 public class ListarProductoController {
@@ -26,8 +29,9 @@ public class ListarProductoController {
         final Response<ProductoDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
         try {
-            facade.execute(productoDTO);
+            List<ProductoDTO> productoDTOList = facade.execute(Optional.ofNullable(productoDTO));
             response.addSuccesMessage("Lista de productos");
+            response.setData(productoDTOList);
         } catch (final YourPlusCustomException exception) {
             httpStatus = HttpStatus.BAD_REQUEST;
             if (exception.isTechnicalException()) {

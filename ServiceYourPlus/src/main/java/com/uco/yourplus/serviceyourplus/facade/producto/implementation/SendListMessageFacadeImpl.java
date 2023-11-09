@@ -1,6 +1,8 @@
 package com.uco.yourplus.serviceyourplus.facade.producto.implementation;
 
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
+import com.uco.yourplus.dtoyourplus.builder.CategoriaDTO;
+import com.uco.yourplus.dtoyourplus.builder.LaboratorioDTO;
 import com.uco.yourplus.dtoyourplus.builder.ProductoDTO;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
 import com.uco.yourplus.serviceyourplus.facade.producto.SendListMessageFacade;
@@ -8,6 +10,8 @@ import com.uco.yourplus.serviceyourplus.usecase.producto.SendListProductMessage;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+
+import java.util.*;
 
 @Service
 @Transactional
@@ -20,11 +24,24 @@ public class SendListMessageFacadeImpl implements SendListMessageFacade {
     }
 
     @Override
-    public void execute(ProductoDTO dto) {
+    public List<ProductoDTO> execute(Optional<ProductoDTO> dto) {
         ProductoDomain productoDomain = new ProductoDomain();
+        List<ProductoDTO> convertResult = new ArrayList<>();
         try {
-            BeanUtils.copyProperties(dto, productoDomain);
-            useCase.execute(productoDomain);
+            BeanUtils.copyProperties(dto.get(), productoDomain);
+            List<ProductoDomain> productoDomainList = useCase.execute(Optional.of(productoDomain));
+            productoDomainList.forEach(value -> {
+                ProductoDTO productoDTO = new ProductoDTO();
+                LaboratorioDTO laboratorioDTO = new LaboratorioDTO();
+                CategoriaDTO categoriaDTO = new CategoriaDTO();
+                BeanUtils.copyProperties(value.getCategoria(), categoriaDTO);
+                BeanUtils.copyProperties(value.getLaboratorio(), laboratorioDTO);
+                BeanUtils.copyProperties(value, productoDTO);
+                productoDTO.setCategoria(categoriaDTO);
+                productoDTO.setLaboratorio(laboratorioDTO);
+                convertResult.add(productoDTO);
+            });
+            return convertResult;
         } catch (ServiceCustomException exception) {
             throw exception;
         } catch (Exception exception) {
