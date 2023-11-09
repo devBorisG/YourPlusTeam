@@ -3,7 +3,7 @@ package com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.respon
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.crosscuttingyourplus.properties.PropertiesCatalogProductoReceiver;
 import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
-import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.response.ProcessRabbitResponse;
+import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.response.process.ProcessRabbitResponseProducto;
 import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.response.producto.HandlerReceiveMessageListProducto;
 import org.springframework.amqp.AmqpException;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -19,10 +19,10 @@ import static com.uco.yourplus.crosscuttingyourplus.helper.IntegerHelper.DEFAULT
 @EnableConfigurationProperties(PropertiesCatalogProductoReceiver.class)
 public class HandlerReceiveMessageListProductoImpl implements HandlerReceiveMessageListProducto {
     private final RabbitTemplate rabbitTemplate;
-    private final ProcessRabbitResponse<ProductoDomain> processRabbitResponse;
+    private final ProcessRabbitResponseProducto processRabbitResponse;
     private final PropertiesCatalogProductoReceiver productoReceiver;
 
-    public HandlerReceiveMessageListProductoImpl(RabbitTemplate rabbitTemplate, ProcessRabbitResponse<ProductoDomain> processRabbitResponse, @Qualifier("propertiesCatalogProductoReceiver") PropertiesCatalogProductoReceiver productoReceiver) {
+    public HandlerReceiveMessageListProductoImpl(RabbitTemplate rabbitTemplate, ProcessRabbitResponseProducto processRabbitResponse, @Qualifier("propertiesCatalogProductoReceiver") PropertiesCatalogProductoReceiver productoReceiver) {
         this.rabbitTemplate = rabbitTemplate;
         this.processRabbitResponse = processRabbitResponse;
         this.productoReceiver = productoReceiver;

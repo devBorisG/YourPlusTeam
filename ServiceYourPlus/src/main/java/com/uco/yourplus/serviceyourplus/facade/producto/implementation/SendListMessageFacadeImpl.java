@@ -30,18 +30,17 @@ public class SendListMessageFacadeImpl implements SendListMessageFacade {
         try {
             BeanUtils.copyProperties(dto.get(), productoDomain);
             List<ProductoDomain> productoDomainList = useCase.execute(Optional.of(productoDomain));
-            for (ProductoDomain domain : productoDomainList) {
-                System.out.println(domain);
+            productoDomainList.forEach(value -> {
                 ProductoDTO productoDTO = new ProductoDTO();
                 LaboratorioDTO laboratorioDTO = new LaboratorioDTO();
                 CategoriaDTO categoriaDTO = new CategoriaDTO();
-                BeanUtils.copyProperties(domain.getCategoria(), categoriaDTO);
-                BeanUtils.copyProperties(domain.getLaboratorio(), laboratorioDTO);
-                BeanUtils.copyProperties(domain, productoDTO);
+                BeanUtils.copyProperties(value.getCategoria(), categoriaDTO);
+                BeanUtils.copyProperties(value.getLaboratorio(), laboratorioDTO);
+                BeanUtils.copyProperties(value, productoDTO);
                 productoDTO.setCategoria(categoriaDTO);
                 productoDTO.setLaboratorio(laboratorioDTO);
                 convertResult.add(productoDTO);
-            }
+            });
             return convertResult;
         } catch (ServiceCustomException exception) {
             throw exception;

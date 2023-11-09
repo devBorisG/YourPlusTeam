@@ -1,12 +1,12 @@
-package com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.response;
+package com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.response.process;
 
-import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.service.ServiceCustomException;
 import com.uco.yourplus.crosscuttingyourplus.helper.json.MapperJsonObject;
-import com.uco.yourplus.serviceyourplus.domain.ResponseDomain;
+import com.uco.yourplus.serviceyourplus.domain.ProductoDomain;
 import com.uco.yourplus.serviceyourplus.domain.enumeration.StateResponse;
+import com.uco.yourplus.serviceyourplus.domain.response.ResponseProductoDomain;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
@@ -16,17 +16,16 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Component
-public class ProcessRabbitResponse<T> {
-
+public class ProcessRabbitResponseProducto {
     private final MapperJsonObject mapperJsonObject;
 
-    public ProcessRabbitResponse(MapperJsonObject mapperJsonObject) {
+    public ProcessRabbitResponseProducto(MapperJsonObject mapperJsonObject) {
         this.mapperJsonObject = mapperJsonObject;
     }
 
-    public List<T> verifyContent(Object response, String requestId) {
+    public List<ProductoDomain> verifyContent(Object response, String requestId) {
         if (response != null) {
-            ResponseDomain<T> responseDomain = convertResponse(response);
+            ResponseProductoDomain responseDomain = convertResponse(response);
             if (Objects.equals(responseDomain.getId().toString(), requestId)) {
                 if (responseDomain.getStateResponse() == StateResponse.ERROR) {
                     throw ServiceCustomException.createUserException(responseDomain.getMessage());
@@ -37,15 +36,13 @@ public class ProcessRabbitResponse<T> {
         return null;
     }
 
-    private ResponseDomain<T> convertResponse(Object object) {
+    private ResponseProductoDomain convertResponse(Object object) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             Optional<String> response = mapperJsonObject.execute(object);
             String base64 = response.get().replace("\"", "");
             byte[] originalBytes = Base64.getDecoder().decode(base64);
-            TypeReference<ResponseDomain<T>> typeReference = new TypeReference<>() {
-            };
-            return objectMapper.readValue(originalBytes, typeReference);
+            return objectMapper.readValue(originalBytes, ResponseProductoDomain.class);
         } catch (JsonMappingException exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error mappeando el json");
         } catch (IOException exception) {
@@ -54,5 +51,6 @@ public class ProcessRabbitResponse<T> {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error inesperado convirtiendo el objeto");
         }
     }
+
 
 }
