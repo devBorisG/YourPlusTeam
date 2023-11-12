@@ -4,10 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a0d24072-1192-4ad9-a5d1-ca65ae60f87b" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/AgregarPersonaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ApiYourPlus/src/main/java/com/uco/yourplus/apiyourplus/controller/persona/AgregarPersonaController.java" afterDir="false" />
+    <list default="true" id="a0d24072-1192-4ad9-a5d1-ca65ae60f87b" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -206,7 +208,7 @@
       <workItem from="1699466109460" duration="934000" />
       <workItem from="1699558088575" duration="2967000" />
       <workItem from="1699569658094" duration="3647000" />
-      <workItem from="1699823952762" duration="1158000" />
+      <workItem from="1699823952762" duration="1473000" />
     </task>
     <task id="LOCAL-00001" summary="Reformat code and solve copy properties to Persona">
       <option name="closed" value="true" />
@@ -256,7 +258,23 @@
       <option name="project" value="LOCAL" />
       <updated>1699403178122</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="commit">
+      <option name="closed" value="true" />
+      <created>1699825407466</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1699825407466</updated>
+    </task>
+    <task id="LOCAL-00008" summary="commit">
+      <option name="closed" value="true" />
+      <created>1699825424587</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1699825424587</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -265,10 +283,10 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Reformat code and solve copy properties to Persona" />
     <MESSAGE value="Creacion de caso de uso para enviar objeto de laboratorio para consultar por Rabbit" />
-    <MESSAGE value="commit" />
     <MESSAGE value="Arreglo del caso de uso de registrar persona ya que no se necesita el token en este metodo" />
     <MESSAGE value="Configuracion de jwt" />
-    <option name="LAST_COMMIT_MESSAGE" value="Configuracion de jwt" />
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
