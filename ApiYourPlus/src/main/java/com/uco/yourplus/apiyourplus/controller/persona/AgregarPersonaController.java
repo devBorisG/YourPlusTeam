@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.uco.yourplus.crosscuttingyourplus.helper.UUIDHelper.getNewUUID;
+
 @RestController
 @RequestMapping("/yourplus/v1/personas")
 public class AgregarPersonaController {
@@ -26,6 +28,7 @@ public class AgregarPersonaController {
 
     @PostMapping()
     public ResponseEntity<Response<PersonaDTO>> execute(@RequestBody PersonaDTO personaDTO) {
+        personaDTO.setId(getNewUUID());
         final Response<PersonaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
         try {
