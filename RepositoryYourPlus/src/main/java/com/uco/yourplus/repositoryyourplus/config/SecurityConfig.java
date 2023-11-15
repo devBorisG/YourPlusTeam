@@ -25,10 +25,12 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
         httpSecurity
+                .cors()
+                .and()
                 .csrf()
                 .disable()
                 .authorizeRequests()
-                .antMatchers(HttpMethod.POST,"/yourplus/v1/personas/**")
+                .antMatchers("/yourplus/v1/personas/**")
                 .permitAll()
                 .antMatchers("/yourplus/v1/laboratorios/**")
                 .hasAuthority(ADMIN)

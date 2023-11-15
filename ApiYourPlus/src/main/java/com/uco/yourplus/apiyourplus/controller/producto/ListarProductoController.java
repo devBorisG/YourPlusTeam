@@ -25,11 +25,11 @@ public class ListarProductoController {
     }
 
     @GetMapping()
-    public ResponseEntity<Response<ProductoDTO>> execute(@RequestBody ProductoDTO productoDTO) {
+    public ResponseEntity<Response<ProductoDTO>> execute() {
         final Response<ProductoDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
         try {
-            List<ProductoDTO> productoDTOList = facade.execute(Optional.ofNullable(productoDTO));
+            List<ProductoDTO> productoDTOList = facade.execute(Optional.of(new ProductoDTO()));
             response.addSuccesMessage("Lista de productos");
             response.setData(productoDTOList);
         } catch (final YourPlusCustomException exception) {
