@@ -15,12 +15,11 @@ import java.util.Optional;
 
 @Service
 @Transactional
-public class SendListMessageFacadeImpl implements SendListMessageFacade {
+public class SendListCategoriaMessageFacadeImpl implements SendListMessageFacade {
 
     private final SendListCategoriaMessage useCase;
 
-
-    public SendListMessageFacadeImpl(SendListCategoriaMessage useCase) {
+    public SendListCategoriaMessageFacadeImpl(SendListCategoriaMessage useCase) {
         this.useCase = useCase;
     }
 
@@ -32,7 +31,10 @@ public class SendListMessageFacadeImpl implements SendListMessageFacade {
             BeanUtils.copyProperties(dto,categoriaDomain);
             List<CategoriaDomain> categoriaDomainList = useCase.execute(Optional.of(categoriaDomain));
             CategoriaDTO categoriaDTO = new CategoriaDTO();
-            BeanUtils.copyProperties(categoriaDomain,categoriaDTO);
+            categoriaDomainList.forEach(value -> {
+                BeanUtils.copyProperties(value, categoriaDTO);
+                convertResult.add(categoriaDTO);
+            });
             convertResult.add(categoriaDTO);
             return convertResult;
         }catch (ServiceCustomException exception){

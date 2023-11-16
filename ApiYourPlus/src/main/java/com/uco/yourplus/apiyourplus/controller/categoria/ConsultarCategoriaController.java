@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -28,8 +29,9 @@ public class ConsultarCategoriaController {
         final Response<CategoriaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
         try{
-            facade.execute(Optional.of(categoriaDTO));
+            List<CategoriaDTO> categoriaDTOList = facade.execute(Optional.of(categoriaDTO));
             response.addSuccesMessage("consulta de categorias exitoso");
+            response.setData(categoriaDTOList);
         } catch (final YourPlusCustomException exception) {
             httpStatus = HttpStatus.BAD_REQUEST;
             if (exception.isTechnicalException()) {
