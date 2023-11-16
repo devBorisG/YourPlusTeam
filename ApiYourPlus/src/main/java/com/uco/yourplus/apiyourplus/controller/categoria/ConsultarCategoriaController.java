@@ -1,9 +1,9 @@
-package com.uco.yourplus.apiyourplus.controller.laboratorio;
+package com.uco.yourplus.apiyourplus.controller.categoria;
 
 import com.uco.yourplus.apiyourplus.controller.response.Response;
 import com.uco.yourplus.crosscuttingyourplus.exceptions.YourPlusCustomException;
-import com.uco.yourplus.dtoyourplus.builder.LaboratorioDTO;
-import com.uco.yourplus.serviceyourplus.facade.laboratorio.SendConsultLaboratoryMessageFacade;
+import com.uco.yourplus.dtoyourplus.builder.CategoriaDTO;
+import com.uco.yourplus.serviceyourplus.facade.categoria.SendListMessageFacade;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,23 +15,23 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@RequestMapping("/yourplus/v1/laboratorios")
-public class ConsultarLaboratorioController {
+@RequestMapping("/yourplus/v1/categorias")
+public class ConsultarCategoriaController {
 
-    private final SendConsultLaboratoryMessageFacade facade;
+    private final SendListMessageFacade facade;
 
-    public ConsultarLaboratorioController(SendConsultLaboratoryMessageFacade facade) {
+    public ConsultarCategoriaController(SendListMessageFacade facade) {
         this.facade = facade;
     }
 
     @GetMapping()
-    public ResponseEntity<Response<LaboratorioDTO>> execute() {
-        final Response<LaboratorioDTO> response = new Response<>();
+    public ResponseEntity<Response<CategoriaDTO>> execute(){
+        final Response<CategoriaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
-        try {
-            List<LaboratorioDTO> laboratorioDTOList = facade.execute(Optional.of(new LaboratorioDTO()));
-            response.addSuccesMessage("Consulta de Laboratorios exitosos");
-            response.setData(laboratorioDTOList);
+        try{
+            List<CategoriaDTO> categoriaDTOList = facade.execute(Optional.of(new CategoriaDTO()));
+            response.addSuccesMessage("consulta de categorias exitoso");
+            response.setData(categoriaDTOList);
         } catch (final YourPlusCustomException exception) {
             httpStatus = HttpStatus.BAD_REQUEST;
             if (exception.isTechnicalException()) {
@@ -43,7 +43,7 @@ public class ConsultarLaboratorioController {
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
             response.addFatalMessage("Ocurrio un error del servidor, intente nuevamente");
         }
-        System.out.println("Laboratorios: "+response.getData().toString());
+        System.out.println("CategoriasL: "+response.getData().toString());
         return new ResponseEntity<>(response, httpStatus);
     }
 }

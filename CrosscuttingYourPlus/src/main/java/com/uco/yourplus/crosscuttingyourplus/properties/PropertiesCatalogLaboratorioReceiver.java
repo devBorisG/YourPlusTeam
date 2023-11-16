@@ -4,11 +4,12 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
 @Component
-@ConfigurationProperties(prefix = "yourplus.management.laboratorio")
-public class PropertiesCatalogLaboratorioProducer {
+@ConfigurationProperties(prefix = "yourplus.management.laboratorio.response")
+public class PropertiesCatalogLaboratorioReceiver {
+
     private String exchange;
-    private Queue queue = new Queue();
-    private RoutingKey routingkey = new RoutingKey();
+    private QueueProperties queue = new QueueProperties();
+    private RoutingKeyProperties routingkey = new RoutingKeyProperties();
 
     public String getExchange() {
         return exchange;
@@ -18,23 +19,23 @@ public class PropertiesCatalogLaboratorioProducer {
         this.exchange = exchange;
     }
 
-    public Queue getQueue() {
+    public QueueProperties getQueue() {
         return queue;
     }
 
-    public void setQueue(Queue queue) {
+    public void setQueue(QueueProperties queue) {
         this.queue = queue;
     }
 
-    public RoutingKey getRoutingkey() {
+    public RoutingKeyProperties getRoutingkey() {
         return routingkey;
     }
 
-    public void setRoutingkey(RoutingKey routingkey) {
+    public void setRoutingkey(RoutingKeyProperties routingkey) {
         this.routingkey = routingkey;
     }
 
-    public class Queue {
+    public static class QueueProperties{
         private String save;
         private String delete;
         private String update;
@@ -73,7 +74,7 @@ public class PropertiesCatalogLaboratorioProducer {
         }
     }
 
-    public class RoutingKey {
+    public static class RoutingKeyProperties{
         private String save;
         private String delete;
         private String update;

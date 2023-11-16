@@ -9,6 +9,10 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Optional;
+
 @Service
 @Transactional
 public class SendConsultLaboratoryMessageFacadeImpl implements SendConsultLaboratoryMessageFacade {
@@ -20,11 +24,18 @@ public class SendConsultLaboratoryMessageFacadeImpl implements SendConsultLabora
     }
 
     @Override
-    public void execute(LaboratorioDTO dto) {
+    public List<LaboratorioDTO> execute(Optional<LaboratorioDTO> dto) {
         LaboratorioDomain laboratorioDomain = new LaboratorioDomain();
+        List<LaboratorioDTO> convertResult = new ArrayList<>();
         try{
-            BeanUtils.copyProperties(dto, laboratorioDomain);
-            useCase.execute(laboratorioDomain);
+            BeanUtils.copyProperties(dto.get(), laboratorioDomain);
+            List<LaboratorioDomain> laboratorioDomainList = useCase.execute(Optional.of(laboratorioDomain));
+            LaboratorioDTO laboratorioDTO = new LaboratorioDTO();
+            laboratorioDomainList.forEach(value -> {
+                BeanUtils.copyProperties(value,laboratorioDTO);
+                convertResult.add(laboratorioDTO);
+            });
+            return convertResult;
         }catch (ServiceCustomException exception){
             throw exception;
         }catch (Exception exception){
