@@ -37,7 +37,7 @@ public class RabbitMQConsultProducerLaboratorioImpl implements RabbitMQConsultPr
             if (bodyMessage.isEmpty()){
                 throw ServiceCustomException.createTechnicalException("No se pudo configurar las propiedades del mensaje para Listar");
             }
-            rabbitTemplate.convertAndSend(producer.getExchange(), producer.getRoutingKey().getList(), bodyMessage.get());
+            rabbitTemplate.convertAndSend(producer.getExchange(), producer.getRoutingkey().getList(), bodyMessage.get());
         }catch (CrosscuttingCustomException exception){
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error en el ConfigRabbitContent para configurar le mensaje");
         }catch (Exception exception){

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 public class PropertiesCatalogLaboratorioProducer {
     private String exchange;
     private Queue queue = new Queue();
-    private RoutingKey routingKey = new RoutingKey();
+    private RoutingKey routingkey = new RoutingKey();
 
     public String getExchange() {
         return exchange;
@@ -26,12 +26,12 @@ public class PropertiesCatalogLaboratorioProducer {
         this.queue = queue;
     }
 
-    public RoutingKey getRoutingKey() {
-        return routingKey;
+    public RoutingKey getRoutingkey() {
+        return routingkey;
     }
 
-    public void setRoutingKey(RoutingKey routingKey) {
-        this.routingKey = routingKey;
+    public void setRoutingkey(RoutingKey routingkey) {
+        this.routingkey = routingkey;
     }
 
     public class Queue {

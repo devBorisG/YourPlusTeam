@@ -1,9 +1,6 @@
 package com.uco.yourplus.repositoryyourplus.config;
 
-import com.uco.yourplus.crosscuttingyourplus.properties.PropertiesCatalogCategoriaProducer;
-import com.uco.yourplus.crosscuttingyourplus.properties.PropertiesCatalogCategoriaReceiver;
-import com.uco.yourplus.crosscuttingyourplus.properties.PropertiesCatalogProductoProducer;
-import com.uco.yourplus.crosscuttingyourplus.properties.PropertiesCatalogProductoReceiver;
+import com.uco.yourplus.crosscuttingyourplus.properties.*;
 import org.springframework.amqp.core.Binding;
 import org.springframework.amqp.core.BindingBuilder;
 import org.springframework.amqp.core.Queue;
@@ -14,7 +11,10 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@EnableConfigurationProperties({PropertiesCatalogProductoProducer.class, PropertiesCatalogProductoReceiver.class})
+@EnableConfigurationProperties({PropertiesCatalogProductoProducer.class,
+        PropertiesCatalogProductoReceiver.class,
+        PropertiesCatalogLaboratorioProducer.class,
+        PropertiesCatalogLaboratorioProducer.class})
 public class MessagingConfig {
 
     private final PropertiesCatalogProductoProducer productoProducer;
@@ -22,13 +22,18 @@ public class MessagingConfig {
     private final PropertiesCatalogCategoriaReceiver categoriaReceiver;
     private final PropertiesCatalogCategoriaProducer categoriaProducer;
 
+    private final PropertiesCatalogLaboratorioProducer laboratorioProducer;
+
+    private final PropertiesCatalogLaboratorioReceiver laboratorioReceiver;
 
     public MessagingConfig(@Qualifier("propertiesCatalogProductoProducer") PropertiesCatalogProductoProducer productoProducer, @Qualifier("propertiesCatalogProductoReceiver") PropertiesCatalogProductoReceiver productoReceiver,
-                           @Qualifier("propertiesCatalogCategoriaReceiver") PropertiesCatalogCategoriaReceiver categoriaReceiver,@Qualifier("propertiesCatalogCategoriaProducer") PropertiesCatalogCategoriaProducer categoriaProducer) {
+                           @Qualifier("propertiesCatalogCategoriaReceiver") PropertiesCatalogCategoriaReceiver categoriaReceiver, @Qualifier("propertiesCatalogCategoriaProducer") PropertiesCatalogCategoriaProducer categoriaProducer, @Qualifier("propertiesCatalogLaboratorioProducer") PropertiesCatalogLaboratorioProducer laboratorioProducer, PropertiesCatalogLaboratorioReceiver laboratorioReceiver) {
         this.productoProducer = productoProducer;
         this.productoReceiver = productoReceiver;
         this.categoriaReceiver = categoriaReceiver;
         this.categoriaProducer = categoriaProducer;
+        this.laboratorioProducer = laboratorioProducer;
+        this.laboratorioReceiver = laboratorioReceiver;
     }
 
     //Spring bean for producer save queue

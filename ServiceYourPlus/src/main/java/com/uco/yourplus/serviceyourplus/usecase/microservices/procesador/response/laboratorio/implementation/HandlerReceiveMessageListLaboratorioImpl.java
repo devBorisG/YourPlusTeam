@@ -41,7 +41,7 @@ public class HandlerReceiveMessageListLaboratorioImpl implements HandlerReceiveM
         }catch (ServiceCustomException exception) {
             throw exception;
         } catch (AmqpException exception) {
-            throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error ejecutando la tarea AMQP");
+            throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error ejecutando la tarea AMQP"+exception.getMessage());
         } catch (Exception exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurro un error inesperado");
         }

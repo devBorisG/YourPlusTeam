@@ -42,7 +42,7 @@ public class RabbitMQConsultProducerCategoriaImpl implements RabbitMQConsultProd
         } catch (CrosscuttingCustomException exception) {
             throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error en el ConfigRabbitContent para configurar le mensaje");
         } catch (Exception exception) {
-            throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error inesperado intentando realizar las configuraciones del mensaje");
+            throw ServiceCustomException.createTechnicalException(exception, "Ocurrio un error inesperado intentando realizar las configuraciones del mensaje"+exception.getMessage());
         }
     }
 }

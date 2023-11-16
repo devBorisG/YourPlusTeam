@@ -28,7 +28,7 @@ public class ProcessRabbitResponseCategoria {
     public List<CategoriaDomain> verifyContent(Object response, String requestId){
         if(response != null){
             ResponseCategoriaDomain responseCategoriaDomain = convertResponse(response);
-            if(!Objects.equals(responseCategoriaDomain.getId().toString(),requestId)){
+            if(Objects.equals(responseCategoriaDomain.getId().toString(),requestId)){
                 if(responseCategoriaDomain.getStateResponse() == StateResponse.ERROR){
                     throw ServiceCustomException.createUserException(responseCategoriaDomain.getMessage());
                 }

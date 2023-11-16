@@ -28,7 +28,7 @@ public class SendListCategoriaMessageFacadeImpl implements SendListMessageFacade
         CategoriaDomain categoriaDomain = new CategoriaDomain();
         List<CategoriaDTO> convertResult = new ArrayList<>();
         try{
-            BeanUtils.copyProperties(dto,categoriaDomain);
+            BeanUtils.copyProperties(dto.get(),categoriaDomain);
             List<CategoriaDomain> categoriaDomainList = useCase.execute(Optional.of(categoriaDomain));
             CategoriaDTO categoriaDTO = new CategoriaDTO();
             categoriaDomainList.forEach(value -> {

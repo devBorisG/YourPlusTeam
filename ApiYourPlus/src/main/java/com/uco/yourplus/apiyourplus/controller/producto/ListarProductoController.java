@@ -43,6 +43,7 @@ public class ListarProductoController {
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
             response.addFatalMessage("Ocurrio un error del servidor, intente nuevamente");
         }
+        System.out.println("Productos: "+response.getData().toString());
         return new ResponseEntity<>(response, httpStatus);
     }
 }

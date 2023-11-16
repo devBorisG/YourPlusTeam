@@ -34,6 +34,8 @@ public class HandlerReceiveMessageListCategoriaImpl implements HandlerReceiveMes
         try{
             Object response = rabbitTemplate.receiveAndConvert(categoriaReceiver.getQueue().getList(),DEFAULT_TIMEOUT_MILLIS);
             List<CategoriaDomain> respuesta = processRabbitResponseCategoria.verifyContent(response,requestId);
+            System.out.println(categoriaReceiver.getQueue().getList());
+            System.out.println(response);
             if(respuesta == null){
                 throw ServiceCustomException.createUserException("algo salio mal, intente nuevamente");
             }

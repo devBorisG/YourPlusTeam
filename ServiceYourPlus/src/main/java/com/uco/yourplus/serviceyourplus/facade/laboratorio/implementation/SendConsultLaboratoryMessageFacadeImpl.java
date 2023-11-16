@@ -28,11 +28,13 @@ public class SendConsultLaboratoryMessageFacadeImpl implements SendConsultLabora
         LaboratorioDomain laboratorioDomain = new LaboratorioDomain();
         List<LaboratorioDTO> convertResult = new ArrayList<>();
         try{
-            BeanUtils.copyProperties(dto, laboratorioDomain);
+            BeanUtils.copyProperties(dto.get(), laboratorioDomain);
             List<LaboratorioDomain> laboratorioDomainList = useCase.execute(Optional.of(laboratorioDomain));
             LaboratorioDTO laboratorioDTO = new LaboratorioDTO();
-            BeanUtils.copyProperties(laboratorioDomain,laboratorioDTO);
-            convertResult.add(laboratorioDTO);
+            laboratorioDomainList.forEach(value -> {
+                BeanUtils.copyProperties(value,laboratorioDTO);
+                convertResult.add(laboratorioDTO);
+            });
             return convertResult;
         }catch (ServiceCustomException exception){
             throw exception;

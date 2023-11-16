@@ -25,17 +25,17 @@ public class ConsultarCategoriaController {
     }
 
     @GetMapping()
-    public ResponseEntity<Response<CategoriaDTO>> execute(@RequestBody CategoriaDTO categoriaDTO){
+    public ResponseEntity<Response<CategoriaDTO>> execute(){
         final Response<CategoriaDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
         try{
-            List<CategoriaDTO> categoriaDTOList = facade.execute(Optional.of(categoriaDTO));
+            List<CategoriaDTO> categoriaDTOList = facade.execute(Optional.of(new CategoriaDTO()));
             response.addSuccesMessage("consulta de categorias exitoso");
             response.setData(categoriaDTOList);
         } catch (final YourPlusCustomException exception) {
             httpStatus = HttpStatus.BAD_REQUEST;
             if (exception.isTechnicalException()) {
-                response.addErrorMessage("Ocurrio un error tecnico, intente nuevamente");
+                response.addErrorMessage("Ocurrio un error tecnico, intente nuevamente"+exception.getMessage());
             } else {
                 response.addErrorMessage(exception.getMessage());
             }
@@ -43,6 +43,7 @@ public class ConsultarCategoriaController {
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
             response.addFatalMessage("Ocurrio un error del servidor, intente nuevamente");
         }
+        System.out.println("CategoriasL: "+response.getData().toString());
         return new ResponseEntity<>(response, httpStatus);
     }
 }

@@ -27,7 +27,7 @@ public class SendConsultLaboratoryMessageImpl implements SendConsultLaboratoryMe
         try{
             if(domain.isPresent()){
                 producerLaboratorio.execute(domain.get());
-                return receiverLaboratorio.waitForResponse(domain.get().toString());
+                return receiverLaboratorio.waitForResponse(domain.get().getId().toString());
             }
             return new ArrayList<>();
         }catch (ServiceCustomException exception){
