@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import static com.uco.yourplus.crosscuttingyourplus.helper.UUIDHelper.getNewUUID;
+
 @RestController
 @RequestMapping("/yourplus/v1/productos")
 public class RegistrarProductoController {
@@ -23,6 +25,15 @@ public class RegistrarProductoController {
 
     @PostMapping()
     public ResponseEntity<Response<ProductoDTO>> execute(@RequestBody ProductoDTO productoDTO) {
+        productoDTO.setId(getNewUUID());
+        System.out.println(productoDTO.getId());
+        System.out.println(productoDTO.getNombre());
+        System.out.println(productoDTO.getPrecio());
+        System.out.println(productoDTO.getDescripcion());
+        System.out.println(productoDTO.getCategoria().getId());
+        System.out.println(productoDTO.getLaboratorio().getId());
+        System.out.println(productoDTO.getImagen());
+
         final Response<ProductoDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
         try {
