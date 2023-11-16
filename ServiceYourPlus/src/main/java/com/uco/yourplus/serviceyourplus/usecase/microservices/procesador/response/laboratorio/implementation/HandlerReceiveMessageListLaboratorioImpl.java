@@ -6,6 +6,8 @@ import com.uco.yourplus.crosscuttingyourplus.properties.PropertiesCatalogLaborat
 import com.uco.yourplus.serviceyourplus.domain.LaboratorioDomain;
 import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.response.laboratorio.HandlerReceiveMessageListLaboratorio;
 import com.uco.yourplus.serviceyourplus.usecase.microservices.procesador.response.process.ProcessRabbitResponseLaboratorio;
+import org.springframework.amqp.AmqpException;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -24,7 +26,6 @@ public class HandlerReceiveMessageListLaboratorioImpl implements HandlerReceiveM
     public HandlerReceiveMessageListLaboratorioImpl(RabbitTemplate rabbitTemplate, ProcessRabbitResponseLaboratorio processRabbitResponseLaboratorio, PropertiesCatalogLaboratorioReceiver laboratorioReceiver) {
         this.rabbitTemplate = rabbitTemplate;
         this.processRabbitResponseLaboratorio = processRabbitResponseLaboratorio;
-
         this.laboratorioReceiver = laboratorioReceiver;
     }
 
