@@ -6,10 +6,9 @@ import com.uco.yourplus.dtoyourplus.builder.LaboratorioDTO;
 import com.uco.yourplus.serviceyourplus.facade.laboratorio.SendDeleteLaboratoryMessageFacade;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/yourplus/v1/laboratorios")
@@ -22,10 +21,12 @@ public class EliminarLaboratorioController {
     }
 
     @DeleteMapping()
-    public ResponseEntity<Response<LaboratorioDTO>> execute(@RequestBody LaboratorioDTO laboratorioDTO) {
+    public ResponseEntity<Response<LaboratorioDTO>> execute(@RequestParam String id) {
         final Response<LaboratorioDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
+        LaboratorioDTO laboratorioDTO = new LaboratorioDTO();
         try {
+            laboratorioDTO.setId(UUID.fromString(id));
             facade.execute(laboratorioDTO);
             response.addSuccesMessage("Se ha Eliminado el Laboratorio");
         } catch (final YourPlusCustomException exception) {

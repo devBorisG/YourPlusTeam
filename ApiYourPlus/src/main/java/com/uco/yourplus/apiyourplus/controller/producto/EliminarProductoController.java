@@ -6,10 +6,9 @@ import com.uco.yourplus.dtoyourplus.builder.ProductoDTO;
 import com.uco.yourplus.serviceyourplus.facade.producto.SendDeleteMessageFacade;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.UUID;
 
 @RestController
 @RequestMapping("/yourplus/v1/productos")
@@ -21,11 +20,13 @@ public class EliminarProductoController {
         this.facade = facade;
     }
 
-    @DeleteMapping()
-    public ResponseEntity<Response<ProductoDTO>> execute(@RequestBody ProductoDTO productoDTO) {
+    @DeleteMapping("{id}")
+    public ResponseEntity<Response<ProductoDTO>> execute(@PathVariable String id) {
         final Response<ProductoDTO> response = new Response<>();
         HttpStatus httpStatus = HttpStatus.OK;
+        ProductoDTO productoDTO = new ProductoDTO();
         try {
+            productoDTO.setId(UUID.fromString(id));
             facade.execute(productoDTO);
             response.addSuccesMessage("Producto eliminado");
         } catch (final YourPlusCustomException exception) {

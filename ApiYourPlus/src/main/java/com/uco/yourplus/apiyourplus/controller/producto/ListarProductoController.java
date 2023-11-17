@@ -39,9 +39,11 @@ public class ListarProductoController {
             } else {
                 response.addErrorMessage(exception.getMessage());
             }
+            System.out.println(response.getMessageList()+exception.getMessage());
         } catch (final Exception exception) {
             httpStatus = HttpStatus.INTERNAL_SERVER_ERROR;
             response.addFatalMessage("Ocurrio un error del servidor, intente nuevamente");
+            System.out.println(response.getMessageList()+exception.getMessage());
         }
         System.out.println("Productos: "+response.getData().toString());
         return new ResponseEntity<>(response, httpStatus);
